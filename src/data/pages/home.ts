@@ -29,7 +29,7 @@ export const homeData = {
 			heading: "Di qué quieres vender. Nosotros te traemos clientes.",
 			description: "<p>Escribe \"quiero vender más empanadas\" y AdsGPT arma tus anuncios, creativos y videos en Google, Instagram y más. Tu eliges cuánto gastar.</p>",
 			phone: {
-				src: "/lotties/v3.0/hero.json",
+				src: "/lotties/v4.0/hero.json",
 				ariaLabel: "AdsGPT en un teléfono: ejemplos de anuncios creados para tu marca."
 			}
 		},
@@ -109,7 +109,7 @@ export const homeData = {
 					description: "<p>Google, Meta, OpenAI, Wortise, X, TikTok, LinkedIn y más. Todo en AdsGPT.</p>",
 					variant: "connect",
 					animation: {
-						src: "/lotties/v1.2/conecta-tus-redes.json",
+						src: "/lotties/v4.0/conecta-tus-redes.json",
 						ariaLabel: "Integraciones con plataformas de publicidad e inteligencia artificial."
 					}
 				},
@@ -118,8 +118,8 @@ export const homeData = {
 					description: "<p>AdsGPT elige cómo, dónde y con qué tipo de campaña hacerlo.</p>",
 					variant: "objective",
 					animation: {
-						src: "/lotties/v3.0/dile-tu-objetivo.json",
-						responsiveSrc: { osm: "/lotties/v2.0/dile-tu-objetivo-mobile.json" },
+						src: "/lotties/v4.0/dile-tu-objetivo.json",
+						responsiveSrc: { osm: "/lotties/v4.0/dile-tu-objetivo-mobile.json" },
 						ariaLabel: "Campo para describir el objetivo de tu campaña en AdsGPT."
 					}
 				},
@@ -128,7 +128,7 @@ export const homeData = {
 					description: "<p>Genera múltiples variantes de imagen, video, interactivos y jugables con la identidad de tu negocio.</p>",
 					variant: "formats",
 					animation: {
-						src: "/lotties/v1.2/tu-marca-en-cada-formato.json",
+						src: "/lotties/v4.0/tu-marca-en-cada-formato.json",
 						ariaLabel: "Ejemplos de creatividades publicitarias en distintos formatos."
 					}
 				},
@@ -137,7 +137,7 @@ export const homeData = {
 					description: "<p>Compara resultados y redistribuye presupuesto hacia donde mejor funciona.</p>",
 					variant: "optimize",
 					animation: {
-						src: "/lotties/v3.0/lanza-y-optimiza.json",
+						src: "/lotties/v4.0/lanza-y-optimiza.json",
 						ariaLabel: "Controles de presupuesto y métricas de alcance de una campaña."
 					}
 				}
@@ -147,7 +147,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/v2.0/conecta.json",
+					lottieSrc: "/lotties/v4.0/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecta",
 					descriptionLeft: "<p>Enlaza tus redes de publicidad y gestiónalas de un solo lugar.</p>",
@@ -162,7 +162,7 @@ export const homeData = {
 				},
 				{
 					number: "02",
-					lottieSrc: "/lotties/v1.3/describe.json",
+					lottieSrc: "/lotties/v4.0/describe.json",
 					heading: "Describe",
 					descriptionLeft: "<p>Dinos qué quieres promocionar. Escribe una frase corta, pega una URL o sube tu producto.</p>",
 					image: {
@@ -176,7 +176,7 @@ export const homeData = {
 				},
 				{
 					number: "03",
-					lottieSrc: "/lotties/v1.3/crea.json",
+					lottieSrc: "/lotties/v4.0/crea.json",
 					heading: "Crea",
 					descriptionLeft: "<p>AdsGPT transforma tu idea en una campaña completa: visual, copy y audiencia, todo alineado.</p>",
 					image: {
@@ -190,7 +190,7 @@ export const homeData = {
 				},
 				{
 					number: "04",
-					lottieSrc: "/lotties/v1.6/lanza.json",
+					lottieSrc: "/lotties/v4.0/lanza.json",
 					heading: "Lanza",
 					descriptionLeft: "<p>Revisa los detalles, ajusta lo que quieras y lanza. La optimización continúa automáticamente.</p>",
 					image: {
@@ -377,7 +377,7 @@ export const homeData = {
 			heading: "Tell us what you want to sell. We bring you customers.",
 			description: "<p>Type \"I want to sell more empanadas\" and AdsGPT creates your ads, ad creatives and videos for Google, Instagram and more. You choose how much to spend.</p>",
 			phone: {
-				src: "/lotties/v3.0/hero.json",
+				src: "/lotties/v4.0/hero.json",
 				ariaLabel: "AdsGPT on a phone: examples of ads created for your brand."
 			}
 		},
@@ -457,7 +457,7 @@ export const homeData = {
 					description: "<p>Google, Meta, OpenAI, Wortise, X, TikTok, LinkedIn and more. All in AdsGPT.</p>",
 					variant: "connect",
 					animation: {
-						src: "/lotties/v1.2/conecta-tus-redes.json",
+						src: "/lotties/v4.0/conecta-tus-redes.json",
 						ariaLabel: "Integrations with advertising and artificial intelligence platforms."
 					}
 				},
@@ -466,8 +466,8 @@ export const homeData = {
 					description: "<p>AdsGPT chooses how, where and which type of campaign to use.</p>",
 					variant: "objective",
 					animation: {
-						src: "/lotties/v3.0/dile-tu-objetivo.json",
-						responsiveSrc: { osm: "/lotties/v2.0/dile-tu-objetivo-mobile.json" },
+						src: "/lotties/v4.0/dile-tu-objetivo.json",
+						responsiveSrc: { osm: "/lotties/v4.0/dile-tu-objetivo-mobile.json" },
 						ariaLabel: "A field to describe your campaign goal in AdsGPT."
 					}
 				},
@@ -476,7 +476,7 @@ export const homeData = {
 					description: "<p>Generate multiple image, video, interactive and playable variations that reflect your brand identity.</p>",
 					variant: "formats",
 					animation: {
-						src: "/lotties/v1.2/tu-marca-en-cada-formato.json",
+						src: "/lotties/v4.0/tu-marca-en-cada-formato.json",
 						ariaLabel: "Examples of advertising creatives in different formats."
 					}
 				},
@@ -485,7 +485,7 @@ export const homeData = {
 					description: "<p>Compare results and shift your budget toward what works best.</p>",
 					variant: "optimize",
 					animation: {
-						src: "/lotties/v3.0/lanza-y-optimiza.json",
+						src: "/lotties/v4.0/lanza-y-optimiza.json",
 						ariaLabel: "Campaign budget controls and reach metrics."
 					}
 				}
@@ -495,7 +495,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/v2.0/conecta.json",
+					lottieSrc: "/lotties/v4.0/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Connect",
 					descriptionLeft: "<p>Link your advertising networks and manage them all in one place.</p>",
@@ -510,7 +510,7 @@ export const homeData = {
 				},
 				{
 					number: "02",
-					lottieSrc: "/lotties/v1.3/describe.json",
+					lottieSrc: "/lotties/v4.0/describe.json",
 					heading: "Describe",
 					descriptionLeft: "<p>Tell us what you want to promote. Write a short sentence, paste a URL or upload your product.</p>",
 					image: {
@@ -524,7 +524,7 @@ export const homeData = {
 				},
 				{
 					number: "03",
-					lottieSrc: "/lotties/v1.3/crea.json",
+					lottieSrc: "/lotties/v4.0/crea.json",
 					heading: "Create",
 					descriptionLeft: "<p>AdsGPT turns your idea into a complete campaign: visuals, copy and audience, all aligned.</p>",
 					image: {
@@ -538,7 +538,7 @@ export const homeData = {
 				},
 				{
 					number: "04",
-					lottieSrc: "/lotties/v1.6/lanza.json",
+					lottieSrc: "/lotties/v4.0/lanza.json",
 					heading: "Launch",
 					descriptionLeft: "<p>Review the details, make any adjustments and launch. Optimization continues automatically.</p>",
 					image: {
@@ -725,7 +725,7 @@ export const homeData = {
 			heading: "Diga o que você quer vender. Nós trazemos os clientes.",
 			description: "<p>Escreva \"quero vender mais empanadas\" e o AdsGPT cria seus anúncios, peças publicitárias e vídeos no Google, Instagram e muito mais. Você escolhe quanto gastar.</p>",
 			phone: {
-				src: "/lotties/v3.0/hero.json",
+				src: "/lotties/v4.0/hero.json",
 				ariaLabel: "AdsGPT em um celular: exemplos de anúncios criados para sua marca."
 			}
 		},
@@ -805,7 +805,7 @@ export const homeData = {
 					description: "<p>Google, Meta, OpenAI, Wortise, X, TikTok, LinkedIn e muito mais. Tudo no AdsGPT.</p>",
 					variant: "connect",
 					animation: {
-						src: "/lotties/v1.2/conecta-tus-redes.json",
+						src: "/lotties/v4.0/conecta-tus-redes.json",
 						ariaLabel: "Integrações com plataformas de publicidade e inteligência artificial."
 					}
 				},
@@ -814,8 +814,8 @@ export const homeData = {
 					description: "<p>O AdsGPT escolhe como, onde e com qual tipo de campanha alcançar seu objetivo.</p>",
 					variant: "objective",
 					animation: {
-						src: "/lotties/v3.0/dile-tu-objetivo.json",
-						responsiveSrc: { osm: "/lotties/v2.0/dile-tu-objetivo-mobile.json" },
+						src: "/lotties/v4.0/dile-tu-objetivo.json",
+						responsiveSrc: { osm: "/lotties/v4.0/dile-tu-objetivo-mobile.json" },
 						ariaLabel: "Campo para descrever o objetivo da sua campanha no AdsGPT."
 					}
 				},
@@ -824,7 +824,7 @@ export const homeData = {
 					description: "<p>Gere diversas versões de imagens, vídeos, anúncios interativos e jogáveis com a identidade da sua marca.</p>",
 					variant: "formats",
 					animation: {
-						src: "/lotties/v1.2/tu-marca-en-cada-formato.json",
+						src: "/lotties/v4.0/tu-marca-en-cada-formato.json",
 						ariaLabel: "Exemplos de peças publicitárias em diferentes formatos."
 					}
 				},
@@ -833,7 +833,7 @@ export const homeData = {
 					description: "<p>Compare resultados e redistribua o orçamento para o que funciona melhor.</p>",
 					variant: "optimize",
 					animation: {
-						src: "/lotties/v3.0/lanza-y-optimiza.json",
+						src: "/lotties/v4.0/lanza-y-optimiza.json",
 						ariaLabel: "Controles de orçamento e métricas de alcance de uma campanha."
 					}
 				}
@@ -843,7 +843,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/v2.0/conecta.json",
+					lottieSrc: "/lotties/v4.0/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecte",
 					descriptionLeft: "<p>Vincule suas redes de publicidade e gerencie todas em um só lugar.</p>",
@@ -858,7 +858,7 @@ export const homeData = {
 				},
 				{
 					number: "02",
-					lottieSrc: "/lotties/v1.3/describe.json",
+					lottieSrc: "/lotties/v4.0/describe.json",
 					heading: "Descreva",
 					descriptionLeft: "<p>Diga o que você quer promover. Escreva uma frase curta, cole uma URL ou envie seu produto.</p>",
 					image: {
@@ -872,7 +872,7 @@ export const homeData = {
 				},
 				{
 					number: "03",
-					lottieSrc: "/lotties/v1.3/crea.json",
+					lottieSrc: "/lotties/v4.0/crea.json",
 					heading: "Crie",
 					descriptionLeft: "<p>O AdsGPT transforma sua ideia em uma campanha completa: visual, texto e público, tudo alinhado.</p>",
 					image: {
@@ -886,7 +886,7 @@ export const homeData = {
 				},
 				{
 					number: "04",
-					lottieSrc: "/lotties/v1.6/lanza.json",
+					lottieSrc: "/lotties/v4.0/lanza.json",
 					heading: "Lance",
 					descriptionLeft: "<p>Revise os detalhes, ajuste o que quiser e lance. A otimização continua automaticamente.</p>",
 					image: {

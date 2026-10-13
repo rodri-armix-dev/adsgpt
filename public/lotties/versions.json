@@ -321,6 +321,56 @@
       "path": "v2.0/alternativas/dile-tu-objetivo-mobile.lottie",
       "previousPath": "nuevos/alternativas/dile-tu-objetivo-mobile.lottie",
       "sha256": "3f45f580a9e197e3065e281b8c46f0c84b402d9cda4a7b2cbbbabea0c1bcdeef"
+    },
+    {
+      "path": "v4.0/conecta.json",
+      "sourceUrl": "https://drive.google.com/file/d/11j8Vk6dfiwsYiwrSJLe272ckJ33pufka/view",
+      "sha256": "26e81b9ead87260791e3a8d8bc24edea98ac8029ed889ec451f50534158ea933"
+    },
+    {
+      "path": "v4.0/lanza-y-optimiza.json",
+      "sourceUrl": "https://drive.google.com/file/d/1VVgHYmCiyPbCZYB19kdxFu_UeMO42Cj4/view",
+      "sha256": "3b8a3b4d446b1c6d3f5fe5869d97c8c2b043fc96ca60bd97d608dfe925c23888"
+    },
+    {
+      "path": "v4.0/crea.json",
+      "sourceUrl": "https://drive.google.com/file/d/1PAQRIWs_vEV8jVuiX_L8M3HmfqLdA2iS/view",
+      "sha256": "c0d955a7a2f3769aee951b094b1be5b896d4e7e476741b4f8b0b18d689da818f"
+    },
+    {
+      "path": "v4.0/describe.json",
+      "sourceUrl": "https://drive.google.com/file/d/1N9ppExPc-hUtu37euvU38CQVjaMUldab/view",
+      "sha256": "74663a59fa820fb5d7f1516c9a05d8c7fecdfff4f9a67c7624ec864c489fd9d2"
+    },
+    {
+      "path": "v4.0/lanza.json",
+      "sourceUrl": "https://drive.google.com/file/d/1HPtzmfNIj1MbefxjX4Z-Z38sSeYL12iZ/view",
+      "sha256": "f3fd030a8b0f0cc1e073cace728ccfafe150238869cff378cc75c3ab40c39ae3"
+    },
+    {
+      "path": "v4.0/hero.json",
+      "sourceUrl": "https://drive.google.com/file/d/1vAPwX9OmnRVqvWPHlEgh3TcdoAV77TYe/view",
+      "sha256": "c111841e62f159879faa3ba520cac2d1a99aa83ef9f2394bf0bbebdaeb9ca091"
+    },
+    {
+      "path": "v4.0/dile-tu-objetivo-mobile.json",
+      "sourceUrl": "https://drive.google.com/file/d/1tYY9sXUJPTYE0QWa8RisPsfOEoFFCrb0/view",
+      "sha256": "ec767d75adbd95eeaa2c45df51cbd7e1315d39b1933adb2f9a9a7d6eaf396e20"
+    },
+    {
+      "path": "v4.0/dile-tu-objetivo.json",
+      "sourceUrl": "https://drive.google.com/file/d/14m_Zut3SeiTpIyeBhR6qQXYdWfYT5T1M/view",
+      "sha256": "0594cad2b30fd9d28e23129aac858470c5ed64f486d32029ac2d29333b0d726d"
+    },
+    {
+      "path": "v4.0/tu-marca-en-cada-formato.json",
+      "sourceUrl": "https://drive.google.com/file/d/1W9xoGH1H0s9OwTpRmUg6Lo7lZB5Fk8CC/view",
+      "sha256": "e1e851ebc9484f90c13003efadc87fb63fa752e7c8316397dec9c3aef36bd6d0"
+    },
+    {
+      "path": "v4.0/conecta-tus-redes.json",
+      "sourceUrl": "https://drive.google.com/file/d/1HHBjlHeWBOHGxEfyOdliFpd4bYlZ40Zj/view",
+      "sha256": "4ed37c583e2a4ff275d3cf1ba2d3950528247341ba3b1937b40084235fe5b07f"
     }
   ]
 }

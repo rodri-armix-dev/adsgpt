@@ -20,20 +20,21 @@ Formato: `v<entrega>.<revisión>`.
 | `v1.6` | `launch-external/`, incluido su JSON y todas sus imágenes WebP |
 | `v2.0` | `Nuevos-20261013T153253Z-1-001.zip`, recibido el 13/10/2026; cuatro JSON y diez alternativas dotLottie |
 | `v3.0` | `drive-download-20261013T155857Z-1-001.zip`, recibido el 13/10/2026; Hero, Dile tu objetivo desktop y Lanza y optimiza |
+| `v4.0` | Carpeta de Drive `1JbnYSfUQa6iDvcDWMDXsQAdZWU2RjbHe`, recibida el 13/10/2026; diez JSON originales |
 
 La numeración de las revisiones históricas de `v1` registra las carpetas existentes al organizar este archivo; no reconstruye fechas de entrega desconocidas.
 
 ## Versiones activas
 
-- Hero: `v3.0/hero.json`.
-- Conecta tus redes: `v1.2/conecta-tus-redes.json`.
-- Dile tu objetivo desktop: `v3.0/dile-tu-objetivo.json`.
-- Dile tu objetivo móvil: `v2.0/dile-tu-objetivo-mobile.json`.
-- Tu marca, en cada formato: `v1.2/tu-marca-en-cada-formato.json`.
-- Lanza y optimiza: `v3.0/lanza-y-optimiza.json`.
-- Panel Conecta: `v2.0/conecta.json`.
-- Panel Describe: `v1.3/describe.json`.
-- Panel Crea: `v1.3/crea.json`.
-- Panel Lanza: `v1.6/lanza.json`.
+- Hero: `v4.0/hero.json`.
+- Conecta tus redes: `v4.0/conecta-tus-redes.json`.
+- Dile tu objetivo desktop: `v4.0/dile-tu-objetivo.json`.
+- Dile tu objetivo móvil: `v4.0/dile-tu-objetivo-mobile.json`.
+- Tu marca, en cada formato: `v4.0/tu-marca-en-cada-formato.json`.
+- Lanza y optimiza: `v4.0/lanza-y-optimiza.json`.
+- Panel Conecta: `v4.0/conecta.json`.
+- Panel Describe: `v4.0/describe.json`.
+- Panel Crea: `v4.0/crea.json`.
+- Panel Lanza: `v4.0/lanza.json`.
 
-`versions.json` registra la ruta anterior y el SHA-256 de cada archivo trasladado para comprobar su conservación. Las revisiones futuras deben añadir sus propios registros sin eliminar las entradas históricas.
+`versions.json` registra la ruta anterior o el enlace de origen y el SHA-256 de cada archivo para comprobar su conservación. Las revisiones futuras deben añadir sus propios registros sin eliminar las entradas históricas.

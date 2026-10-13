@@ -178,8 +178,12 @@ $phone-viewport-height-limit: 0.8;
 
 		&[data-animation-step='0']
 		{
+			// Conecta's 1623px canvas adds 197px on each side of the 1229px phone.
+			left: calc(-100% * 197 / 1229);
+			right: auto;
 			translate: 0 0%;
 			visibility: visible;
+			width: calc(100% * 1623 / 1229);
 		}
 	}
 }
