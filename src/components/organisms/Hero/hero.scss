@@ -35,6 +35,7 @@
 
 	&__media
 	{
+		--phone-mockup-status-display: none;
 		--phone-mockup-width: var(--layout-phone-width);
 		align-items: flex-start;
 		display: flex;

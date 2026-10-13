@@ -40,6 +40,10 @@ Props: `src` (required), `autoplay` and `loop` (default `true`), `ariaLabel`
 uses `high` for the device image, which remains eagerly loaded. Playback methods and bubbling `lottie:*` events remain owned by the
 nested `lottie-animation` element.
 
+`--phone-mockup-status-display` controls the overlay clock and status icons
+(default `inline`). The Hero sets it to `none` because its animation includes
+its own status bar; the camera overlay remains visible.
+
 The named `animation` slot replaces the default Lottie with consumer-owned
 animation layers. PhoneMockup keeps the device, composition alignment and status
 overlay; the consumer owns playback and transitions between those layers.

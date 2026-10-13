@@ -29,7 +29,7 @@ export const homeData = {
 			heading: "Di qué quieres vender. Nosotros te traemos clientes.",
 			description: "<p>Escribe \"quiero vender más empanadas\" y AdsGPT arma tus anuncios, creativos y videos en Google, Instagram y más. Tu eliges cuánto gastar.</p>",
 			phone: {
-				src: "/lotties/launch-external/lanza.json",
+				src: "/lotties/nuevos/hero.json",
 				ariaLabel: "AdsGPT en un teléfono: ejemplos de anuncios creados para tu marca."
 			}
 		},
@@ -118,8 +118,8 @@ export const homeData = {
 					description: "<p>AdsGPT elige cómo, dónde y con qué tipo de campaña hacerlo.</p>",
 					variant: "objective",
 					animation: {
-						src: "/lotties/optimized-v2/dile-tu-objetivo.json",
-						responsiveSrc: { osm: "/lotties/optimized-v2/dile-tu-objetivo-mobile.json" },
+						src: "/lotties/nuevos/dile-tu-objetivo.json",
+						responsiveSrc: { osm: "/lotties/nuevos/dile-tu-objetivo-mobile.json" },
 						ariaLabel: "Campo para describir el objetivo de tu campaña en AdsGPT."
 					}
 				},
@@ -147,7 +147,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/conecta-progressive/conecta.json",
+					lottieSrc: "/lotties/nuevos/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecta",
 					descriptionLeft: "<p>Enlaza tus redes de publicidad y gestiónalas de un solo lugar.</p>",
@@ -377,7 +377,7 @@ export const homeData = {
 			heading: "Tell us what you want to sell. We bring you customers.",
 			description: "<p>Type \"I want to sell more empanadas\" and AdsGPT creates your ads, ad creatives and videos for Google, Instagram and more. You choose how much to spend.</p>",
 			phone: {
-				src: "/lotties/launch-external/lanza.json",
+				src: "/lotties/nuevos/hero.json",
 				ariaLabel: "AdsGPT on a phone: examples of ads created for your brand."
 			}
 		},
@@ -466,8 +466,8 @@ export const homeData = {
 					description: "<p>AdsGPT chooses how, where and which type of campaign to use.</p>",
 					variant: "objective",
 					animation: {
-						src: "/lotties/optimized-v2/dile-tu-objetivo.json",
-						responsiveSrc: { osm: "/lotties/optimized-v2/dile-tu-objetivo-mobile.json" },
+						src: "/lotties/nuevos/dile-tu-objetivo.json",
+						responsiveSrc: { osm: "/lotties/nuevos/dile-tu-objetivo-mobile.json" },
 						ariaLabel: "A field to describe your campaign goal in AdsGPT."
 					}
 				},
@@ -495,7 +495,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/conecta-progressive/conecta.json",
+					lottieSrc: "/lotties/nuevos/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Connect",
 					descriptionLeft: "<p>Link your advertising networks and manage them all in one place.</p>",
@@ -725,7 +725,7 @@ export const homeData = {
 			heading: "Diga o que você quer vender. Nós trazemos os clientes.",
 			description: "<p>Escreva \"quero vender mais empanadas\" e o AdsGPT cria seus anúncios, peças publicitárias e vídeos no Google, Instagram e muito mais. Você escolhe quanto gastar.</p>",
 			phone: {
-				src: "/lotties/launch-external/lanza.json",
+				src: "/lotties/nuevos/hero.json",
 				ariaLabel: "AdsGPT em um celular: exemplos de anúncios criados para sua marca."
 			}
 		},
@@ -814,8 +814,8 @@ export const homeData = {
 					description: "<p>O AdsGPT escolhe como, onde e com qual tipo de campanha alcançar seu objetivo.</p>",
 					variant: "objective",
 					animation: {
-						src: "/lotties/optimized-v2/dile-tu-objetivo.json",
-						responsiveSrc: { osm: "/lotties/optimized-v2/dile-tu-objetivo-mobile.json" },
+						src: "/lotties/nuevos/dile-tu-objetivo.json",
+						responsiveSrc: { osm: "/lotties/nuevos/dile-tu-objetivo-mobile.json" },
 						ariaLabel: "Campo para descrever o objetivo da sua campanha no AdsGPT."
 					}
 				},
@@ -843,7 +843,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/conecta-progressive/conecta.json",
+					lottieSrc: "/lotties/nuevos/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecte",
 					descriptionLeft: "<p>Vincule suas redes de publicidade e gerencie todas em um só lugar.</p>",
