@@ -30,6 +30,7 @@ Formato: `v<entrega>.<revisión>`.
 | `v4.7` | Lanza y optimiza: indicador negro de presupuesto por delante del borde de la tarjeta |
 | `v4.8` | Reestructuración para reproducción: keyframes lineales, capas auxiliares, textos numéricos y atlas estáticos |
 | `v4.9` | Simplificación adicional de keyframes lineales (0,1 unidades), máscaras redundantes y grupos estáticos |
+| `v4.10` | Panel Conecta: oscurecimiento ajustado al borde inferior del marco |
 
 La numeración de las revisiones históricas de `v1` registra las carpetas existentes al organizar este archivo; no reconstruye fechas de entrega desconocidas.
 
@@ -41,7 +42,7 @@ La numeración de las revisiones históricas de `v1` registra las carpetas exist
 - Dile tu objetivo móvil: `v4.8/dile-tu-objetivo-mobile.json`.
 - Tu marca, en cada formato: `v4.9/tu-marca-en-cada-formato.json`.
 - Lanza y optimiza: `v4.9/lanza-y-optimiza.json`.
-- Panel Conecta: `v4.9/conecta.json`.
+- Panel Conecta: `v4.10/conecta.json`.
 - Panel Describe: `v4.9/describe.json`.
 - Panel Crea: `v4.9/crea.json`.
 - Panel Lanza: `v4.8/lanza.json`.

@@ -65,6 +65,16 @@ medición se agrupan con `requestAnimationFrame`: un único pase por frame, sin
 leer layout cuando la escena está lejos. El umbral y el viewport se actualizan
 solo al redimensionar.
 
+La timeline escribe la visibilidad inline y el controlador consulta ese estado,
+sin volver a pedir el estilo calculado. Solo evalúa el panel actual y el siguiente,
+que son los que pueden coincidir durante el desplazamiento. Los atributos de
+transición se actualizan al cambiar el rango de capas, no en cada frame.
+El gradiente de corte inferior anima su propio `color`; no se propaga una variable
+CSS de color animada a todos los SVG del organismo.
+
+La comparación de rendimiento contra el commit `f388d02` y sus condiciones están
+registradas en `reports/lottie-performance/README.md`.
+
 En touch, los Lotties se pausan mientras la timeline desliza los paneles y se
 reproducen cuando el panel queda asentado y cumple el umbral. Esto evita actualizar
 el SVG a la vez que se compone su desplazamiento. Desktop mantiene la reproducción

@@ -68,8 +68,9 @@ function bindLottiePlayback(scene: HTMLElement, animations: HTMLElement[], reduc
 		const area = Math.max(0, right - left) * Math.max(0, bottom - top);
 		let candidate = -1;
 		if (area && !document.hidden) {
-			candidate = animations.findIndex(animation => {
-				if (getComputedStyle(animation).visibility === 'hidden') return false;
+			// The timeline writes inline visibility and only the current/next panel can overlap.
+			candidate = animations.findIndex((animation, index) => {
+				if ((index !== current && index !== current + 1) || animation.style.visibility === 'hidden') return false;
 				const rect = animation.getBoundingClientRect();
 				const width = Math.max(0, Math.min(rect.right, right, viewportWidth) - Math.max(rect.left, left, 0));
 				const height = Math.max(0, Math.min(rect.bottom, bottom, viewportHeight) - Math.max(rect.top, top, 0));
@@ -88,6 +89,10 @@ function bindLottiePlayback(scene: HTMLElement, animations: HTMLElement[], reduc
 	};
 	// ScrollTrigger and native scroll may request the same check during one frame.
 	const update = () => {
+		if (!near || document.hidden) {
+			pause();
+			return;
+		}
 		if (!frame && !signal.aborted) frame = requestAnimationFrame(measure);
 	};
 	const setTransitioning = (moving: boolean) => {
@@ -154,6 +159,7 @@ class ScrollPanelsUnified extends HTMLElement {
 		const animations = Array.from(this.querySelectorAll<HTMLElement>('[data-animation-step]'));
 		const layers = [...steps, ...animations];
 		const container = animations[0]?.parentElement;
+		const phoneCut = this.querySelector<HTMLElement>('.scroll-panels-unified__phone-cut');
 		const playback = bindLottiePlayback(scene, animations, reduced, touch, abort.signal);
 		const hold = touch ? 0 : DESKTOP_HOLD_DISTANCE;
 		const panelDistance = hold + 1;
@@ -166,11 +172,13 @@ class ScrollPanelsUnified extends HTMLElement {
 		let refreshIndex: number | undefined;
 		let refreshProgress: number | undefined;
 		let trigger: ScrollTrigger | undefined;
+		let preparedLayers: { moving: boolean; first: number; last: number } | undefined;
 
 		// Registrar los estilos originales antes de que refresh invalide la timeline.
 		// El pin ya restaura el scroll: evitar que Chrome lo compense otra vez al cambiar su altura.
 		gsap.set(document.documentElement, { overflowAnchor: 'none' });
-		gsap.set(this, { backgroundColor: backgrounds[0], '--scroll-panels-unified-border-color': '#d1d1d1' });
+		gsap.set(this, { backgroundColor: backgrounds[0] });
+		if (phoneCut) gsap.set(phoneCut, { color: '#d1d1d1' });
 		if (touch) gsap.set(this, { '--scroll-panels-unified-transition-duration': `${SLIDE_TRANSITION_DURATION}s` });
 		gsap.set(layers, {
 			translate: (_, layer) => getComputedStyle(layer).translate,
@@ -182,14 +190,16 @@ class ScrollPanelsUnified extends HTMLElement {
 		const setPanelAppearance = context.add('setPanelAppearance', (index: number) => {
 			if (index === appearanceIndex) return;
 			appearanceIndex = index;
-			gsap.set(this, {
-				backgroundColor: backgrounds[index],
-				'--scroll-panels-unified-border-color': steps[index].dataset.context === 'dark' ? '#fff' : '#d1d1d1',
-			});
+			gsap.set(this, { backgroundColor: backgrounds[index] });
+			if (phoneCut) gsap.set(phoneCut, { color: steps[index].dataset.context === 'dark' ? '#fff' : '#d1d1d1' });
 		});
 		// Preparar el color del fondo y las capas móviles; conservar el pin sin transform hints.
 		const prepareLayers = (first?: number, last = first) => {
 			const moving = !reduced && first !== undefined && within();
+			const rangeFirst = moving ? first! : -1;
+			const rangeLast = moving ? last! : -1;
+			if (preparedLayers?.moving === moving && preparedLayers.first === rangeFirst && preparedLayers.last === rangeLast) return;
+			preparedLayers = { moving, first: rangeFirst, last: rangeLast };
 			this.toggleAttribute('data-transitioning', moving);
 			container?.toggleAttribute('data-transitioning', moving);
 			playback.setTransitioning(moving);
@@ -235,10 +245,8 @@ class ScrollPanelsUnified extends HTMLElement {
 				panels.to(steps[i], { translate: '0 -100%' }, start)
 					.to(step, { translate: '0 0%' }, start);
 				if (!touch) {
-					panels.to(this, {
-						backgroundColor: backgrounds[i + 1],
-						'--scroll-panels-unified-border-color': step.dataset.context === 'dark' ? '#fff' : '#d1d1d1',
-					}, start);
+					panels.to(this, { backgroundColor: backgrounds[i + 1] }, start);
+					if (phoneCut) panels.to(phoneCut, { color: step.dataset.context === 'dark' ? '#fff' : '#d1d1d1' }, start);
 				}
 				if (animations[i] && animations[i + 1]) {
 					panels.set(animations[i + 1], { visibility: 'visible' }, start)

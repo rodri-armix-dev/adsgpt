@@ -7,7 +7,6 @@ $phone-viewport-height-limit: 0.8;
 .scroll-panels-unified
 {
 	--scroll-panels-dark-background: #0c0d0e;
-	--scroll-panels-unified-border-color: #d1d1d1;
 	// Reservar 112 px más el área segura para el header siempre visible.
 	--scroll-panels-mobile-top-space: calc(var(--spacing-48) + var(--spacing-64) + env(safe-area-inset-top, 0px));
 	// Reserva común: texto y beneficios; no se mide cada slide con JavaScript.
@@ -123,7 +122,7 @@ $phone-viewport-height-limit: 0.8;
 	{
 		background-image: linear-gradient(to right, transparent, currentColor, transparent);
 		bottom: 0;
-		color: var(--scroll-panels-unified-border-color);
+		color: #d1d1d1;
 		display: none;
 		height: 1px;
 		left: 0;

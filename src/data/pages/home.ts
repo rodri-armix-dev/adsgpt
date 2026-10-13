@@ -147,7 +147,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/v4.9/conecta.json",
+					lottieSrc: "/lotties/v4.10/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecta",
 					descriptionLeft: "<p>Enlaza tus redes de publicidad y gestiónalas de un solo lugar.</p>",
@@ -495,7 +495,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/v4.9/conecta.json",
+					lottieSrc: "/lotties/v4.10/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Connect",
 					descriptionLeft: "<p>Link your advertising networks and manage them all in one place.</p>",
@@ -843,7 +843,7 @@ export const homeData = {
 			items: [
 				{
 					number: "01",
-					lottieSrc: "/lotties/v4.9/conecta.json",
+					lottieSrc: "/lotties/v4.10/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecte",
 					descriptionLeft: "<p>Vincule suas redes de publicidade e gerencie todas em um só lugar.</p>",
