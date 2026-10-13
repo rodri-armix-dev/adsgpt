@@ -10,7 +10,7 @@ import PhoneMockup from './PhoneMockup.astro';
 ---
 
 <div class="demo__phone">
-	<PhoneMockup src="/lotties/describe.json" autoplay={true} loop={true} ariaLabel="Demo de creación de anuncios" />
+	<PhoneMockup src="/lotties/v1.0/describe.json" autoplay={true} loop={true} ariaLabel="Demo de creación de anuncios" />
 </div>
 
 <style lang="scss">
@@ -41,8 +41,8 @@ uses `high` for the device image, which remains eagerly loaded. Playback methods
 nested `lottie-animation` element.
 
 `--phone-mockup-status-display` controls the overlay clock and status icons
-(default `inline`). The Hero sets it to `none` because its animation includes
-its own status bar; the camera overlay remains visible.
+(default `inline`). Set it to `none` when an animation includes its own status
+bar; the camera overlay remains visible.
 
 The named `animation` slot replaces the default Lottie with consumer-owned
 animation layers. PhoneMockup keeps the device, composition alignment and status

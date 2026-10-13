@@ -307,6 +307,8 @@ const sources = rangeOrder.flatMap((range) => responsiveSrc[range] ? [{ query: m
 				if (id && this.compositionBounds.has(id)) {
 					(group as SVGGElement).dataset.lottieComposition = '';
 					(group as SVGGElement).style.setProperty('--lottie-renderer-clip', clip);
+					// Inline configuration also reaches composition groups cloned by SVG <use> in mattes.
+					(group as SVGGElement).style.setProperty('clip-path', 'var(--lottie-composition-clip, var(--lottie-renderer-clip))');
 				}
 			}
 		}

@@ -72,6 +72,8 @@ GEMINI.md
 /docs/publication-review.md
 /public/lotties/**/report.json
 /public/lotties/**/README.md
+!/public/lotties/README.md
+!/public/lotties/v*/README.md
 
 # local browser audits and test artifacts
 .cache/

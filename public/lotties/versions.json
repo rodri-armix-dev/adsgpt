@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "convention": "v<delivery>.<revision>",
+  "files": [
+    {
+      "path": "v1.0/lanza-y-optimiza.json",
+      "previousPath": "lanza-y-optimiza.json",
+      "sha256": "178f2ae560e2e0d309c759876e183f260e2cdcc5ae287299e7163e52d6e9ad65"
+    },
+    {
+      "path": "v1.0/crea.json",
+      "previousPath": "crea.json",
+      "sha256": "ef6aa8302e9271ef8c8593dcf46c461517f1691562ae73674138ab6ba5d573ae"
+    },
+    {
+      "path": "v1.0/conecta-tus-redes.json",
+      "previousPath": "conecta-tus-redes.json",
+      "sha256": "9c19aaf57270a57cdf18db90f131aae33ec344a0fc706468100f34125ed65966"
+    },
+    {
+      "path": "v1.0/tu-marca-en-cada-formato.json",
+      "previousPath": "tu-marca-en-cada-formato.json",
+      "sha256": "1c07b4c8bc64f3258794324762f79b8bf4ae590111ecf364fd3065f5b6a81d8d"
+    },
+    {
+      "path": "v1.0/dile-tu-objetivo-mobile.json",
+      "previousPath": "dile-tu-objetivo-mobile.json",
+      "sha256": "9b740cc04d1c18f6ede129929bfcdc5bd2b9731896761dd32a6a81da1e63b682"
+    },
+    {
+      "path": "v1.0/describe.json",
+      "previousPath": "describe.json",
+      "sha256": "3dd36d89671c4ee019cf89efce3a77b759d121d19153ee08144f1731ddd3caf5"
+    },
+    {
+      "path": "v1.0/dile-tu-objetivo.json",
+      "previousPath": "dile-tu-objetivo.json",
+      "sha256": "db5a529193c421efc9613ab6f2d11b33eda958f027a1f2f67b39957ea0fafd93"
+    },
+    {
+      "path": "v1.0/conecta.json",
+      "previousPath": "conecta.json",
+      "sha256": "e62d8f0e8a8cf0def703e4bf05100799954a14d5b1059e6fc03cda90bae21321"
+    },
+    {
+      "path": "v1.0/lanza.json",
+      "previousPath": "lanza.json",
+      "sha256": "5b922912fe108ca0d84a931ca590ee928f616188c390443cf12ce6ad33f39f34"
+    },
+    {
+      "path": "v3.0/lanza-y-optimiza.json",
+      "previousPath": "prueba-local/lanza-y-optimiza.json",
+      "sha256": "7990b42e57bbc6ea357aec9aa89712b54895baa3f700ba9ec3fe2e4f61e05ba6"
+    },
+    {
+      "path": "v3.0/dile-tu-objetivo.json",
+      "previousPath": "prueba-local/dile-tu-objetivo.json",
+      "sha256": "1c3df0d4a3679ee68049d79a6928497bc7b3483ceed1fa99b1053bdb986f4272"
+    },
+    {
+      "path": "v3.0/hero.json",
+      "previousPath": "prueba-local/hero.json",
+      "sha256": "ef910289f962af0d9a64d8a1fd4f774764a9678a214ac045bcefd80e13fe9a60"
+    },
+    {
+      "path": "v1.3/crea.json",
+      "previousPath": "optimized-snap/crea.json",
+      "sha256": "0e6a08dd947e3c4fa23b594e6c9313be51bfaac1b02f5781899520f1b2311b4b"
+    },
+    {
+      "path": "v1.3/report.json",
+      "previousPath": "optimized-snap/report.json",
+      "sha256": "31a1e2dea3019631b83b91bee35c41773cd956b5f814b4368e339799b0b53b59"
+    },
+    {
+      "path": "v1.3/README.md",
+      "previousPath": "optimized-snap/README.md",
+      "sha256": "62f70355036ee4a77deb11721de9b6be0f68c9fb3500496c02aeded05196cd30"
+    },
+    {
+      "path": "v1.3/describe.json",
+      "previousPath": "optimized-snap/describe.json",
+      "sha256": "feba63a2b78e8f11215878f1d974dc5ea6285d011fe27e534e7ce69e5307d7a5"
+    },
+    {
+      "path": "v1.3/conecta.json",
+      "previousPath": "optimized-snap/conecta.json",
+      "sha256": "feedab1554c9dc493899e18d3cc2e0c1d6e725f5c1b7e254e70a537085c40ef1"
+    },
+    {
+      "path": "v1.6/asset_1.webp",
+      "previousPath": "launch-external/asset_1.webp",
+      "sha256": "873eeedcd65103509205de73feea7e8db3dc77eb3b7028d0da354e69ba3cb346"
+    },
+    {
+      "path": "v1.6/report.json",
+      "previousPath": "launch-external/report.json",
+      "sha256": "15fae555121f85aa0365e27fad6c5b2ab8a7a709fe4c0eca8350841450bbbaa8"
+    },
+    {
+      "path": "v1.6/asset_12.webp",
+      "previousPath": "launch-external/asset_12.webp",
+      "sha256": "f941b4d0dc4c40301ba3dfdb99d53a8a53c08204eef0f20683225db4904ed3b1"
+    },
+    {
+      "path": "v1.6/asset_14.webp",
+      "previousPath": "launch-external/asset_14.webp",
+      "sha256": "c96c3afa5567759b2be46d0e537096dfa602ef4470929ff56d7afc5da46f5b6b"
+    },
+    {
+      "path": "v1.6/asset_6.webp",
+      "previousPath": "launch-external/asset_6.webp",
+      "sha256": "c55a788038345e02c33608e3e18f26acb81efa165c1cc28a98144dceb9d041e6"
+    },
+    {
+      "path": "v1.6/README.md",
+      "previousPath": "launch-external/README.md",
+      "sha256": "a67a7aa5007c63491a3a550b95a96bcd961dae517ab1fcb16f7baf4c208185f0"
+    },
+    {
+      "path": "v1.6/asset_8.webp",
+      "previousPath": "launch-external/asset_8.webp",
+      "sha256": "07351ce582e86518cd02973dd60b9338895adba319349f11ade716b65ee66222"
+    },
+    {
+      "path": "v1.6/asset_4.webp",
+      "previousPath": "launch-external/asset_4.webp",
+      "sha256": "64827f450f7662a079ba185342b9b78f5c769cbf17ecb6425d9c17222bf93c9b"
+    },
+    {
+      "path": "v1.6/lanza.json",
+      "previousPath": "launch-external/lanza.json",
+      "sha256": "5dbf11331255f1666f2deb186a8d0e4bd33f6fc70280f9ddf9ec8fa39d1b4fb6"
+    },
+    {
+      "path": "v1.6/asset_2.webp",
+      "previousPath": "launch-external/asset_2.webp",
+      "sha256": "eb0483ffb3f10ec48fd024bf43884b5a831f3d5852dca32d3efacdd83d842b77"
+    },
+    {
+      "path": "v1.6/asset_10.webp",
+      "previousPath": "launch-external/asset_10.webp",
+      "sha256": "c1590acc65884e5565c8b5ce23e6c4f2e3a7364644f29942006656effe2cad64"
+    },
+    {
+      "path": "v1.2/lanza-y-optimiza.json",
+      "previousPath": "optimized-v2/lanza-y-optimiza.json",
+      "sha256": "9dc858fcac8e7ba21fb8b74ea7d001e34ad1d92994b82df3801b6e75ea7687c4"
+    },
+    {
+      "path": "v1.2/report.json",
+      "previousPath": "optimized-v2/report.json",
+      "sha256": "8e003aa5ca70147cdfeff98807ab1c0c871ba458630c24607896303f3fb4c460"
+    },
+    {
+      "path": "v1.2/conecta-tus-redes.json",
+      "previousPath": "optimized-v2/conecta-tus-redes.json",
+      "sha256": "8968aba471644f2548e5b8f8c5ad2119d8af1143cb031dcbc993b7f3f23e67f7"
+    },
+    {
+      "path": "v1.2/tu-marca-en-cada-formato.json",
+      "previousPath": "optimized-v2/tu-marca-en-cada-formato.json",
+      "sha256": "83547f26ab1f2220500469d107a5f99db86d684c142df7c5695ad6e8d2f8c162"
+    },
+    {
+      "path": "v1.2/README.md",
+      "previousPath": "optimized-v2/README.md",
+      "sha256": "56f80f73ad39bced392f95d0dfdd486dd9869beed501e1075078628afe9c11f6"
+    },
+    {
+      "path": "v1.2/dile-tu-objetivo-mobile.json",
+      "previousPath": "optimized-v2/dile-tu-objetivo-mobile.json",
+      "sha256": "75961d56204cb1cac10c8f8f0ac1fa1e474b79a489907e1913202f5f5137dd02"
+    },
+    {
+      "path": "v1.2/dile-tu-objetivo.json",
+      "previousPath": "optimized-v2/dile-tu-objetivo.json",
+      "sha256": "fc68a4d530dbd75378b003c5345b6c0a56bfa93ea011f0cf118f87ca8856a4be"
+    },
+    {
+      "path": "v1.2/lanza.json",
+      "previousPath": "optimized-v2/lanza.json",
+      "sha256": "bab04e1aa2962815ebb4264fd7412fc0af91b4968289138fcb58bbc65360ae17"
+    },
+    {
+      "path": "v1.5/report.json",
+      "previousPath": "conecta-progressive/report.json",
+      "sha256": "9e866a7ad8cb31baba88aadf8d482d49ea7245914b4c3bed3c833fb5f1067957"
+    },
+    {
+      "path": "v1.5/README.md",
+      "previousPath": "conecta-progressive/README.md",
+      "sha256": "fa2b3a4c73e22540fffbf9f77a412b584ba5f4bc0b128d1d65b0c4fdfb6536f5"
+    },
+    {
+      "path": "v1.5/conecta.json",
+      "previousPath": "conecta-progressive/conecta.json",
+      "sha256": "5971c91284e9a8bd805333cc9573aac2d83b656ab3fb86e8dc622d12f7a721ac"
+    },
+    {
+      "path": "v1.4/report.json",
+      "previousPath": "conecta-static-text/report.json",
+      "sha256": "4e0e79277196bad046f6d45ee2c41c7587eece915f3c99dfac306485c8bfed90"
+    },
+    {
+      "path": "v1.4/README.md",
+      "previousPath": "conecta-static-text/README.md",
+      "sha256": "993c3c0a01d4dead107da28736384b36cb2b9ce34699f2368620dd130e3f8c54"
+    },
+    {
+      "path": "v1.4/conecta.json",
+      "previousPath": "conecta-static-text/conecta.json",
+      "sha256": "24da9c7a08b8437972150eb0a33244d51495ab0463c3d1bc19848dfddb38afc5"
+    },
+    {
+      "path": "v1.1/lanza-y-optimiza.json",
+      "previousPath": "optimized/lanza-y-optimiza.json",
+      "sha256": "6b6dec33893e4497b66a0b363706a9d8457b7ad0ffc9be50109a5237f98567b3"
+    },
+    {
+      "path": "v1.1/conecta-tus-redes.json",
+      "previousPath": "optimized/conecta-tus-redes.json",
+      "sha256": "1061006e28826ec545f8444ed1afada046daea3b38147f1de28789c781f24f97"
+    },
+    {
+      "path": "v1.1/tu-marca-en-cada-formato.json",
+      "previousPath": "optimized/tu-marca-en-cada-formato.json",
+      "sha256": "83547f26ab1f2220500469d107a5f99db86d684c142df7c5695ad6e8d2f8c162"
+    },
+    {
+      "path": "v1.1/README.md",
+      "previousPath": "optimized/README.md",
+      "sha256": "0d91d3e64e4a141f00657d8aca7238490f5033dd51645f874980a76717b78bb1"
+    },
+    {
+      "path": "v1.1/dile-tu-objetivo-mobile.json",
+      "previousPath": "optimized/dile-tu-objetivo-mobile.json",
+      "sha256": "75961d56204cb1cac10c8f8f0ac1fa1e474b79a489907e1913202f5f5137dd02"
+    },
+    {
+      "path": "v1.1/dile-tu-objetivo.json",
+      "previousPath": "optimized/dile-tu-objetivo.json",
+      "sha256": "fc68a4d530dbd75378b003c5345b6c0a56bfa93ea011f0cf118f87ca8856a4be"
+    },
+    {
+      "path": "v1.1/lanza.json",
+      "previousPath": "optimized/lanza.json",
+      "sha256": "bab04e1aa2962815ebb4264fd7412fc0af91b4968289138fcb58bbc65360ae17"
+    },
+    {
+      "path": "v2.0/README.md",
+      "previousPath": "nuevos/README.md",
+      "sha256": "12ee3c5178152f6e04126eace858063871b57ca37a2bcdf944c53dff5477452a"
+    },
+    {
+      "path": "v2.0/dile-tu-objetivo-mobile.json",
+      "previousPath": "nuevos/dile-tu-objetivo-mobile.json",
+      "sha256": "9b740cc04d1c18f6ede129929bfcdc5bd2b9731896761dd32a6a81da1e63b682"
+    },
+    {
+      "path": "v2.0/dile-tu-objetivo.json",
+      "previousPath": "nuevos/dile-tu-objetivo.json",
+      "sha256": "db5a529193c421efc9613ab6f2d11b33eda958f027a1f2f67b39957ea0fafd93"
+    },
+    {
+      "path": "v2.0/conecta.json",
+      "previousPath": "nuevos/conecta.json",
+      "sha256": "fb3f579546d8241cf0908b2917914c8c5cc6daacbdf237792480a2f9ddd13ea2"
+    },
+    {
+      "path": "v2.0/hero.json",
+      "previousPath": "nuevos/hero.json",
+      "sha256": "d8616f25ac784a4f7f8b52ed71ceaba34400d3ab58785bba8ddef851473eb76d"
+    },
+    {
+      "path": "v2.0/alternativas/hero.lottie",
+      "previousPath": "nuevos/alternativas/hero.lottie",
+      "sha256": "16c5b83806ae7a3697bc644ac04053a6823f1c88eab1f7d8ee08b819786feaf8"
+    },
+    {
+      "path": "v2.0/alternativas/describe.lottie",
+      "previousPath": "nuevos/alternativas/describe.lottie",
+      "sha256": "1881c9993db88f441bd6618ca5af98d0d6bc3c4ebc3a9d928ded1ed5d4b4712d"
+    },
+    {
+      "path": "v2.0/alternativas/conecta.lottie",
+      "previousPath": "nuevos/alternativas/conecta.lottie",
+      "sha256": "1373968ac44dd96c4e5c79ab8cbe009038f7697508b8a0c38acd7883d3801d4f"
+    },
+    {
+      "path": "v2.0/alternativas/conecta-tus-redes.lottie",
+      "previousPath": "nuevos/alternativas/conecta-tus-redes.lottie",
+      "sha256": "a1b3521d8532fe370cc34cc7aa17ea6851a5bac9c0113e059a05d28c9669121f"
+    },
+    {
+      "path": "v2.0/alternativas/dile-tu-objetivo.lottie",
+      "previousPath": "nuevos/alternativas/dile-tu-objetivo.lottie",
+      "sha256": "381de9a9a6a04ed7e44d7c22a256dfb7e57275a35c1b7bab77d19a67b5034938"
+    },
+    {
+      "path": "v2.0/alternativas/lanza-y-optimiza.lottie",
+      "previousPath": "nuevos/alternativas/lanza-y-optimiza.lottie",
+      "sha256": "1b482575462d874c2fc762d635b0055e120a75ee6253b3b505928b852d181e2b"
+    },
+    {
+      "path": "v2.0/alternativas/tu-marca-en-cada-formato.lottie",
+      "previousPath": "nuevos/alternativas/tu-marca-en-cada-formato.lottie",
+      "sha256": "168df64e2e701011e15d5cdc7da98472218daf86f92a1d5ff2d1d4c3ef939794"
+    },
+    {
+      "path": "v2.0/alternativas/crea.lottie",
+      "previousPath": "nuevos/alternativas/crea.lottie",
+      "sha256": "2b75f0fce7f54ca2ea618754841c5b1ce3e27d674a07542c087d9edbcfdb4bcb"
+    },
+    {
+      "path": "v2.0/alternativas/lanza.lottie",
+      "previousPath": "nuevos/alternativas/lanza.lottie",
+      "sha256": "dc9d282cee6ac9ee32e89e6edb5e3abf878b1ee530e0f9870c946295404d1f29"
+    },
+    {
+      "path": "v2.0/alternativas/dile-tu-objetivo-mobile.lottie",
+      "previousPath": "nuevos/alternativas/dile-tu-objetivo-mobile.lottie",
+      "sha256": "3f45f580a9e197e3065e281b8c46f0c84b402d9cda4a7b2cbbbabea0c1bcdeef"
+    }
+  ]
+}
