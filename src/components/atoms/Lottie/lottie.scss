@@ -1,0 +1,23 @@
+.lottie
+{
+	aspect-ratio: var(--lottie-aspect-ratio, 1);
+	display: block;
+	height: var(--lottie-height, auto);
+	width: var(--lottie-width, 100%);
+
+	> :global(svg)
+	{
+		overflow: var(--lottie-overflow, hidden);
+
+		// The SVG viewport owns composition clipping. Keep JSON layer masks intact.
+		> :global(g)
+		{
+			clip-path: none;
+		}
+
+		:global([data-lottie-composition])
+		{
+			clip-path: var(--lottie-composition-clip, var(--lottie-renderer-clip));
+		}
+	}
+}

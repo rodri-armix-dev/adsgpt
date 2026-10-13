@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AboutContent from '../../components/organisms/AboutContent/AboutContent.astro';
+import ManifestoCTA from '../../components/organisms/ManifestoCTA/ManifestoCTA.astro';
+import LegalDocument from '../../components/organisms/LegalDocument/LegalDocument.astro';
+import { aboutData } from '../../data/pages/about';
+import { privacyData, termsData } from '../../data/pages/legal';
+import { locales, isLocale } from '../../i18n/config';
+import { pageSlugs, type Page } from '../../i18n/routes';
+
+export function getStaticPaths() {
+	const pages = ['about', 'privacy', 'terms'] as const satisfies readonly Page[];
+	// Spanish pages retain their existing routes.
+	return locales.filter((locale) => locale !== 'es').flatMap((locale) =>
+		pages.map((page) => ({
+			params: { locale, page: pageSlugs[page][locale] },
+			props: { page },
+		})),
+	);
+}
+
+export interface Props {
+	page: 'about' | 'privacy' | 'terms';
+}
+
+const { locale } = Astro.params;
+if (!isLocale(locale)) return new Response(null, { status: 404 });
+const { page } = Astro.props;
+const about = aboutData[locale];
+const legal = page === 'privacy' ? privacyData[locale] : termsData[locale];
+const title = page === 'about' ? about.meta.title : `${legal.title} | AdsGPT`;
+const description = page === 'about' ? about.meta.description : {
+	en: `${legal.title} for Wortise and AdsGPT.`,
+	pt: `${legal.title} da Wortise e do AdsGPT.`,
+	es: `${legal.title} de Wortise y AdsGPT.`,
+}[locale];
+---
+
+<BaseLayout locale={locale} title={title} description={description} background="inner">
+	{page === 'about' ? (
+		<>
+			<AboutContent {...about.content} />
+			<ManifestoCTA {...about.manifesto} />
+		</>
+	) : (
+		<LegalDocument {...legal} />
+	)}
+</BaseLayout>

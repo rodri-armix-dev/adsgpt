@@ -1,0 +1,8 @@
+.home
+{
+	&__brands-marquee
+	{
+		// Duración de una vuelta: menos segundos = más rápido.
+		--brands-marquee-duration: 40s;
+	}
+}

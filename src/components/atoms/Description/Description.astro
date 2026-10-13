@@ -1,0 +1,23 @@
+---
+import { rangeOrder, type ResponsiveValues } from '../../../../config/breakpoints';
+import { sanitizeDescription } from './sanitize-description';
+
+export type DescriptionSize = 'extra-small' | 'small' | 'normal' | 'large';
+
+export interface Props {
+	html: string;
+	id?: string;
+	size?: DescriptionSize;
+	responsiveSize?: ResponsiveValues<DescriptionSize>;
+}
+
+const { html, id, size = 'normal', responsiveSize = {} } = Astro.props;
+const content = sanitizeDescription(html);
+const responsiveClasses = rangeOrder.flatMap((range) => responsiveSize[range] ? [`description--${range}-${responsiveSize[range]}`] : []);
+---
+
+<div class:list={['description', 'rich-text', `description--${size}`, ...responsiveClasses]} id={id} set:html={content} />
+
+<style lang="scss">
+	@use './description';
+</style>

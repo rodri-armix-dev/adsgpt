@@ -1,0 +1,43 @@
+import type { Locale } from '../../i18n/config';
+
+export const uiData = {
+	es: {
+		description: 'Catálogo inicial de componentes de adsgpt.',
+		eyebrow: 'Componentes',
+		intro: 'Botones del header · primario azul y secundario blanco.',
+		instructions: 'Probá hover, clic y foco con Tab en los ejemplos default.',
+		slot: 'También admite contenido mediante slot.',
+		example: "<p>Texto con <strong>negrita</strong>, <em>cursiva</em> y <a href='https://example.com' target='_blank'>un enlace</a>.</p><ul><li>Primer elemento de una lista.</li><li>Segundo elemento.</li></ul><blockquote>Una cita dentro de la descripción.</blockquote>",
+		iconInstructions: 'Configurá el tamaño con --icon-size; el color se hereda o se define con --icon-color.',
+		iconInherited: 'Color heredado',
+		iconBattery: 'Batería',
+		login: 'Ingresar',
+		download: 'Descargar',
+	},
+	en: {
+		description: 'Initial adsgpt component catalogue.',
+		eyebrow: 'Components',
+		intro: 'Header buttons · blue primary and white secondary.',
+		instructions: 'Try hovering, clicking and focusing with Tab on the default examples.',
+		slot: 'It also supports content through a slot.',
+		example: "<p>Text with <strong>bold</strong>, <em>italics</em> and <a href='https://example.com' target='_blank'>a link</a>.</p><ul><li>First list item.</li><li>Second item.</li></ul><blockquote>A quote within the description.</blockquote>",
+		iconInstructions: 'Set the size with --icon-size; color is inherited or configured with --icon-color.',
+		iconInherited: 'Inherited color',
+		iconBattery: 'Battery',
+		login: 'Log in',
+		download: 'Download',
+	},
+	pt: {
+		description: 'Catálogo inicial de componentes do adsgpt.',
+		eyebrow: 'Componentes',
+		intro: 'Botões do cabeçalho · primário azul e secundário branco.',
+		instructions: 'Teste os estados de hover, clique e foco com Tab nos exemplos padrão.',
+		slot: 'Também aceita conteúdo por meio de slot.',
+		example: "<p>Texto com <strong>negrito</strong>, <em>itálico</em> e <a href='https://example.com' target='_blank'>um link</a>.</p><ul><li>Primeiro item da lista.</li><li>Segundo item.</li></ul><blockquote>Uma citação na descrição.</blockquote>",
+		iconInstructions: 'Configure o tamanho com --icon-size; a cor é herdada ou definida com --icon-color.',
+		iconInherited: 'Cor herdada',
+		iconBattery: 'Bateria',
+		login: 'Entrar',
+		download: 'Baixar',
+	},
+} satisfies Record<Locale, Record<string, string>>;

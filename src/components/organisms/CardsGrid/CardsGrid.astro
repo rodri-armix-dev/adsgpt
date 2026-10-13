@@ -1,0 +1,32 @@
+---
+import { getUiText } from '../../../i18n/ui';
+import type { ComponentProps } from 'astro/types';
+import CardsGridItem from '../../molecules/CardsGridItem/CardsGridItem.astro';
+
+export interface Props {
+	items: ComponentProps<typeof CardsGridItem>[];
+}
+
+const text = getUiText(Astro.currentLocale);
+const { items } = Astro.props;
+---
+
+<cards-grid class="cards-grid" id="sobre-nosotros" role="region" aria-label={text.features}>
+	<div class="cards-grid__inner global-inner">
+		<div class="cards-grid__list">
+			{items.map((item) => (
+				<div class:list={['cards-grid__item', `cards-grid__item--${item.variant}`]}>
+					<CardsGridItem {...item} />
+				</div>
+			))}
+		</div>
+	</div>
+</cards-grid>
+
+<script>
+	import './cards-grid.ts';
+</script>
+
+<style lang="scss">
+	@use './cards-grid' as cardsGrid;
+</style>

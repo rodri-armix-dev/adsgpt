@@ -1,0 +1,161 @@
+// sass-lint:disable no-color-literals
+.pricing-item
+{
+	background: #fff;
+	border: 1px solid #efefef;
+	border-radius: var(--radius-pricing-card);
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+	height: 100%;
+	padding: var(--spacing-8) var(--spacing-8) var(--spacing-24);
+
+	&__header
+	{
+		background-image: var(--pricing-item-background-image);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: var(--radius-pricing-header);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-16);
+		padding: var(--spacing-16);
+	}
+
+	&__heading,
+	&__benefits-heading
+	{
+		color: #21242a;
+	}
+
+	&__description
+	{
+		color: #4d5159;
+	}
+
+	&__price
+	{
+		align-items: baseline;
+		color: #21242a;
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 40px;
+		font-weight: 600;
+		letter-spacing: -.01em;
+		line-height: 1.1;
+	}
+
+	&__value
+	{
+		display: inline-flex;
+		white-space: nowrap;
+	}
+
+	&__period
+	{
+		color: #4d5159;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.32;
+		margin-inline-start: 6px;
+	}
+
+	&__body
+	{
+		color: #4d5159;
+		display: flex;
+		flex-direction: column;
+		font-size: 15px;
+		gap: var(--spacing-16);
+		letter-spacing: -.01em;
+		line-height: 1.32;
+		padding-inline: var(--spacing-16);
+	}
+
+	&__group,
+	&__features,
+	&__benefits
+	{
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-16);
+	}
+
+	&__feature,
+	&__benefit
+	{
+		align-items: flex-start;
+		display: flex;
+		gap: var(--spacing-12);
+	}
+
+	&__text
+	{
+		min-width: 0;
+		overflow-wrap: break-word;
+	}
+
+	&__icon
+	{
+		--icon-color: #4d5159;
+
+		align-items: center;
+		display: inline-flex;
+		flex: 0 0 16px;
+		justify-content: center;
+		min-height: 1.32em;
+
+		&--rocket
+		{
+			--icon-size: 13.5px;
+		}
+
+		&--star
+		{
+			--icon-size: 14.3333px;
+		}
+
+		&--tag
+		{
+			--icon-size: 13.3009px;
+		}
+
+		&--user
+		{
+			--icon-size: 14.3346px;
+		}
+
+		&--users
+		{
+			--icon-size: 14.2054px;
+		}
+
+		&--check-double
+		{
+			--icon-color: #3b8dff;
+			--icon-size: 16px;
+		}
+	}
+}
+@include xl
+{
+	.pricing-item
+	{
+		&__body
+		{
+			font-size: 14px;
+		}
+	}
+}
+
+@include xxl
+{
+	.pricing-item
+	{
+		display: grid;
+		grid-row: span 2;
+		grid-template-rows: subgrid;
+	}
+}
+// sass-lint:enable no-color-literals

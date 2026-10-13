@@ -1,0 +1,190 @@
+.hero
+{
+	overflow-x: clip;
+	padding-block: 140px 0;
+	text-align: center;
+
+	&__inner
+	{
+		display: grid;
+		gap: 16px;
+		grid-template-areas: "left" "right" "center";
+		grid-template-columns: minmax(0, 1fr);
+		justify-content: center;
+		width: calc(348px - var(--layout-gutter) * 2);
+	}
+
+	&__left
+	{
+		grid-area: left;
+	}
+
+	&__heading,
+	&__description
+	{
+		text-wrap: balance;
+	}
+
+	&__center
+	{
+		display: flex;
+		grid-area: center;
+		justify-content: center;
+		position: relative;
+	}
+
+	&__media
+	{
+		--phone-mockup-width: var(--layout-phone-width);
+		align-items: flex-start;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	&__right
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		grid-area: right;
+	}
+
+	&__stores
+	{
+		display: flex;
+		gap: 12px;
+		justify-content: center;
+		--store-badge-image-height: 36px;
+	}
+}
+
+@include m
+{
+	.hero
+	{
+		&__inner
+		{
+			width: calc(520px - var(--layout-gutter) * 2);
+		}
+	}
+}
+
+@include osm
+{
+	.hero
+	{
+		&__center
+		{
+			margin-top: 11px;
+			overflow-y: clip;
+		}
+
+		&__media
+		{
+			margin-bottom: -138px;
+		}
+	}
+}
+
+@include l
+{
+	.hero
+	{
+		padding-block: 125px 70px;
+		text-align: left;
+
+		&__inner
+		{
+			gap: 30px;
+			grid-template-areas: "left center right";
+			grid-template-columns: minmax(0, 1fr) var(--layout-phone-width) minmax(0, 1fr);
+			width: calc(100% - var(--layout-gutter) * 2);
+		}
+
+		&__left
+		{
+			display: flex;
+			justify-content: end;
+			width: 100%;
+		}
+
+		&__heading
+		{
+			max-width: 368px;
+			width: fit-content;
+		}
+
+		&__right
+		{
+			justify-self: start;
+			max-width: 368px;
+			width: 100%;
+		}
+
+		&__stores
+		{
+			justify-content: start;
+			--store-badge-image-height: 40px;
+		}
+	}
+}
+
+@include xl
+{
+	.hero
+	{
+		padding-block: 150px 85px;
+		text-align: left;
+
+		&__inner
+		{
+			gap: 60px;
+		}
+
+		&__left,
+		&__right
+		{
+			padding-top: 30px;
+		}
+
+		&__heading
+		{
+			max-width: 395px;
+		}
+	}
+}
+
+@include xxl
+{
+	.hero
+	{
+		padding-block: 195px 107px;
+
+		&__inner
+		{
+			gap: 67px;
+		}
+
+		&__left,
+		&__right
+		{
+			align-self: end;
+			// Figma: los textos y badges terminan 275px antes del borde inferior del teléfono.
+			margin-bottom: 275px;
+			padding-top: 60px;
+		}
+
+		&__right
+		{
+			gap: 15px;
+		}
+
+		&__stores
+		{
+			gap: 25px;
+			justify-content: start;
+			--store-badge-image-height: 50px;
+		}
+	}
+}

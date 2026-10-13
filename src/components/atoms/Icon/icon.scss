@@ -1,0 +1,10 @@
+.icon
+{
+	color: var(--icon-color, inherit);
+	display: inline-block;
+	flex-shrink: 0;
+	height: var(--icon-size, 24px);
+	overflow: visible;
+	vertical-align: middle;
+	width: calc(var(--icon-size, 24px) * var(--icon-aspect-ratio));
+}

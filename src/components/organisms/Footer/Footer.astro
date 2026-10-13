@@ -1,0 +1,40 @@
+---
+import type { ComponentProps } from 'astro/types';
+import type { Locale } from '../../../i18n/config';
+import FooterBrand from '../../molecules/FooterBrand/FooterBrand.astro';
+import LegalMenu from '../../molecules/LegalMenu/LegalMenu.astro';
+import Copyright from '../../atoms/Copyright/Copyright.astro';
+
+export interface Props {
+	locale: Locale;
+	brand: ComponentProps<typeof FooterBrand>;
+	legal: ComponentProps<typeof LegalMenu>;
+	credit: string;
+	copyright: ComponentProps<typeof Copyright>;
+}
+
+const { locale, brand, legal, credit, copyright } = Astro.props;
+---
+
+<footer class="footer" lang={locale}>
+	<div class="footer__inner global-inner">
+		<div class="footer__top">
+			<div class="footer__brand">
+				<FooterBrand {...brand} />
+			</div>
+			<div class="footer__legal-menu">
+				<LegalMenu {...legal} />
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<p class="footer__credit">{credit}</p>
+			<div class="footer__copyright">
+				<Copyright {...copyright} />
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style lang="scss">
+	@use './footer';
+</style>

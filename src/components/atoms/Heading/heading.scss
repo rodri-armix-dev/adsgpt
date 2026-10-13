@@ -1,0 +1,47 @@
+@use 'sass:map';
+
+$sizes: (
+	extra-small: (size: 14px, line-height: 1.32, weight: 400),
+	compact: (size: 20px, line-height: 1.04, weight: 600),
+	small: (size: 24px, line-height: 1.25, weight: 400),
+	medium: (size: 36px, line-height: 1.04, weight: 400),
+	normal: (size: 45px, line-height: 1.04, weight: 400),
+	large: (size: 64px, line-height: 1.04, weight: 500),
+	extra-large: (size: 72px, line-height: 1.04, weight: 400),
+);
+
+.heading
+{
+	color: inherit;
+	letter-spacing: -.01em;
+	overflow-wrap: break-word;
+
+	@each $name, $values in $sizes
+	{
+		&--#{$name}
+		{
+			font-size: var(--heading-font-size, #{map.get($values, size)});
+			font-weight: #{map.get($values, weight)};
+			line-height: var(--heading-line-height, #{map.get($values, line-height)});
+		}
+	}
+}
+
+@each $range in $range-order
+{
+	@include media($range)
+	{
+		.heading
+		{
+			@each $name, $values in $sizes
+			{
+				&--#{$range}-#{$name}
+				{
+					font-size: var(--heading-font-size, #{map.get($values, size)});
+					font-weight: #{map.get($values, weight)};
+					line-height: var(--heading-line-height, #{map.get($values, line-height)});
+				}
+			}
+		}
+	}
+}

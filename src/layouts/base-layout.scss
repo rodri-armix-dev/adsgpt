@@ -1,0 +1,38 @@
+.base-layout
+{
+	&--inner
+	{
+		background-image: url('/backgrounds/inner-sm.webp');
+		background-position: top right;
+		background-size: 100% auto;
+	}
+
+	&__skip-link
+	{
+		background: var(--color-action-primary);
+		color: var(--color-text-inverse);
+		left: 1rem;
+		padding: .75rem 1rem;
+		position: fixed;
+		top: 1rem;
+		transform: translateY(-200%);
+		z-index: 100;
+
+		&:focus
+		{
+			transform: translateY(0);
+		}
+	}
+}
+
+@include l
+{
+	.base-layout
+	{
+		&--inner
+		{
+			background-image: url('/backgrounds/inner-desktop.webp');
+			background-size: 2560px auto;
+		}
+	}
+}

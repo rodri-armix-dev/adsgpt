@@ -1,0 +1,44 @@
+---
+import primaryFont from '../assets/fonts/host-grotesk/host-grotesk-normal-latin.woff2?url';
+import Footer from '../components/organisms/Footer/Footer.astro';
+import Header from '../components/organisms/Header/Header.astro';
+import type { Locale } from '../i18n/config';
+import { getSiteData } from '../data/site';
+import '../styles/global.scss';
+import { uiText } from '../i18n/ui';
+
+export interface Props {
+	locale: Locale;
+	title: string;
+	description?: string;
+	background?: 'default' | 'inner';
+}
+
+const { locale, title, description, background = 'default' } = Astro.props;
+const site = await getSiteData(locale);
+---
+
+<!doctype html>
+<html lang={locale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preload" href={primaryFont} as="font" type="font/woff2" crossorigin />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		{description && <meta name="description" content={description} />}
+		<title>{title}</title>
+	</head>
+	<body class:list={['base-layout', `base-layout--${background}`]}>
+		<a class="base-layout__skip-link" href="#main-content">{uiText[locale].skipContent}</a>
+		<Header {...site.header} />
+		<main id="main-content">
+			<slot />
+		</main>
+		<Footer locale={locale} {...site.footer} />
+	</body>
+</html>
+
+<style lang="scss">
+	@use './base-layout';
+</style>

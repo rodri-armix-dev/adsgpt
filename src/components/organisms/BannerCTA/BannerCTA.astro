@@ -1,0 +1,49 @@
+---
+import { getUiText } from '../../../i18n/ui';
+import type { ComponentProps } from 'astro/types';
+import Pill from '../../atoms/Pill/Pill.astro';
+import Heading from '../../atoms/Heading/Heading.astro';
+import Description from '../../atoms/Description/Description.astro';
+import StoreBadge from '../../atoms/StoreBadge/StoreBadge.astro';
+
+export interface Props {
+	pill: ComponentProps<typeof Pill>;
+	heading: string;
+	description: string;
+	stores: ComponentProps<typeof StoreBadge>[];
+}
+
+const text = getUiText(Astro.currentLocale);
+const { pill, heading, description, stores } = Astro.props;
+---
+
+<section class="banner-cta">
+	<div class="banner-cta__inner global-inner">
+		<div class="banner-cta__banner">
+			<div class="banner-cta__content">
+				<div class="banner-cta__pill">
+					<Pill {...pill} />
+				</div>
+				<div class="banner-cta__text">
+					<div class="banner-cta__heading">
+						<Heading label={heading} tag="h2" size="medium" responsiveSize={{ l: "large" }} />
+					</div>
+					<div class="banner-cta__description">
+						<Description html={description} size="small" responsiveSize={{ l: "normal" }} />
+					</div>
+				</div>
+				<div class="banner-cta__stores" aria-label={text.downloadApp}>
+					{stores.map((store) => (
+						<div class="banner-cta__store-badge">
+							<StoreBadge {...store} />
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	@use './banner-cta';
+</style>

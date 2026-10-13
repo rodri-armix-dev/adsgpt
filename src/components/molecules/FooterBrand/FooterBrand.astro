@@ -1,0 +1,25 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Logo from '../../atoms/Logo/Logo.astro';
+import Description from '../../atoms/Description/Description.astro';
+
+export interface Props {
+	logo: ComponentProps<typeof Logo>;
+	description: string;
+}
+
+const { logo, description } = Astro.props;
+---
+
+<div class="footer-brand">
+	<div class="footer-brand__logo">
+		<Logo {...logo} />
+	</div>
+	<div class="footer-brand__description">
+		<Description html={description} size="normal" />
+	</div>
+</div>
+
+<style lang="scss">
+	@use './footer-brand';
+</style>

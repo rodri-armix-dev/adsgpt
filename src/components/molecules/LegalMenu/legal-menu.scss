@@ -1,0 +1,34 @@
+.legal-menu
+{
+	color: var(--legal-menu-color, #21242a);
+	font-size: var(--legal-menu-font-size, 18px);
+	font-weight: 500;
+	letter-spacing: -.01em;
+	line-height: var(--legal-menu-line-height, 1.4);
+
+	&__list
+	{
+		display: flex;
+		flex-direction: var(--legal-menu-direction, column);
+		gap: var(--legal-menu-gap, 18px);
+	}
+
+	&__link
+	{
+		align-items: center;
+		display: inline-flex;
+		gap: 2px;
+
+		&:hover
+		{
+			text-decoration: underline;
+			text-underline-offset: .2em;
+		}
+	}
+
+	&__icon
+	{
+		--icon-size: .9em;
+		display: flex;
+	}
+}

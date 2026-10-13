@@ -1,0 +1,11 @@
+:root
+{
+	// Primitive family used throughout AdsGPT.
+	--font-family-primitive-host-grotesk: 'Host Grotesk', sans-serif;
+}
+
+:root
+{
+	// Semantic family consumed by the UI.
+	--font-family-primary: var(--font-family-primitive-host-grotesk);
+}

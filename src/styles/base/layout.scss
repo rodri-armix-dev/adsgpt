@@ -1,0 +1,39 @@
+.global-inner
+{
+	// El ancho reserva los gutters laterales sin añadir padding al contenedor.
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: var(--global-item-gap, 40px);
+	justify-content: center;
+	margin-inline: auto;
+	max-width: var(--layout-content-max-width);
+	width: calc(100% - var(--layout-gutter) * 2);
+}
+
+@include l
+{
+	.global-inner
+	{
+		// Hasta 1184px de contenido, con gutters externos.
+		--layout-content-max-width: 1184px;
+	}
+}
+
+@include xl
+{
+	.global-inner
+	{
+		// Hasta 1344px de contenido, con gutters externos.
+		--layout-content-max-width: 1344px;
+	}
+}
+
+@include xxl
+{
+	.global-inner
+	{
+		// Hasta 1584px de contenido, con gutters externos.
+		--layout-content-max-width: 1584px;
+	}
+}

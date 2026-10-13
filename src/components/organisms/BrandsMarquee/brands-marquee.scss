@@ -1,0 +1,126 @@
+// sass-lint:disable no-color-literals
+.brands-marquee
+{
+	border-block: 1px solid #d8d8d8;
+	padding-block: 32px;
+
+	&__inner
+	{
+		--global-item-gap: 24px;
+		--layout-content-max-width: var(--layout-compact-max-width);
+		--layout-gutter: 24px;
+		max-width: calc(var(--layout-content-max-width) + var(--layout-gutter) * 2);
+		width: 100%;
+	}
+
+	&__description
+	{
+		color: #21242a;
+		max-width: 296px;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	&__viewport
+	{
+		max-width: var(--layout-compact-max-width);
+		overflow: hidden;
+		width: 100%;
+	}
+
+	&__track
+	{
+		align-items: center;
+		animation: brands-marquee-scroll var(--brands-marquee-duration, 40s) linear infinite;
+		display: flex;
+		gap: 33px;
+		padding-inline-end: 33px;
+		width: max-content;
+
+		.brands-marquee__viewport:hover &,
+		.brands-marquee__viewport:focus-within &
+		{
+			animation-play-state: paused;
+		}
+	}
+
+	&__brand
+	{
+		flex: 0 0 auto;
+	}
+
+	&__image
+	{
+		height: var(--brands-marquee-logo-mobile-height);
+		opacity: .42;
+		width: var(--brands-marquee-logo-mobile-width);
+	}
+}
+
+@include l
+{
+	.brands-marquee
+	{
+		padding-block: 44px 32px;
+
+		&__description
+		{
+			color: var(--color-text-description);
+			max-width: 100%;
+		}
+
+		&__viewport
+		{
+			mask-image: linear-gradient(to right, transparent, #000 130px, #000 calc(100% - 130px), transparent);
+		}
+
+		&__track
+		{
+			gap: 68px;
+			padding-inline-end: 68px;
+		}
+
+		&__image
+		{
+			height: var(--brands-marquee-logo-height);
+			width: var(--brands-marquee-logo-width);
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+	.brands-marquee
+	{
+		&__viewport
+		{
+			mask-image: none;
+		}
+
+		&__track
+		{
+			animation: none;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-inline-end: 0;
+			width: 100%;
+		}
+
+		&__brand
+		{
+			&[aria-hidden='true']
+			{
+				display: none;
+			}
+		}
+	}
+}
+
+@keyframes brands-marquee-scroll
+{
+	to
+	{
+		transform: translateX(-50%);
+	}
+}
+// sass-lint:enable no-color-literals

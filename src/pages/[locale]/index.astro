@@ -1,0 +1,38 @@
+---
+import Hero from '../../components/organisms/Hero/Hero.astro';
+import BrandsMarquee from '../../components/organisms/BrandsMarquee/BrandsMarquee.astro';
+import ScrollPanelsUnified from '../../components/organisms/ScrollPanelsUnified/ScrollPanelsUnified.astro';
+import CardsGrid from '../../components/organisms/CardsGrid/CardsGrid.astro';
+import Pricing from '../../components/organisms/Pricing/Pricing.astro';
+import BannerCTA from '../../components/organisms/BannerCTA/BannerCTA.astro';
+import { getHomeData } from '../../data/home';
+import { isLocale, locales } from '../../i18n/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+	return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale: localeParam } = Astro.params;
+
+if (!isLocale(localeParam)) {
+	return new Response(null, { status: 404 });
+}
+
+const page = await getHomeData(localeParam);
+---
+
+<BaseLayout locale={localeParam} title={page.meta.title} description={page.meta.description}>
+	<Hero {...page.hero} />
+	<div class="home__brands-marquee">
+		<BrandsMarquee {...page.brandsMarquee} />
+	</div>
+	<CardsGrid {...page.cardsGrid} />
+	<ScrollPanelsUnified {...page.scrollPanels} />
+	<Pricing {...page.pricing} />
+	<BannerCTA {...page.bannerCTA} />
+</BaseLayout>
+
+<style lang="scss">
+	@use '../home';
+</style>

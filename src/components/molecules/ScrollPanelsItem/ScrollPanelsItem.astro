@@ -1,0 +1,43 @@
+---
+import Heading from '../../atoms/Heading/Heading.astro';
+import Description from '../../atoms/Description/Description.astro';
+
+export interface Props {
+	number: string;
+	lottieSrc?: string;
+	lottieProgressiveLoad?: boolean;
+	heading: string;
+	descriptionLeft: string;
+	image: {
+		src: string;
+		alt: string;
+		width: number;
+		height: number;
+	};
+	descriptionRight: string;
+	context: 'light' | 'dark';
+}
+
+const { number, heading, descriptionLeft, descriptionRight, context } = Astro.props;
+---
+
+<article class:list={['scroll-panels-item', `scroll-panels-item--${context}`]} data-context={context} data-scroll-panels-text>
+	<div class="scroll-panels-item__inner global-inner">
+		<div class="scroll-panels-item__content">
+			<p class="scroll-panels-item__number">{number}</p>
+			<div class="scroll-panels-item__heading">
+				<Heading label={heading} tag="h2" size="normal" responsiveSize={{ l: "extra-large" }} />
+			</div>
+			<div class="scroll-panels-item__description scroll-panels-item__description--left">
+				<Description html={descriptionLeft} size="normal" responsiveSize={{ l: "small" }} />
+			</div>
+		</div>
+		<div class="scroll-panels-item__description scroll-panels-item__description--right">
+			<Description html={descriptionRight} size="normal" responsiveSize={{ l: "large" }} />
+		</div>
+	</div>
+</article>
+
+<style lang="scss">
+	@use './scroll-panels-item' as scrollPanelsItem;
+</style>

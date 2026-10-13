@@ -1,0 +1,80 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Icon from '../../atoms/Icon/Icon.astro';
+import Lottie from '../../atoms/Lottie/Lottie.astro';
+
+export interface Props {
+	src: string;
+	autoplay?: boolean;
+	loop?: boolean;
+	ariaLabel?: string;
+	animationLoading?: ComponentProps<typeof Lottie>['loading'];
+	loading?: 'eager' | 'lazy';
+	fetchPriority?: 'high' | 'low' | 'auto';
+}
+
+const { src, autoplay = true, loop = true, ariaLabel, animationLoading = 'viewport', loading = 'lazy', fetchPriority = 'auto' } = Astro.props;
+const cameraClipId = `phone-camera-${crypto.randomUUID()}`;
+const device = '/phone-mockup/device.webp';
+---
+
+<phone-mockup class="phone-mockup">
+	<div class="phone-mockup__device" aria-hidden="true">
+		<img class="phone-mockup__image" src={device} alt="" width="1024" height="1536" srcset="/phone-mockup/device-384.webp 384w, /phone-mockup/device-768.webp 768w, /phone-mockup/device.webp 1024w" sizes={loading === 'lazy' ? 'auto, 100vw' : '100vw'} loading={loading} decoding="async" fetchpriority={fetchPriority} />
+	</div>
+	<div class="phone-mockup__animation">
+		<slot name="animation">
+			<Lottie loading={animationLoading} src={src} autoplay={autoplay} loop={loop} ariaLabel={ariaLabel} />
+		</slot>
+	</div>
+	<svg class="phone-mockup__overlay" viewBox="0 0 410 788" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+		<defs>
+			<clipPath id={cameraClipId}>
+				<rect x="144.63" y="25.46" width="120.335" height="32.976" rx="17.067" />
+			</clipPath>
+		</defs>
+		<image href="/phone-mockup/camera.webp" x="140.01565625" y="20.25696354166667" width="133.06802734375" height="46.28541666666666" clip-path={`url(#${cameraClipId})`} />
+		<text class="phone-mockup__time" x="90.127" y="42.535" dominant-baseline="central" text-anchor="middle" data-phone-time></text>
+		<g class="phone-mockup__cellular" transform="translate(286.479 37.275)">
+			<Icon name="cellular" />
+		</g>
+		<g class="phone-mockup__wifi" transform="translate(309.023 37.231)">
+			<Icon name="wifi" />
+		</g>
+		<g class="phone-mockup__battery" transform="translate(329.796 36.942)">
+			<Icon name="battery" />
+		</g>
+	</svg>
+</phone-mockup>
+
+<script>
+	class PhoneMockup extends HTMLElement {
+		private clock?: ReturnType<typeof setTimeout>;
+
+		connectedCallback() {
+			if (this.clock !== undefined) return;
+			const time = this.querySelector('[data-phone-time]');
+			if (!time) return;
+
+			const update = () => {
+				const now = new Date();
+				time.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+				this.clock = setTimeout(update, 60_000 - (now.getSeconds() * 1000 + now.getMilliseconds()));
+			};
+			update();
+		}
+
+		disconnectedCallback() {
+			clearTimeout(this.clock);
+			this.clock = undefined;
+		}
+	}
+
+	if (!customElements.get('phone-mockup')) {
+		customElements.define('phone-mockup', PhoneMockup);
+	}
+</script>
+
+<style lang="scss">
+	@use './phone-mockup';
+</style>

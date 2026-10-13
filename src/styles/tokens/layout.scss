@@ -1,0 +1,55 @@
+@use 'sass:map';
+@use '../config/index' as *;
+
+:root
+{
+	@each $name, $value in $breakpoints
+	{
+		#{'--breakpoint-' + $name}: #{$value};
+	}
+}
+
+// Primitive and semantic token sections remain separate.
+:root // sass-lint:disable-line no-mergeable-selectors
+{
+	// Semantic roles consumed by the UI.
+	--layout-compact-max-width: 920px;
+	--layout-content-max-width: 100%;
+	--layout-gutter: var(--spacing-16);
+	--layout-min-width: 360px;
+	--layout-phone-width: #{map.get($phone-widths, s)};
+}
+
+@include m
+{
+	:root
+	{
+		--layout-gutter: var(--spacing-24);
+		--layout-phone-width: #{map.get($phone-widths, m)};
+	}
+}
+
+@include l
+{
+	:root
+	{
+		--layout-gutter: var(--spacing-48);
+		--layout-phone-width: #{map.get($phone-widths, l)};
+	}
+}
+
+@include xl
+{
+	:root
+	{
+		--layout-phone-width: #{map.get($phone-widths, xl)};
+	}
+}
+
+@include xxl
+{
+	:root
+	{
+		--layout-phone-width: #{map.get($phone-widths, xxl)};
+	}
+}

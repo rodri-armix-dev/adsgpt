@@ -1,0 +1,17 @@
+.footer-brand
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--footer-brand-gap, var(--spacing-16));
+	max-width: var(--footer-brand-max-width, none);
+
+	&__logo
+	{
+		--logo-height: var(--footer-brand-logo-height, 25.76px);
+	}
+
+	&__description
+	{
+		color: #5d5d5d; // sass-lint:disable-line no-color-literals
+	}
+}

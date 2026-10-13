@@ -1,0 +1,13 @@
+---
+export interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<p class="copyright">{text}</p>
+
+<style lang="scss">
+	@use './copyright';
+</style>

@@ -1,0 +1,143 @@
+// sass-lint:disable no-color-literals
+.legal-document
+{
+	padding-block: 120px 40px;
+
+	&__inner
+	{
+		--global-item-gap: 24px;
+		--layout-content-max-width: 1040px;
+		--layout-gutter: 24px;
+	}
+
+	&__header
+	{
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		text-align: center;
+		width: 100%;
+
+		&::after
+		{
+			border-top: 1px solid #dddfe3;
+			content: '';
+			max-width: 800px;
+			width: 100%;
+		}
+	}
+
+	&__title
+	{
+		--heading-line-height: 1.02;
+
+		color: #21242a;
+		width: 100%;
+	}
+
+	&__date
+	{
+		color: #5d5d5d;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 20px;
+	}
+
+	&__body
+	{
+		color: #4d5159;
+		font-size: 18px;
+		line-height: 26px;
+		max-width: 800px;
+		overflow-wrap: break-word;
+		width: 100%;
+
+		:global(> *)
+		{
+			margin-block: 16px 0;
+		}
+
+		:global(h2),
+		:global(h3)
+		{
+			color: #21242a;
+			font-size: 21px;
+			font-weight: 500;
+			line-height: 26px;
+		}
+
+		:global(h2)
+		{
+			margin-block-start: 40px;
+		}
+
+		:global(> :first-child)
+		{
+			margin-block-start: 0;
+		}
+
+		:global(ul),
+		:global(ol)
+		{
+			padding-inline-start: 29px;
+		}
+
+		:global(ul)
+		{
+			list-style: disc;
+		}
+
+		:global(ol)
+		{
+			list-style: decimal;
+		}
+
+		:global(li + li)
+		{
+			margin-block-start: 16px;
+		}
+
+		:global(a)
+		{
+			color: inherit;
+			text-decoration: underline;
+			text-underline-offset: .15em;
+		}
+
+		:global(strong)
+		{
+			font-weight: 700;
+		}
+
+		:global(em)
+		{
+			font-style: italic;
+		}
+	}
+}
+
+@include l
+{
+	.legal-document
+	{
+		padding-block: 184px 80px;
+
+		&__inner
+		{
+			--global-item-gap: 56px;
+		}
+
+		&__header
+		{
+			gap: 32px;
+		}
+
+		&__title
+		{
+			--heading-font-size: 52px;
+			--heading-line-height: 58px;
+		}
+	}
+}
+// sass-lint:enable no-color-literals

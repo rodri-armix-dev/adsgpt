@@ -1,0 +1,167 @@
+// sass-lint:disable no-color-literals
+.cards-grid-item
+{
+	background: #fff;
+	border: 1px solid #efefef;
+	border-radius: var(--radius-feature-card);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	isolation: isolate;
+	min-height: 373px;
+	overflow: hidden;
+	position: relative;
+
+	&__content
+	{
+		padding: 23px 23px 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__heading
+	{
+		color: var(--color-text-heading);
+		margin-bottom: 6px;
+	}
+
+	&__description
+	{
+		color: #4d5159;
+		max-width: 478px;
+
+		.cards-grid-item--connect &
+		{
+			max-width: 384px;
+		}
+
+		.cards-grid-item--optimize &
+		{
+			max-width: 380px;
+		}
+	}
+
+	&__media
+	{
+		--lottie-aspect-ratio: 464 / 218;
+		--lottie-composition-clip: none;
+		--lottie-overflow: visible;
+		align-self: center;
+		flex: 0 0 auto;
+		margin-top: 33px;
+		position: relative;
+		width: 464px;
+		z-index: 1;
+
+		.cards-grid-item--objective &
+		{
+			--lottie-aspect-ratio: 350 / 197;
+			margin-top: 22px;
+			max-width: 100%;
+			width: 350px;
+		}
+
+		.cards-grid-item--formats &
+		{
+			--lottie-aspect-ratio: 723 / 268;
+			width: 723px;
+		}
+
+		.cards-grid-item--optimize &
+		{
+			--lottie-aspect-ratio: 453 / 221;
+			margin-top: 22px;
+			width: calc(100% - 46px);
+		}
+	}
+
+	&__dots
+	{
+		bottom: 0;
+		height: 413px;
+		position: absolute;
+		right: -8px;
+		width: 253px;
+		z-index: -1;
+	}
+
+	&__dots-image
+	{
+		left: 50%;
+		max-width: none;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(-90deg);
+	}
+
+	&__rings
+	{
+		height: 571px;
+		left: 50%;
+		position: absolute;
+		top: 143px;
+		transform: translateX(-50%);
+		width: 571px;
+		z-index: -1;
+	}
+
+	&__ring
+	{
+		left: 50%;
+		max-width: none;
+		position: absolute;
+		transform: translateX(-50%);
+
+		&--outer
+		{
+			top: 0;
+		}
+
+		&--middle
+		{
+			top: 71px;
+		}
+
+		&--inner
+		{
+			top: 159px;
+		}
+
+		&--center
+		{
+			top: 213px;
+		}
+	}
+}
+
+@include l
+{
+	.cards-grid-item
+	{
+		&__content
+		{
+			padding: 39px 39px 0;
+		}
+
+		&__media
+		{
+			width: 100%;
+
+			.cards-grid-item--objective &
+			{
+				--lottie-aspect-ratio: 792 / 227;
+				width: 100%;
+			}
+
+			.cards-grid-item--formats &
+			{
+				width: 100%;
+			}
+
+			.cards-grid-item--optimize &
+			{
+				width: calc(100% - 78px);
+			}
+		}
+	}
+}

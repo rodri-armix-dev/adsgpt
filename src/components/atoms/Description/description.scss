@@ -1,0 +1,40 @@
+$sizes: (
+	extra-small: 14px,
+	small: 16px,
+	normal: 18px,
+	large: 21px,
+);
+
+.description
+{
+	color: inherit;
+	font-weight: 400;
+	letter-spacing: -.01em;
+	line-height: var(--description-line-height, 1.4);
+	overflow-wrap: break-word;
+
+	@each $name, $value in $sizes
+	{
+		&--#{$name}
+		{
+			font-size: var(--description-font-size, #{$value});
+		}
+	}
+}
+
+@each $range in $range-order
+{
+	@include media($range)
+	{
+		.description
+		{
+			@each $name, $value in $sizes
+			{
+				&--#{$range}-#{$name}
+				{
+					font-size: var(--description-font-size, #{$value});
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,97 @@
+// sass-lint:disable no-color-literals
+.download-menu
+{
+	position: relative;
+
+	&__panel
+	{
+		@include navigation-disclosure-panel;
+
+		padding: 16px 12px 12px;
+		right: 0;
+		width: 260px;
+
+		&[hidden]
+		{
+			display: none;
+		}
+	}
+
+	&__heading
+	{
+		color: #4d5159;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: normal;
+		margin-bottom: 4px;
+		padding-inline: 12px;
+	}
+
+	&__list
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	&__link
+	{
+		align-items: center;
+		border-radius: var(--radius-md);
+		color: #21242a;
+		display: flex;
+		gap: 12px;
+		padding: 12px;
+
+		&:hover
+		{
+			@include navigation-disclosure-option-highlight;
+		}
+	}
+
+	&__platform
+	{
+		--icon-color: #0055cc;
+		--icon-size: 24px;
+
+		align-items: center;
+		background: #ebf4ff;
+		border-radius: var(--radius-menu-option);
+		display: flex;
+		flex: 0 0 40px;
+		height: 40px;
+		justify-content: center;
+	}
+
+	&__destination
+	{
+		display: flex;
+		flex: 1 1 0;
+		flex-direction: column;
+		gap: 4px;
+		line-height: normal;
+		min-width: 0;
+	}
+
+	&__name
+	{
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	&__store
+	{
+		color: #4d5159;
+		font-size: 12px;
+	}
+
+	&__arrow
+	{
+		--icon-color: #0055cc;
+		--icon-size: 16px;
+
+		display: flex;
+		flex: 0 0 auto;
+	}
+}
+// sass-lint:enable no-color-literals

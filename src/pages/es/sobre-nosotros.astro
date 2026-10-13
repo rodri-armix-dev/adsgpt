@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AboutContent from '../../components/organisms/AboutContent/AboutContent.astro';
+import ManifestoCTA from '../../components/organisms/ManifestoCTA/ManifestoCTA.astro';
+import { aboutData } from '../../data/pages/about';
+
+const page = aboutData.es;
+---
+
+<BaseLayout locale="es" title={page.meta.title} description={page.meta.description} background="inner">
+	<AboutContent {...page.content} />
+	<ManifestoCTA {...page.manifesto} />
+</BaseLayout>

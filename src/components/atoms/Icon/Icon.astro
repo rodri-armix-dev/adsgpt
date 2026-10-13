@@ -1,0 +1,73 @@
+---
+import arrowUpRightSvg from '../../../../public/icons/arrow-up-right.svg?raw';
+import batterySvg from '../../../../public/icons/battery.svg?raw';
+import cellularSvg from '../../../../public/icons/cellular.svg?raw';
+import checkDoubleSvg from '../../../../public/icons/check-double.svg?raw';
+import chevronDownSvg from '../../../../public/icons/chevron-down.svg?raw';
+import chevronUpSvg from '../../../../public/icons/chevron-up.svg?raw';
+import downloadAppleSvg from '../../../../public/icons/download-apple.svg?raw';
+import downloadArrowSvg from '../../../../public/icons/download-arrow.svg?raw';
+import downloadSmartphoneSvg from '../../../../public/icons/download-smartphone.svg?raw';
+import languageChevronSvg from '../../../../public/icons/language-chevron.svg?raw';
+import menuSvg from '../../../../public/icons/menu.svg?raw';
+import menuCloseSvg from '../../../../public/icons/menu-close.svg?raw';
+import rocketSvg from '../../../../public/icons/rocket.svg?raw';
+import starSvg from '../../../../public/icons/star.svg?raw';
+import starFilledSvg from '../../../../public/icons/star-filled.svg?raw';
+import tagSvg from '../../../../public/icons/tag.svg?raw';
+import userSvg from '../../../../public/icons/user.svg?raw';
+import usersSvg from '../../../../public/icons/users.svg?raw';
+import wifiSvg from '../../../../public/icons/wifi.svg?raw';
+
+export const iconRegistry = {
+	'arrow-up-right': arrowUpRightSvg,
+	'battery': batterySvg,
+	'cellular': cellularSvg,
+	'check-double': checkDoubleSvg,
+	'chevron-down': chevronDownSvg,
+	'chevron-up': chevronUpSvg,
+	'download-apple': downloadAppleSvg,
+	'download-arrow': downloadArrowSvg,
+	'download-smartphone': downloadSmartphoneSvg,
+	'language-chevron': languageChevronSvg,
+	'menu': menuSvg,
+	'menu-close': menuCloseSvg,
+	'rocket': rocketSvg,
+	'star': starSvg,
+	'star-filled': starFilledSvg,
+	'tag': tagSvg,
+	'user': userSvg,
+	'users': usersSvg,
+	'wifi': wifiSvg,
+};
+
+export interface Props {
+	name: keyof typeof iconRegistry;
+	label?: string;
+}
+
+const { name, label } = Astro.props;
+const source = iconRegistry[name];
+if (!source) throw new Error(`Unknown icon: ${name}`);
+
+const openingTag = source.match(/<svg\b([^>]*)>/);
+if (!openingTag) throw new Error(`Invalid SVG icon: ${name}`);
+const attributes = Object.fromEntries([...openingTag[1].matchAll(/([\w:-]+)="([^"]*)"/g)].map((match) => [match[1], match[2]]));
+const viewBox = attributes.viewBox;
+const [, , width, height] = viewBox.split(/\s+/).map(Number);
+const svgAttributes = Object.fromEntries(Object.entries(attributes).filter(([key]) => !['width', 'height', 'xmlns', 'viewBox'].includes(key)));
+let content = source.slice(openingTag.index! + openingTag[0].length, source.lastIndexOf('</svg>'));
+// Definitions belong to each instance, including repeated battery masks.
+const instanceId = `icon-${crypto.randomUUID()}`;
+const ids = [...content.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
+for (const id of ids) {
+	const uniqueId = `${instanceId}-${id}`;
+	content = content.replaceAll(`id="${id}"`, `id="${uniqueId}"`).replaceAll(`url(#${id})`, `url(#${uniqueId})`).replaceAll(`href="#${id}"`, `href="#${uniqueId}"`);
+}
+---
+
+<svg {...svgAttributes} class:list={['icon', `icon--${name}`]} xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} width={width} height={height} style={`--icon-aspect-ratio: ${width / height}`} role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : 'true'} focusable="false" set:html={content} />
+
+<style lang="scss">
+	@use './icon';
+</style>

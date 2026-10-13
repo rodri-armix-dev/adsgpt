@@ -1,0 +1,105 @@
+// sass-lint:disable no-color-literals
+.manifesto-cta
+{
+	padding-block: 32px 16px;
+
+	&__banner
+	{
+		align-items: center;
+		background-color: #0f4be7;
+		background-image: linear-gradient(#0f4be757, #0f4be757), url('/banner-cta/banner-cta-bg.webp');
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: var(--radius-banner);
+		color: var(--color-text-inverse);
+		display: flex;
+		flex-direction: column;
+		gap: 36px;
+		padding: 48px 24px;
+		text-align: center;
+		width: 100%;
+	}
+
+	&__heading
+	{
+		font-size: 22px;
+		font-weight: 300;
+		letter-spacing: -.01em;
+		line-height: 1.15;
+	}
+
+	&__line
+	{
+		display: block;
+		white-space: nowrap;
+	}
+
+	&__emphasis
+	{
+		font-weight: 600;
+	}
+
+	&__stores
+	{
+		--store-badge-image-height: 60px;
+
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+
+@include m
+{
+	.manifesto-cta
+	{
+		&__heading
+		{
+			font-size: 32px;
+		}
+
+		&__stores
+		{
+			flex-direction: row;
+		}
+	}
+}
+
+@include l
+{
+	.manifesto-cta
+	{
+		padding-block: 54px 0;
+
+		&__inner
+		{
+			--layout-gutter: 56px;
+		}
+
+		&__banner
+		{
+			background-position: left 28%;
+			background-size: 231.852% auto;
+			border-radius: var(--radius-banner-desktop);
+			gap: 38px;
+			min-height: 400px;
+			padding-block: 64px;
+		}
+
+		&__heading
+		{
+			font-size: 48px;
+			line-height: 1.12;
+		}
+
+		&__stores
+		{
+			--store-badge-image-height: 50px;
+
+			gap: 25px;
+		}
+	}
+}
+// sass-lint:enable no-color-literals

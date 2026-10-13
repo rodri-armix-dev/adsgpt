@@ -1,0 +1,224 @@
+// sass-lint:disable no-color-literals
+.header
+{
+	align-items: center;
+	display: flex;
+	inset: 0;
+	min-width: var(--layout-min-width);
+	pointer-events: none;
+	position: fixed;
+	z-index: 1000;
+
+	&__backdrop
+	{
+		inset: 0;
+		pointer-events: auto;
+		position: absolute;
+
+		&[hidden]
+		{
+			display: none;
+		}
+	}
+
+	&__shell
+	{
+		align-self: flex-start;
+		display: flex;
+		flex-direction: column;
+		gap: 9px;
+		margin: calc(16px + env(safe-area-inset-top, 0px)) auto 0;
+		max-height: calc(100dvh - 32px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+		max-width: var(--layout-compact-max-width);
+		min-width: calc(var(--layout-min-width) - 32px);
+		opacity: 1;
+		pointer-events: auto;
+		position: relative;
+		transform: translate3d(0, 0, 0);
+		transition: width 0.18s ease-in-out, margin 0.18s ease-in-out, opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+		width: calc(100% - 32px);
+		will-change: opacity, transform;
+
+		.header:is([data-cards-snap-hidden], [data-scroll-panels-hidden]) &
+		{
+			opacity: 0;
+			pointer-events: none;
+			transform: translate3d(0, -8px, 0);
+			transition-timing-function: ease-in-out, ease-in-out, cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+		}
+	}
+
+	&__bar
+	{
+		align-items: center;
+		background: var(--color-surface);
+		border-radius: var(--radius-full);
+		box-shadow: 0 4px 16.8px 0 rgba(0, 0, 0, 0.09);
+		display: flex;
+		flex: 0 0 auto;
+		height: 68px;
+		justify-content: space-between;
+		padding: 12px 16px;
+	}
+
+	&__logo
+	{
+		flex: 0 0 auto;
+	}
+
+	&__main-menu,
+	&__lang-menu,
+	&__login
+	{
+		display: none;
+	}
+
+	&__right
+	{
+		align-items: center;
+		display: flex;
+		flex: 0 0 auto;
+		gap: clamp(4px, calc(6px + (100vw - var(--layout-min-width)) * .3), 15px);
+	}
+
+	&__actions
+	{
+		align-items: center;
+		display: flex;
+		flex: 0 0 auto;
+		gap: 7px;
+	}
+
+
+	&__menu-toggle
+	{
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		flex: 0 0 44px;
+		height: 44px;
+		justify-content: center;
+		margin-inline-end: -10px;
+		width: 44px;
+	}
+
+	&__menu-icon
+	{
+		--icon-color: #21242a;
+		--icon-size: 24px;
+
+		display: flex;
+
+		.header--open &
+		{
+			display: none;
+		}
+	}
+
+	&__close-icon
+	{
+		--icon-color: #21242a;
+		--icon-size: 21.3731px;
+
+		display: none;
+
+		.header--open &
+		{
+			display: block;
+		}
+	}
+
+	&__panel
+	{
+		@include navigation-disclosure-surface;
+
+		border-radius: var(--radius-mobile-menu);
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		min-height: 0;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		padding: 21px;
+
+		&[hidden]
+		{
+			display: none;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+	.header
+	{
+		&__shell
+		{
+			transform: none;
+			transition: none;
+			will-change: auto;
+
+			.header:is([data-cards-snap-hidden], [data-scroll-panels-hidden]) &
+			{
+				transform: none;
+			}
+		}
+	}
+}
+
+@include osm
+{
+	@supports (-webkit-touch-callout: none)
+	{
+		.header
+		{
+			// Keep the fixed container beyond Safari's edge-sampling zone.
+			inset: 8px 0;
+
+			&__shell
+			{
+				// Compensate the container inset to retain the visible bar position.
+				margin-top: calc(8px + env(safe-area-inset-top, 0px));
+			}
+		}
+	}
+}
+
+@include l
+{
+	.header
+	{
+		&__shell
+		{
+			margin-top: 23px;
+			max-height: none;
+			width: var(--layout-compact-max-width);
+		}
+
+		&__bar
+		{
+			height: auto;
+			padding: 14px 14px 14px 27px;
+		}
+
+		&__main-menu,
+		&__lang-menu,
+		&__login
+		{
+			display: block;
+		}
+
+		&__right
+		{
+			gap: 16px;
+		}
+
+		&__menu-toggle,
+		&__panel,
+		&__backdrop
+		{
+			display: none;
+		}
+	}
+}
+// sass-lint:enable no-color-literals

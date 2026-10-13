@@ -1,0 +1,56 @@
+.rich-text
+{
+	> p,
+	> ul,
+	> ol,
+	> blockquote
+	{
+		margin-bottom: 1em;
+	}
+
+	> :last-child
+	{
+		margin-bottom: 0;
+	}
+
+	ul,
+	ol
+	{
+		padding-inline-start: 1.5em;
+	}
+
+	ul
+	{
+		list-style: disc;
+	}
+
+	ol
+	{
+		list-style: decimal;
+	}
+
+	strong,
+	b
+	{
+		font-weight: 700;
+	}
+
+	em,
+	i
+	{
+		font-style: italic;
+	}
+
+	a
+	{
+		color: var(--rich-text-link-color, var(--color-text-highlight));
+		text-decoration: underline;
+		text-underline-offset: .15em;
+	}
+
+	blockquote
+	{
+		border-inline-start: .125em solid var(--rich-text-border-color, var(--color-border-default));
+		padding-inline-start: 1em;
+	}
+}

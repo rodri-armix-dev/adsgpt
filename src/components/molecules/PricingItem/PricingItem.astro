@@ -1,0 +1,82 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Icon from '../../atoms/Icon/Icon.astro';
+import { getUiText, formatLabel } from '../../../i18n/ui';
+import Heading from '../../atoms/Heading/Heading.astro';
+import Description from '../../atoms/Description/Description.astro';
+
+export interface PricingFeature {
+	label: string;
+	icon: ComponentProps<typeof Icon>['name'];
+}
+
+export interface Props {
+	id: string;
+	heading: string;
+	description: string;
+	background: string;
+	monthlyPrice: number;
+	currency: string;
+	pricePeriod: string;
+	features: PricingFeature[];
+	benefitsHeading?: string;
+	benefits: string[];
+}
+
+const text = getUiText(Astro.currentLocale);
+const { id, heading, description, background, monthlyPrice, currency, pricePeriod, features, benefitsHeading, benefits } = Astro.props;
+const currencySymbol = new Intl.NumberFormat('en-US', { style: 'currency', currency }).formatToParts(monthlyPrice).find((part) => part.type === 'currency')?.value;
+---
+
+<article class="pricing-item" data-plan={id} data-monthly-price={monthlyPrice} data-currency={currency}>
+	<header class="pricing-item__header" style={{ '--pricing-item-background-image': `url(${JSON.stringify(background)})` }}>
+		<div class="pricing-item__heading">
+			<Heading label={heading} tag="h3" size="compact" />
+		</div>
+		<div class="pricing-item__description">
+			<Description html={description} size="small" responsiveSize={{ xl: "extra-small" }} />
+		</div>
+		<p class="pricing-item__price" aria-live="polite" aria-atomic="true">
+			<span class="pricing-item__value">
+				<span class="pricing-item__currency" data-price-currency>{currencySymbol}</span>
+				<span class="pricing-item__amount" data-price-amount>{monthlyPrice.toFixed(2)}</span>
+			</span>
+			<span class="pricing-item__period" data-price-period>{pricePeriod}</span>
+		</p>
+	</header>
+	<div class="pricing-item__body">
+		<div class="pricing-item__group pricing-item__group--features">
+			<ul class="pricing-item__features" aria-label={formatLabel(text.planFeatures, heading)}>
+				{features.map((feature) => (
+					<li class="pricing-item__feature">
+						<span class:list={['pricing-item__icon', `pricing-item__icon--${feature.icon}`]}>
+							<Icon name={feature.icon} />
+						</span>
+						<span class="pricing-item__text">{feature.label}</span>
+					</li>
+				))}
+			</ul>
+		</div>
+		<div class="pricing-item__group pricing-item__group--benefits">
+			{benefitsHeading && (
+				<div class="pricing-item__benefits-heading">
+					<Heading label={benefitsHeading} tag="p" size="extra-small" />
+				</div>
+			)}
+			<ul class="pricing-item__benefits" aria-label={formatLabel(text.planBenefits, heading)}>
+				{benefits.map((benefit) => (
+					<li class="pricing-item__benefit">
+						<span class="pricing-item__icon pricing-item__icon--check-double">
+							<Icon name="check-double" />
+						</span>
+						<span class="pricing-item__text">{benefit}</span>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</article>
+
+<style lang="scss">
+	@use './pricing-item';
+</style>

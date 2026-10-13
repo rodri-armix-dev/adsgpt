@@ -1,0 +1,55 @@
+@keyframes menu-enter
+{
+	from
+	{
+		opacity: 0;
+		transform: translateY(-6px);
+	}
+
+	to
+	{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes menu-exit
+{
+	from
+	{
+		opacity: var(--menu-animation-exit-opacity, 1);
+		transform: var(--menu-animation-exit-transform, translateY(0));
+	}
+
+	to
+	{
+		opacity: 0;
+		transform: translateY(-6px);
+	}
+}
+
+[data-animation='menu-enter']
+{
+	&:not([hidden])
+	{
+		animation: menu-enter 180ms ease-out both;
+	}
+
+	&[data-animation-state='closing']:not([hidden])
+	{
+		animation: menu-exit 180ms ease-in both;
+		pointer-events: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+	[data-animation='menu-enter']
+	{
+		&:not([hidden]),
+		&[data-animation-state='closing']:not([hidden])
+		{
+			animation: none;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+---
+import { getUiText } from '../../../i18n/ui';
+import logoImage from '../../../assets/adsgpt-logo.svg';
+
+export interface Props {
+	href: string;
+	ariaLabel?: string;
+}
+
+const text = getUiText(Astro.currentLocale);
+const { href, ariaLabel = text.home } = Astro.props;
+---
+
+<a class="logo" href={href} aria-label={ariaLabel}>
+	<img
+		class="logo__image"
+		src={logoImage.src}
+		width={logoImage.width}
+		height={logoImage.height}
+		alt=""
+	/>
+</a>
+
+<style lang="scss">
+	@use './logo';
+</style>

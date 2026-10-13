@@ -1,0 +1,84 @@
+.phone-mockup
+{
+	// Screen bounds within the original 410×784 animation composition.
+	--phone-mockup-screen-clip: inset(1.913265% 4.878049% 1.403061% round 12.162162% / 5.936675%);
+
+	aspect-ratio: $phone-aspect-ratio;
+	display: block;
+	isolation: isolate;
+	max-width: 100%;
+	position: relative;
+	width: var(--phone-mockup-width, 100%);
+
+	&__device
+	{
+		inset: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	&__image
+	{
+		height: 112.77%;
+		left: -22.25%;
+		max-width: none;
+		position: absolute;
+		top: -6.61%;
+		width: 144.49%;
+	}
+
+	&__animation
+	{
+		--lottie-aspect-ratio: 410 / 784;
+		--lottie-composition-clip: none;
+		--lottie-height: 100%;
+		--lottie-overflow: visible;
+		--lottie-width: 100%;
+
+		// Preserve the 410×784 composition above the device, without clipping.
+		height: 99.492386%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	&__overlay
+	{
+		height: 100%;
+		inset: 0;
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+	}
+
+	&__cellular,
+	&__wifi,
+	&__battery
+	{
+		color: var(--color-text-on-light-muted);
+	}
+
+	&__cellular
+	{
+		--icon-size: 10.52px;
+	}
+
+	&__wifi
+	{
+		--icon-size: 10.608px;
+	}
+
+	&__battery
+	{
+		--icon-size: 11.186px;
+	}
+
+	&__time
+	{
+		fill: var(--color-text-on-light-muted);
+		font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+		font-size: 14.63px;
+		font-weight: 600;
+	}
+}

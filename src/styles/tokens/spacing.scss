@@ -1,0 +1,22 @@
+// sass-lint:disable no-mergeable-selectors
+:root
+{
+	// Primitive spacing scale from Figma.
+	--spacing-4: 4px;
+	--spacing-8: 8px;
+	--spacing-12: 12px;
+	--spacing-16: 16px;
+	--spacing-20: 20px;
+	--spacing-24: 24px;
+	--spacing-32: 32px;
+	--spacing-40: 40px;
+	--spacing-48: 48px;
+	--spacing-64: 64px;
+}
+
+// This block is reserved until semantic spacing roles are defined.
+// sass-lint:disable no-empty-rulesets
+:root
+{
+	// Reserved for semantic spacing roles when the design defines them.
+}

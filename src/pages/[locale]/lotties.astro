@@ -1,0 +1,26 @@
+---
+import { readdir } from 'node:fs/promises';
+import LottiesGallery from '../../components/organisms/LottiesGallery/LottiesGallery.astro';
+import { isLocale, locales } from '../../i18n/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+	return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+if (!isLocale(locale)) return new Response(null, { status: 404 });
+
+const files = (await readdir('public/lotties'))
+	.filter((file) => file.endsWith('.json'))
+	.sort();
+const intro = {
+	es: 'Probá cada animación con Reproducir, Pausar y Repetir. Mové la barra de progreso para recorrerla; al hacerlo, la reproducción se pausa.',
+	en: 'Test each animation with Play, Pause and Loop. Drag the progress bar to scrub through it; scrubbing pauses playback.',
+	pt: 'Teste cada animação com Reproduzir, Pausar e Repetir. Arraste a barra de progresso para percorrê-la; ao fazer isso, a reprodução é pausada.',
+}[locale];
+---
+
+<BaseLayout locale={locale} title="Lotties | adsgpt" description={intro}>
+	<LottiesGallery files={files} intro={intro} />
+</BaseLayout>

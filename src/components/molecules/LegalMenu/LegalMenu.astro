@@ -1,0 +1,41 @@
+---
+import Icon from '../../atoms/Icon/Icon.astro';
+
+export interface LegalMenuItem {
+	label: string;
+	href?: string;
+	external?: boolean;
+}
+
+export interface Props {
+	label: string;
+	items: LegalMenuItem[];
+}
+
+const { label, items } = Astro.props;
+---
+
+<nav class="legal-menu" aria-label={label}>
+	<ul class="legal-menu__list" role="list">
+		{items.map((item) => (
+			<li class="legal-menu__item">
+				{item.href ? (
+					<a class="legal-menu__link" href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener noreferrer' : undefined}>
+						<span class="legal-menu__label">{item.label}</span>
+						{item.external && (
+							<span class="legal-menu__icon">
+								<Icon name="arrow-up-right" />
+							</span>
+						)}
+					</a>
+				) : (
+					<span class="legal-menu__label">{item.label}</span>
+				)}
+			</li>
+		))}
+	</ul>
+</nav>
+
+<style lang="scss">
+	@use './legal-menu';
+</style>

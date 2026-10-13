@@ -1,0 +1,26 @@
+---
+import { rangeOrder, type ResponsiveValues } from "../../../../config/breakpoints";
+
+export type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
+
+export type HeadingSize = 'extra-small' | 'compact' | 'small' | 'medium' | 'normal' | 'large' | 'extra-large';
+
+export interface Props {
+	label?: string;
+	tag?: HeadingTag;
+	size?: HeadingSize;
+	responsiveSize?: ResponsiveValues<HeadingSize>;
+	id?: string;
+}
+
+const { label, tag: Tag = 'h2', size = 'normal', responsiveSize = {}, id } = Astro.props;
+const responsiveClasses = rangeOrder.flatMap((range) => responsiveSize[range] ? [`heading--${range}-${responsiveSize[range]}`] : []);
+---
+
+<Tag class:list={['heading', `heading--${size}`, ...responsiveClasses]} id={id}>
+	<slot>{label}</slot>
+</Tag>
+
+<style lang="scss">
+	@use './heading';
+</style>

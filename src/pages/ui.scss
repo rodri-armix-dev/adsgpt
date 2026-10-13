@@ -1,0 +1,102 @@
+.ui
+{
+	margin-inline: auto;
+	max-width: 1280px;
+	padding: var(--spacing-40) var(--spacing-16);
+
+	&__intro
+	{
+		margin-bottom: var(--spacing-48);
+	}
+
+	&__typography
+	{
+		color: var(--color-text-on-light);
+		display: grid;
+		gap: var(--spacing-24);
+	}
+
+	&__eyebrow
+	{
+		color: var(--color-text-accent);
+	}
+
+	h1
+	{
+		font-size: 48px;
+		margin-block: var(--spacing-8);
+	}
+
+	h2
+	{
+		font-size: 24px;
+		margin-bottom: var(--spacing-24);
+	}
+
+	&__section
+	{
+		border-top: 1px solid var(--color-border-soft);
+		padding-block: var(--spacing-32);
+	}
+
+	&__icons
+	{
+		display: grid;
+		gap: var(--spacing-16);
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		margin-block: var(--spacing-24);
+	}
+
+	&__icon-sample
+	{
+		align-items: center;
+		border: 1px solid var(--color-border-subtle);
+		border-radius: var(--radius-md);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-12);
+		padding: var(--spacing-16);
+	}
+
+	&__icon-settings,
+	&__icon-size,
+	&__icon-inherited,
+	&__icon-custom,
+	&__icon-repeat
+	{
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-12);
+	}
+
+	&__icon-inherited
+	{
+		color: var(--color-text-highlight);
+	}
+
+	&__icon-custom
+	{
+		--icon-color: var(--color-action-primary);
+	}
+
+	&__example
+	{
+		align-items: center;
+		background: var(--color-surface-card);
+		border-radius: var(--radius-md);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-24);
+		justify-content: center;
+		padding: var(--spacing-24) var(--spacing-12);
+	}
+}
+
+@include l
+{
+	.ui
+	{
+		padding: var(--spacing-64) var(--spacing-32);
+	}
+}

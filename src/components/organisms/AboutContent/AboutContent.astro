@@ -1,0 +1,49 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Heading from '../../atoms/Heading/Heading.astro';
+import Pill from '../../atoms/Pill/Pill.astro';
+
+export interface AboutStatistic {
+	value: string;
+	label: string;
+}
+
+export interface Props {
+	pill: ComponentProps<typeof Pill>;
+	title: string;
+	subtitle: string;
+	statistics: AboutStatistic[];
+	paragraphs: string[];
+}
+
+const { pill, title, subtitle, statistics, paragraphs } = Astro.props;
+---
+
+<section class="about-content" aria-labelledby="about-title">
+	<div class="about-content__inner global-inner">
+		<div class="about-content__presentation">
+			<Pill {...pill} />
+			<Heading label={title} tag="h1" size="medium" responsiveSize={{ l: 'extra-large' }} id="about-title" />
+			<div class="about-content__subtitle">
+				<Heading label={subtitle} tag="h2" size="small" />
+			</div>
+		</div>
+		<div class="about-content__story">
+			<dl class="about-content__statistics">
+				{statistics.map((statistic) => (
+					<div class="about-content__statistic">
+						<dt class="about-content__statistic-label">{statistic.label}</dt>
+						<dd class="about-content__statistic-value">{statistic.value}</dd>
+					</div>
+				))}
+			</dl>
+			{paragraphs.map((paragraph) => (
+				<p class="about-content__paragraph">{paragraph}</p>
+			))}
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	@use './about-content';
+</style>

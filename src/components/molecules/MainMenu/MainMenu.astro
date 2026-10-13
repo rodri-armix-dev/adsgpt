@@ -1,0 +1,81 @@
+---
+import { getUiText, formatLabel } from '../../../i18n/ui';
+import Icon from '../../atoms/Icon/Icon.astro';
+
+export interface MainMenuLink {
+	id: string;
+	label: string;
+	href: string;
+	children?: MainMenuLink[];
+}
+
+export interface Props {
+	items: MainMenuLink[];
+	currentPath: string;
+	expandedItemIds?: string[];
+	label?: string;
+	variant?: 'horizontal' | 'vertical';
+}
+
+const text = getUiText(Astro.currentLocale);
+const {
+	items,
+	currentPath,
+	expandedItemIds = [],
+	label = text.mainNavigation,
+	variant = 'horizontal',
+} = Astro.props;
+
+const normalizePath = (path: string) => {
+	const normalizedPath = path.replace(/\/+$/, '');
+	return normalizedPath || '/';
+};
+
+const instanceId = crypto.randomUUID();
+const normalizedCurrentPath = normalizePath(currentPath);
+const isCurrent = (href: string) => normalizePath(href) === normalizedCurrentPath;
+---
+
+<nav class:list={['main-menu', `main-menu--${variant}`]} aria-label={label}>
+	<ul class="main-menu__list">
+		{items.map((item) => {
+			const hasChildren = Boolean(item.children?.length);
+			const isExpanded = expandedItemIds.includes(item.id);
+			const isChildCurrent = item.children?.some((child) => isCurrent(child.href)) ?? false;
+			const submenuId = `main-menu-submenu-${instanceId}-${item.id}`;
+
+			return (
+				<li class:list={[ 'main-menu__item', { 'main-menu__item--current': isCurrent(item.href) || isChildCurrent, 'main-menu__item--expanded': hasChildren && isExpanded, }, ]} >
+					{hasChildren ? (
+						<>
+							<a class:list={[ 'main-menu__link', { 'main-menu__link--current': isCurrent(item.href) }, ]} href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined} >
+								{item.label}
+							</a>
+							<button class="main-menu__toggle" type="button" aria-expanded={isExpanded} aria-controls={submenuId} aria-label={formatLabel(isExpanded ? text.closeSubmenu : text.openSubmenu, item.label)} >
+								<Icon name={isExpanded ? 'chevron-up' : 'chevron-down'} />
+							</button>
+
+							<ul id={submenuId} class="main-menu__submenu" hidden={!isExpanded} >
+								{item.children?.map((child) => (
+									<li class="main-menu__submenu-item">
+										<a class:list={[ 'main-menu__link', 'main-menu__link--submenu', { 'main-menu__link--current': isCurrent(child.href) }, ]} href={child.href} aria-current={isCurrent(child.href) ? 'page' : undefined} >
+											{child.label}
+										</a>
+									</li>
+								))}
+							</ul>
+						</>
+					) : (
+						<a class:list={[ 'main-menu__link', { 'main-menu__link--current': isCurrent(item.href) }, ]} href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined} >
+							{item.label}
+						</a>
+					)}
+				</li>
+			);
+		})}
+	</ul>
+</nav>
+
+<style lang="scss">
+	@use './main-menu';
+</style>

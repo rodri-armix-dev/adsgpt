@@ -1,0 +1,25 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Icon from '../Icon/Icon.astro';
+
+export interface Props {
+	label: string;
+	icon?: ComponentProps<typeof Icon>['name'];
+	variant?: 'default' | 'light';
+}
+
+const { label, icon, variant = 'default' } = Astro.props;
+---
+
+<span class:list={['pill', `pill--${variant}`, { 'pill--indicator': variant === 'light' && !icon }]}>
+	{icon && (
+		<span class="pill__icon">
+			<Icon name={icon} />
+		</span>
+	)}
+	<span class="pill__label">{label}</span>
+</span>
+
+<style lang="scss">
+	@use './pill';
+</style>

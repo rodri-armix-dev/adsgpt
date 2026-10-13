@@ -1,0 +1,10 @@
+.store-badge
+{
+	display: block;
+
+	&__image
+	{
+		height: var(--store-badge-image-height);
+		width: auto;
+	}
+}

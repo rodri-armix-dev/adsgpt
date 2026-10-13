@@ -1,0 +1,39 @@
+// sass-lint:disable no-mergeable-selectors
+:root
+{
+	// Primitives.
+	--radius-primitive-0: 0;
+	--radius-primitive-2: 2px;
+	--radius-primitive-4: 4px;
+	--radius-primitive-8: 8px;
+	--radius-primitive-10: 10px;
+	--radius-primitive-12: 12px;
+	--radius-primitive-14: 14px;
+	--radius-primitive-16: 16px;
+	--radius-primitive-18: 18px;
+	--radius-primitive-20: 20px;
+	--radius-primitive-24: 24px;
+	--radius-primitive-28: 28px;
+	--radius-primitive-31: 31px;
+	--radius-primitive-50: 50px;
+	--radius-primitive-999: 999px;
+}
+
+:root
+{
+	// Semantic aliases consumed by the UI.
+	--radius-banner: var(--radius-primitive-28);
+	--radius-banner-desktop: var(--radius-primitive-50);
+	--radius-feature-card: var(--radius-primitive-31);
+	--radius-md: var(--radius-primitive-12);
+	--radius-mobile-menu: var(--radius-primitive-24);
+	--radius-menu: var(--radius-primitive-20);
+	--radius-menu-toggle: var(--radius-primitive-4);
+	--radius-menu-option: var(--radius-primitive-10);
+	--radius-pricing-card: var(--radius-primitive-12);
+	--radius-pricing-header: var(--radius-primitive-8);
+	--radius-pricing-billing: var(--radius-primitive-16);
+	--radius-pricing-option: var(--radius-primitive-8);
+	--radius-statistic-card: var(--radius-primitive-16);
+	--radius-full: var(--radius-primitive-999);
+}

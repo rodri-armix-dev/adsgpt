@@ -1,0 +1,52 @@
+// Primitive palette for AdsGPT.
+:root
+{
+	--color-primitive-neutral-0: #fff;
+
+	--color-primitive-slate-400: #94a3b8;
+	--color-primitive-slate-700: #334155;
+	--color-primitive-slate-800: #1e293b;
+	--color-primitive-slate-900: #0f172a;
+	--color-primitive-slate-950: #020617;
+
+	--color-primitive-blue-300: #93c5fd;
+	--color-primitive-blue-500: #3b82f6;
+	--color-primitive-blue-600: #2563eb;
+
+	--color-primitive-gray-500: #5D5D5D;
+}
+
+// Shared semantic roles consumed by the UI.
+:root
+{
+	--color-surface: #F9F9F9;
+	--color-text-heading: #060606;
+	--color-text-description: #060606;
+	--color-text-inverse: var(--color-primitive-neutral-0);
+
+	--color-text-on-light: var(--color-primitive-slate-950);
+	--color-text-on-light-muted: var(--color-primitive-slate-700);
+
+	--color-surface-card: var(--color-primitive-slate-900);
+	--color-surface-card-accent: var(--color-primitive-slate-800);
+
+	--color-action-primary: var(--color-primitive-blue-600);
+
+	--color-text-muted: var(--color-primitive-slate-400);
+	--color-text-accent: var(--color-primitive-blue-300);
+	--color-text-highlight: var(--color-primitive-blue-500);
+
+	--color-border-default: var(--color-primitive-slate-700);
+	--color-border-subtle: color-mix(
+		in srgb,
+		var(--color-primitive-neutral-0) 8%,
+		transparent
+	);
+	--color-border-soft: color-mix(
+		in srgb,
+		var(--color-primitive-neutral-0) 16%,
+		transparent
+	);
+	--color-border-focus: var(--color-primitive-blue-600);
+
+}

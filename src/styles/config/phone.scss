@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+$phone-widths: (
+	s: 242px,
+	m: 300px,
+	l: 330px,
+	xl: 410px,
+	xxl: 510px,
+);
+
+$phone-aspect-ratio: math.div(410, 788);

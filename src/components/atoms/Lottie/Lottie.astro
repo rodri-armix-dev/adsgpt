@@ -1,0 +1,358 @@
+---
+import { mediaQueries, rangeOrder, type ResponsiveValues } from '../../../../config/breakpoints';
+
+export interface Props {
+	src: string;
+	responsiveSrc?: ResponsiveValues<string>;
+	autoplay?: boolean;
+	loop?: boolean;
+	ariaLabel?: string;
+	loading?: 'viewport' | 'after-load' | 'manual';
+	progressiveLoad?: boolean;
+}
+
+const { src, autoplay = true, loop = true, ariaLabel, responsiveSrc = {}, loading = 'viewport', progressiveLoad = false } = Astro.props;
+const sources = rangeOrder.flatMap((range) => responsiveSrc[range] ? [{ query: mediaQueries[range], src: responsiveSrc[range] }] : []);
+---
+
+<lottie-animation class="lottie" data-src={src} data-loading={loading} data-progressive-load={String(progressiveLoad)} data-sources={sources.length ? JSON.stringify(sources) : undefined} data-autoplay={String(autoplay)} data-loop={String(loop)} role={ariaLabel ? 'img' : undefined} aria-label={ariaLabel} aria-hidden={ariaLabel ? undefined : 'true'}></lottie-animation>
+
+<script>
+	import type { AnimationItem } from 'lottie-web';
+
+	// Share the SVG player, but only download it when an animation is requested.
+	let renderer: Promise<typeof import('lottie-web/build/player/lottie_svg')> | undefined;
+
+	class LottieAnimation extends HTMLElement {
+		// Let the document and its critical images finish before optional hero animation work.
+		private static documentLoaded = document.readyState === 'complete';
+		private static onDocumentLoad = () => {
+			LottieAnimation.documentLoaded = true;
+			LottieAnimation.pump();
+		};
+
+		private static players = new Set<LottieAnimation>();
+		private static loading = new Map<LottieAnimation, symbol>();
+		private static observer?: IntersectionObserver;
+		private static preloadObserver?: IntersectionObserver;
+
+		private animation?: AnimationItem;
+		private svgObserver?: MutationObserver;
+		private compositionBounds = new Set<string>();
+		private source?: string;
+		private sources: { media: MediaQueryList; src: string }[] = [];
+		private loaded = false;
+		private loadRevision = 0;
+		private failed = false;
+		private nearViewport = false;
+		private requested = false;
+		private visible = false;
+		private finishLoading?: () => void;
+		private pendingProgress?: number;
+		private shouldPlay = false;
+		private shouldLoop = true;
+
+		get ready() {
+			return this.loaded;
+		}
+
+		get progress() {
+			if (!this.loaded || !this.animation) return this.pendingProgress ?? 0;
+			return Math.min(1, this.animation.currentFrame / Math.max(1, this.animation.totalFrames - 1));
+		}
+
+		get playing() {
+			return this.loaded && !!this.animation && !this.animation.isPaused;
+		}
+
+		get loop() {
+			return this.shouldLoop;
+		}
+
+		prepare() {
+			if (this.requested) return;
+			this.requested = true;
+			LottieAnimation.pump();
+		}
+
+		play() {
+			this.shouldPlay = true;
+			if (this.progress >= 1) this.animation?.goToAndStop(0, true);
+			this.syncPlayback();
+		}
+
+		pause() {
+			this.shouldPlay = false;
+			this.syncPlayback();
+		}
+
+		setLoop(enabled: boolean) {
+			this.shouldLoop = enabled;
+			this.animation?.setLoop(enabled);
+			this.emit('lottie:state');
+		}
+
+		// Normalized progress (0–1) can come from a range input or a scroll controller.
+		// Seeking pauses playback and also works before the JSON has finished loading.
+		setProgress(value: number) {
+			if (!Number.isFinite(value)) return;
+			this.pendingProgress = Math.min(1, Math.max(0, value));
+			this.shouldPlay = false;
+			if (this.loaded && this.animation) {
+				this.animation.goToAndStop(this.pendingProgress * Math.max(0, this.animation.totalFrames - 1), true);
+			}
+			this.emit('lottie:state');
+		}
+
+		private emit(name: string) {
+			this.dispatchEvent(new CustomEvent(name, {
+				bubbles: true,
+				detail: { progress: this.progress, playing: this.playing, loop: this.loop, ready: this.ready },
+			}));
+		}
+
+		// Visibility suspends playback without changing the user's play/pause intent.
+		private syncPlayback() {
+			if (this.loaded && this.shouldPlay && this.visible && !document.hidden) {
+				this.animation?.play();
+			} else {
+				this.animation?.pause();
+			}
+			this.emit('lottie:state');
+		}
+
+		private static onVisibilityChange = () => {
+			for (const player of this.players) player.syncPlayback();
+			this.pump();
+		};
+
+		private static start(player: LottieAnimation) {
+			const token = Symbol();
+			this.loading.set(player, token);
+			void player.load().finally(() => {
+				if (this.loading.get(player) === token) this.loading.delete(player);
+				this.pump();
+			});
+		}
+
+		private static pump() {
+			if (document.readyState === 'complete') this.documentLoaded = true;
+			if (document.hidden) return;
+			const waiting = [...this.players].filter((player) => !player.animation && !this.loading.has(player) && !player.failed
+				&& (player.dataset.loading !== 'after-load' || this.documentLoaded)
+				&& (player.requested || (player.dataset.loading !== 'manual' && player.nearViewport)));
+			waiting.sort((first, second) => Number(second.visible) - Number(first.visible));
+			for (const player of waiting) {
+				if (this.loading.size >= 2) break;
+				this.start(player);
+			}
+		}
+
+		private selectSource() {
+			return this.sources.filter(({ media }) => media.matches).at(-1)?.src ?? this.dataset.src;
+		}
+
+		private onSourceChange = () => {
+			if (this.selectSource() === this.source) return;
+			this.disconnectedCallback();
+			this.pendingProgress = undefined;
+			this.connectedCallback();
+		};
+
+		connectedCallback() {
+			const src = this.dataset.src;
+			if (!src || LottieAnimation.players.has(this)) return;
+			const sources = JSON.parse(this.dataset.sources ?? '[]') as { query: string; src: string }[];
+			this.sources = sources.map(({ query, src }) => ({ media: window.matchMedia(query), src }));
+			for (const { media } of this.sources) media.addEventListener('change', this.onSourceChange);
+			this.source = this.selectSource();
+			this.shouldPlay = this.dataset.autoplay === 'true';
+			this.shouldLoop = this.dataset.loop === 'true';
+			this.failed = false;
+			LottieAnimation.players.add(this);
+			if (!LottieAnimation.observer) {
+				LottieAnimation.observer = new IntersectionObserver((entries) => {
+					for (const entry of entries) {
+						const player = entry.target as LottieAnimation;
+						if (!LottieAnimation.players.has(player)) continue;
+						player.visible = entry.isIntersecting && entry.intersectionRatio > 0;
+						player.syncPlayback();
+					}
+					LottieAnimation.pump();
+				}, { threshold: [0, 0.001] });
+				document.addEventListener('visibilitychange', LottieAnimation.onVisibilityChange);
+				window.addEventListener('load', LottieAnimation.onDocumentLoad, { once: true });
+				LottieAnimation.preloadObserver = new IntersectionObserver((entries) => {
+					for (const entry of entries) {
+						const player = entry.target as LottieAnimation;
+						if (LottieAnimation.players.has(player)) player.nearViewport = entry.isIntersecting;
+					}
+					LottieAnimation.pump();
+				}, { rootMargin: '200px 0px' });
+			}
+			LottieAnimation.observer.observe(this);
+			if (this.dataset.loading !== 'manual') LottieAnimation.preloadObserver?.observe(this);
+			LottieAnimation.pump();
+		}
+
+		private async load(): Promise<void> {
+			const revision = this.loadRevision;
+			try {
+				const { default: lottie } = await (renderer ??= import('lottie-web/build/player/lottie_svg'));
+				if (!this.isConnected || this.loadRevision !== revision) return;
+				await new Promise<void>((resolve) => {
+					this.finishLoading = resolve;
+					try {
+						this.initializeAnimation(lottie);
+					} catch {
+						this.failLoading();
+					}
+				});
+			} catch {
+				if (this.loadRevision === revision) this.failLoading();
+			}
+		}
+
+		private failLoading() {
+			this.failed = true;
+			this.emit('lottie:error');
+			this.finishLoading?.();
+			this.finishLoading = undefined;
+		}
+
+		private initializeAnimation(lottie: typeof import('lottie-web')['default']) {
+			const src = this.source;
+			if (!src) {
+				this.failLoading();
+				return;
+			}
+			this.animation = lottie.loadAnimation({
+				container: this,
+				renderer: 'svg',
+				loop: this.shouldLoop,
+				autoplay: false,
+				path: src,
+				rendererSettings: {
+					preserveAspectRatio: 'xMidYMid meet',
+					progressiveLoad: this.dataset.progressiveLoad === 'true',
+				},
+			});
+			this.animation.addEventListener('DOMLoaded', () => {
+				this.syncSvg();
+				this.svgObserver = new MutationObserver((records) => {
+					const added = new Set(records.flatMap(record => {
+						if (record.type === 'attributes') {
+							return record.target instanceof Element && record.target.hasAttribute('aria-label') ? [record.target] : [];
+						}
+						return [...record.addedNodes].filter((node): node is Element => node instanceof Element);
+					}));
+					// Only visit new subtrees. Their descendants can appear in multiple records.
+					const roots = [...added].filter(node => {
+						for (let parent = node.parentElement; parent; parent = parent.parentElement) {
+							if (added.has(parent)) return false;
+						}
+						return true;
+					});
+					if (roots.length) this.syncSvg(roots);
+				});
+				this.svgObserver.observe(this, {
+					attributes: true,
+					attributeFilter: ['aria-label'],
+					childList: this.dataset.progressiveLoad === 'true',
+					subtree: true,
+				});
+				this.loaded = true;
+				if (this.pendingProgress !== undefined) {
+					const shouldPlay = this.shouldPlay;
+					this.setProgress(this.pendingProgress);
+					this.shouldPlay = shouldPlay;
+				}
+				if (this.shouldPlay && this.progress >= 1) this.animation?.goToAndStop(0, true);
+				this.syncPlayback();
+				this.emit('lottie:ready');
+				this.finishLoading?.();
+				this.finishLoading = undefined;
+			});
+			this.animation.addEventListener('enterFrame', () => this.emit('lottie:progress'));
+			this.animation.addEventListener('complete', () => {
+				this.shouldPlay = false;
+				this.emit('lottie:state');
+				this.emit('lottie:complete');
+			});
+			this.animation.addEventListener('data_failed', () => this.failLoading());
+		}
+
+		private syncSvg(roots?: Element[]) {
+			// Expose generated composition bounds only; authored masks stay intact.
+			const svg = this.querySelector('svg');
+			if (!svg) return;
+			svg.setAttribute('aria-hidden', 'true');
+			svg.setAttribute('focusable', 'false');
+			const trees = roots ?? [svg];
+			const select = (selector: string) => trees.flatMap(root => [
+				...(root.matches(selector) ? [root] : []),
+				...root.querySelectorAll(selector),
+			]);
+			for (const group of select('g[aria-label]:not([role])')) group.removeAttribute('aria-label');
+			for (const clip of select('defs > clipPath')) {
+				const shape = clip.firstElementChild;
+				if (clip.children.length === 1 && shape?.tagName === 'path'
+					&& /^M0,0 L[\d.]+,0 L[\d.]+,[\d.]+ L0,[\d.]+z$/.test(shape.getAttribute('d') ?? '')) {
+					this.compositionBounds.add(clip.id);
+				}
+			}
+			for (const group of select('g[clip-path]:not([data-lottie-composition])')) {
+				const clip = group.getAttribute('clip-path') ?? '';
+				const id = clip.match(/#([^)'"\s]+)['"]?\)$/)?.[1];
+				if (id && this.compositionBounds.has(id)) {
+					(group as SVGGElement).dataset.lottieComposition = '';
+					(group as SVGGElement).style.setProperty('--lottie-renderer-clip', clip);
+				}
+			}
+		}
+
+		disconnectedCallback() {
+			this.loadRevision++;
+			this.svgObserver?.disconnect();
+			this.svgObserver = undefined;
+			this.compositionBounds.clear();
+			this.requested = false;
+			for (const { media } of this.sources) media.removeEventListener('change', this.onSourceChange);
+			this.sources = [];
+			LottieAnimation.observer?.unobserve(this);
+			LottieAnimation.preloadObserver?.unobserve(this);
+			LottieAnimation.players.delete(this);
+			LottieAnimation.loading.delete(this);
+			this.finishLoading?.();
+			this.finishLoading = undefined;
+			this.animation?.destroy();
+			this.animation = undefined;
+			this.loaded = false;
+			this.nearViewport = false;
+			this.visible = false;
+			if (!LottieAnimation.players.size) {
+				LottieAnimation.observer?.disconnect();
+				LottieAnimation.observer = undefined;
+				LottieAnimation.preloadObserver?.disconnect();
+				LottieAnimation.preloadObserver = undefined;
+				document.removeEventListener('visibilitychange', LottieAnimation.onVisibilityChange);
+				window.removeEventListener('load', LottieAnimation.onDocumentLoad);
+			}
+			LottieAnimation.pump();
+		}
+	}
+
+	declare global {
+		interface HTMLElementTagNameMap {
+			'lottie-animation': LottieAnimation;
+		}
+	}
+
+	if (!customElements.get('lottie-animation')) {
+		customElements.define('lottie-animation', LottieAnimation);
+	}
+</script>
+
+<style lang="scss">
+	@use './lottie';
+</style>

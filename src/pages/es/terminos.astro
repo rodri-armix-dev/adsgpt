@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalDocument from '../../components/organisms/LegalDocument/LegalDocument.astro';
+import { terminosData as page } from '../../data/pages/terminos';
+---
+
+<BaseLayout locale="es" title="Términos y Condiciones | AdsGPT" description="Términos y Condiciones de Wortise y AdsGPT." background="inner">
+	<LegalDocument {...page} />
+</BaseLayout>

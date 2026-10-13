@@ -1,0 +1,39 @@
+---
+import type { ComponentProps } from 'astro/types';
+import StoreBadge from '../../atoms/StoreBadge/StoreBadge.astro';
+import { getUiText } from '../../../i18n/ui';
+
+export interface ManifestoLine {
+	text: string;
+	emphasis: string;
+}
+
+export interface Props {
+	lines: ManifestoLine[];
+	stores: ComponentProps<typeof StoreBadge>[];
+}
+
+const { lines, stores } = Astro.props;
+const text = getUiText(Astro.currentLocale);
+---
+
+<section class="manifesto-cta" aria-labelledby="manifesto-title">
+	<div class="manifesto-cta__inner global-inner">
+		<div class="manifesto-cta__banner">
+			<h2 class="manifesto-cta__heading" id="manifesto-title">
+				{lines.map((line) => (
+					<span class="manifesto-cta__line">{line.text} <strong class="manifesto-cta__emphasis">{line.emphasis}</strong>{' '}</span>
+				))}
+			</h2>
+			<div class="manifesto-cta__stores" aria-label={text.downloadApp}>
+				{stores.map((store) => (
+					<StoreBadge {...store} />
+				))}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	@use './manifesto-cta';
+</style>

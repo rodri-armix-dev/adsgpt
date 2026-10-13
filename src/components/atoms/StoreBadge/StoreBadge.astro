@@ -1,0 +1,22 @@
+---
+import type { ImageMetadata } from 'astro';
+
+export type StoreBadgeStore = 'apple' | 'google-play';
+
+export interface Props {
+	store: StoreBadgeStore;
+	href: string;
+	image: Pick<ImageMetadata, 'src' | 'width' | 'height'>;
+	label: string;
+}
+
+const { store, href, image, label } = Astro.props;
+---
+
+<a class:list={['store-badge', `store-badge--${store}`]} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+	<img class="store-badge__image" src={image.src} width={image.width} height={image.height} alt="" />
+</a>
+
+<style lang="scss">
+	@use './store-badge';
+</style>

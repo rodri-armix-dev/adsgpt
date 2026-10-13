@@ -1,0 +1,10 @@
+.logo
+{
+	display: block;
+
+	&__image
+	{
+		height: var(--logo-height, 26px);
+		width: auto;
+	}
+}

@@ -1,0 +1,46 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Heading from '../../atoms/Heading/Heading.astro';
+import Description from '../../atoms/Description/Description.astro';
+import Lottie from '../../atoms/Lottie/Lottie.astro';
+
+export interface Props {
+	heading: string;
+	description: string;
+	variant: 'connect' | 'objective' | 'formats' | 'optimize';
+	animation: Pick<ComponentProps<typeof Lottie>, 'src' | 'responsiveSrc' | 'ariaLabel'>;
+}
+
+const { heading, description, variant, animation } = Astro.props;
+---
+
+<article class:list={['cards-grid-item', `cards-grid-item--${variant}`]}>
+	{variant === 'formats' && (
+		<div class="cards-grid-item__dots" aria-hidden="true">
+			<img class="cards-grid-item__dots-image" src="/cards-grid/format-dots.svg" alt="" />
+		</div>
+	)}
+	{variant === 'optimize' && (
+		<div class="cards-grid-item__rings" aria-hidden="true">
+			<img class="cards-grid-item__ring cards-grid-item__ring--outer" src="/cards-grid/optimize-ring-outer.svg" alt="" />
+			<img class="cards-grid-item__ring cards-grid-item__ring--middle" src="/cards-grid/optimize-ring-middle.svg" alt="" />
+			<img class="cards-grid-item__ring cards-grid-item__ring--inner" src="/cards-grid/optimize-ring-inner.svg" alt="" />
+			<img class="cards-grid-item__ring cards-grid-item__ring--center" src="/cards-grid/optimize-ring-center.svg" alt="" />
+		</div>
+	)}
+	<div class="cards-grid-item__content">
+		<div class="cards-grid-item__heading">
+			<Heading label={heading} tag="h2" size="small" />
+		</div>
+		<div class="cards-grid-item__description">
+			<Description html={description} size="small" />
+		</div>
+	</div>
+	<div class="cards-grid-item__media">
+		<Lottie {...animation} />
+	</div>
+</article>
+
+<style lang="scss">
+	@use './cards-grid-item';
+</style>

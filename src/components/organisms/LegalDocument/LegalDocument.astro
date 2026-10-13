@@ -1,0 +1,37 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Heading from '../../atoms/Heading/Heading.astro';
+import Pill from '../../atoms/Pill/Pill.astro';
+import { sanitizeRichText } from '../../../lib/sanitize-rich-text';
+
+export interface Props {
+	title: string;
+	pill?: ComponentProps<typeof Pill>;
+	effectiveDate?: { label: string; text: string; datetime: string };
+	html: string;
+}
+
+const { title, pill, effectiveDate, html } = Astro.props;
+const content = sanitizeRichText(html, { headings: true });
+---
+
+<article class="legal-document" aria-labelledby="legal-title">
+	<div class="legal-document__inner global-inner">
+		<header class="legal-document__header">
+			{pill && (
+				<Pill {...pill} />
+			)}
+			<div class="legal-document__title">
+				<Heading label={title} tag="h1" size="medium" id="legal-title" />
+			</div>
+			{effectiveDate && (
+				<p class="legal-document__date">{effectiveDate.label} <time datetime={effectiveDate.datetime}>{effectiveDate.text}</time></p>
+			)}
+		</header>
+		<div class="legal-document__body" set:html={content} />
+	</div>
+</article>
+
+<style lang="scss">
+	@use './legal-document';
+</style>

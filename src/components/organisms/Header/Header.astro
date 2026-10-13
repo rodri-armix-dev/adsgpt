@@ -1,0 +1,77 @@
+---
+import type { ComponentProps } from 'astro/types';
+import { getUiText } from '../../../i18n/ui';
+import Icon from '../../atoms/Icon/Icon.astro';
+import Button from '../../atoms/Button/Button.astro';
+import Logo from '../../atoms/Logo/Logo.astro';
+import DownloadMenu from '../../molecules/DownloadMenu/DownloadMenu.astro';
+import LangMenu from '../../molecules/LangMenu/LangMenu.astro';
+import MainMenu from '../../molecules/MainMenu/MainMenu.astro';
+
+export interface Props {
+	expandedMenuItemIds?: string[];
+	isLangMenuExpanded?: boolean;
+	logo: ComponentProps<typeof Logo>;
+	menu: Omit<ComponentProps<typeof MainMenu>, 'currentPath' | 'expandedItemIds'>;
+	login: ComponentProps<typeof Button>;
+	download: ComponentProps<typeof DownloadMenu>;
+}
+
+const {
+	expandedMenuItemIds = [],
+	isLangMenuExpanded = false,
+	logo,
+	menu,
+	login,
+	download,
+} = Astro.props;
+const currentPath = Astro.url.pathname;
+const text = getUiText(Astro.currentLocale);
+const mobileMenuId = `header-mobile-menu-${crypto.randomUUID()}`;
+---
+
+<header class="header" data-mobile-header data-navigation-disclosure>
+	<div class="header__backdrop" aria-hidden="true" hidden></div>
+	<div class="header__shell" data-dialog-label={text.mainNavigation}>
+		<div class="header__bar" data-navigation-bar>
+			<div class="header__logo">
+				<Logo {...logo} />
+			</div>
+			<div class="header__main-menu">
+				<MainMenu {...menu} currentPath={currentPath} expandedItemIds={expandedMenuItemIds} />
+			</div>
+			<div class="header__right">
+				<div class="header__lang-menu">
+					<LangMenu expanded={isLangMenuExpanded} />
+				</div>
+				<div class="header__actions">
+					<div class="header__login">
+						<Button {...login} />
+					</div>
+					<DownloadMenu {...download} />
+				</div>
+				<button class="header__menu-toggle" type="button" aria-label={text.openMenu} aria-expanded="false" aria-controls={mobileMenuId} data-open-label={text.openMenu} data-close-label={text.closeMenu}>
+					<span class="header__menu-icon">
+						<Icon name="menu" />
+					</span>
+					<span class="header__close-icon">
+						<Icon name="menu-close" />
+					</span>
+				</button>
+			</div>
+		</div>
+		<div id={mobileMenuId} class="header__panel" data-animation="menu-enter" hidden>
+			<MainMenu {...menu} currentPath={currentPath} expandedItemIds={expandedMenuItemIds} variant="vertical" />
+			<LangMenu variant="inline" />
+			<div class="header__mobile-login">
+				<Button {...login} fullWidth />
+			</div>
+		</div>
+	</div>
+</header>
+
+<script src="./header.ts"></script>
+
+<style lang="scss">
+	@use './header';
+</style>

@@ -1,0 +1,33 @@
+---
+export type ButtonVariant = 'primary' | 'secondary';
+
+export interface Props {
+	label: string;
+	variant?: ButtonVariant;
+	fullWidth?: boolean;
+	href?: string;
+	target?: '_self' | '_blank';
+	type?: 'button' | 'submit' | 'reset';
+	disabled?: boolean;
+	ariaLabel?: string;
+	ariaExpanded?: boolean;
+	ariaControls?: string;
+}
+
+const { label, variant = 'primary', fullWidth = false, href, target = '_self', type = 'button', disabled = false, ariaLabel, ariaExpanded, ariaControls } = Astro.props;
+const classes = ['button', `button--${variant}`, { 'button--full-width': fullWidth }];
+---
+
+{href !== undefined ? (
+	<a class:list={classes} href={disabled ? undefined : href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined} aria-label={ariaLabel} aria-expanded={ariaExpanded} aria-controls={ariaControls} aria-disabled={disabled ? 'true' : undefined} tabindex={disabled ? -1 : undefined}>
+		<span class="button__label">{label}</span>
+	</a>
+) : (
+	<button class:list={classes} type={type} disabled={disabled} aria-label={ariaLabel} aria-expanded={ariaExpanded} aria-controls={ariaControls}>
+		<span class="button__label">{label}</span>
+	</button>
+)}
+
+<style lang="scss">
+	@use './button';
+</style>

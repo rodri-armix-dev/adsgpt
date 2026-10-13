@@ -1,0 +1,118 @@
+@use 'sass:map';
+@use 'shared:breakpoints' as *;
+
+@function media-query($range)
+{
+	@if not map.has-key($media-queries, $range)
+	{
+		@error 'Unknown responsive range: #{$range}. Valid ranges: #{map.keys($media-queries)}.';
+	}
+
+	@return map.get($media-queries, $range);
+}
+
+@mixin media($range)
+{ // sass-lint:disable-line indentation
+	@media #{media-query($range)}
+	{
+		@content;
+	}
+}
+
+// Keep the existing shorthand API. Query formulas live only in the map above.
+
+@mixin m
+{
+	@include media(m)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin l
+{
+	@include media(l)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin xl
+{
+	@include media(xl)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin xxl
+{
+	@include media(xxl)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin os
+{
+	@include media(os)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin om
+{
+	@include media(om)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin ol
+{
+	@include media(ol)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin oxl
+{
+	@include media(oxl)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin oxxl
+{
+	@include media(oxxl)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin osm
+{
+	@include media(osm)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin osml
+{
+	@include media(osml)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}
+
+@mixin oml
+{
+	@include media(oml)
+	{ // sass-lint:disable-line indentation
+		@content;
+	}
+}

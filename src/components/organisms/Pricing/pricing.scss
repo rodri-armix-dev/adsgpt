@@ -1,0 +1,158 @@
+// sass-lint:disable no-color-literals
+.pricing
+{
+	padding-block: 56px var(--spacing-24);
+
+	&__inner
+	{
+		--global-item-gap: var(--spacing-24);
+	}
+
+	&__heading
+	{
+		color: #21242a;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	&__billing
+	{
+		background: #fff;
+		border: 1px solid #efefef;
+		border-radius: var(--radius-pricing-billing);
+		display: flex;
+		max-width: 295px;
+		min-width: 0;
+		padding: var(--spacing-8);
+		width: 100%;
+	}
+
+	&__billing-legend
+	{
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+
+	&__billing-option
+	{
+		flex: 1;
+		min-width: 0;
+		position: relative;
+	}
+
+	&__billing-input
+	{
+		border-radius: var(--radius-pricing-option);
+		height: 100%;
+		inset: 0;
+		position: absolute;
+		width: 100%;
+	}
+
+	&__billing-label
+	{
+		align-items: center;
+		border-radius: var(--radius-pricing-option);
+		color: #21242a;
+		display: flex;
+		font-size: 14px;
+		gap: var(--spacing-4);
+		justify-content: center;
+		line-height: 20px;
+		padding: 11px var(--spacing-4);
+		white-space: nowrap;
+
+		.pricing__billing-input:checked + &
+		{
+			background: #ebf4ff;
+			color: #0055cc;
+			font-weight: 600;
+		}
+	}
+
+	&__discount
+	{
+		color: #4d5159;
+		font-size: 12px;
+		font-weight: 500;
+	}
+
+	&__items
+	{
+		display: grid;
+		gap: var(--spacing-20);
+		grid-template-columns: minmax(0, 1fr);
+		width: 100%;
+	}
+
+	&__item
+	{
+		min-width: 0;
+	}
+}
+
+@include m
+{
+	.pricing
+	{
+		padding-block: var(--spacing-64) var(--spacing-48);
+
+		&__items
+		{
+			gap: var(--spacing-24);
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+}
+
+@include l
+{
+	.pricing
+	{
+		&__inner
+		{
+			--global-item-gap: var(--spacing-32);
+		}
+	}
+}
+
+@include xl
+{
+	.pricing
+	{
+		padding-block: 80px var(--spacing-64);
+
+		&__billing-label
+		{
+			font-size: 18px;
+		}
+
+		&__discount
+		{
+			font-size: 14px;
+		}
+
+		&__items
+		{
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+}
+
+@include xxl
+{
+	.pricing
+	{
+		&__item
+		{
+			display: grid;
+			grid-row: span 2;
+			grid-template-rows: subgrid;
+		}
+	}
+}
+// sass-lint:enable no-color-literals

@@ -1,0 +1,47 @@
+---
+import { getLocaleFromPath } from '../../../i18n/navigation';
+import { getUiText } from '../../../i18n/ui';
+import { storesData } from '../../../data/global/stores';
+import Icon from '../../atoms/Icon/Icon.astro';
+import Button from '../../atoms/Button/Button.astro';
+
+export interface Props {
+	label: string;
+}
+
+const { label } = Astro.props;
+const text = getUiText(Astro.currentLocale);
+const stores = storesData[getLocaleFromPath(Astro.url.pathname)];
+const menuId = `download-options-${crypto.randomUUID()}`;
+---
+
+<div class="download-menu" data-download-menu data-navigation-disclosure>
+	<Button label={label} variant="primary" ariaExpanded={false} ariaControls={menuId} />
+	<div id={menuId} class="download-menu__panel" data-animation="menu-enter" hidden>
+		<p class="download-menu__heading">{text.downloadApp}</p>
+		<ul class="download-menu__list">
+			{stores.map((store) => (
+				<li class="download-menu__item">
+					<a class="download-menu__link" href={store.href} target="_blank" rel="noopener noreferrer" aria-label={store.label} data-store={store.store}>
+						<span class="download-menu__platform">
+							<Icon name={store.store === 'apple' ? 'download-apple' : 'download-smartphone'} />
+						</span>
+						<span class="download-menu__destination">
+							<span class="download-menu__name">{store.store === 'apple' ? 'iOS' : 'Android'}</span>
+							<span class="download-menu__store">{store.store === 'apple' ? 'App Store' : 'Google Play'}</span>
+						</span>
+						<span class="download-menu__arrow">
+							<Icon name="download-arrow" />
+						</span>
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</div>
+
+<script src="./download-menu.ts"></script>
+
+<style lang="scss">
+	@use './download-menu';
+</style>

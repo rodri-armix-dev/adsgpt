@@ -1,0 +1,27 @@
+// sass-lint:disable no-color-literals
+@mixin navigation-disclosure-surface
+{
+	background: #fff;
+	border: 1px solid #efefef;
+	box-shadow: 0 12px 28px rgba(6, 20, 33, .08);
+}
+
+@mixin navigation-disclosure-panel
+{
+	@include navigation-disclosure-surface;
+
+	border-radius: var(--radius-menu);
+	max-height: calc(100dvh - var(--navigation-disclosure-panel-top, 0px) - var(--spacing-16));
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	position: absolute;
+	top: calc(var(--navigation-disclosure-anchor-bottom, 100%) + var(--spacing-16));
+	z-index: 10;
+}
+
+@mixin navigation-disclosure-option-highlight
+{
+	background: #ebf4ff;
+	color: #05c;
+}
+// sass-lint:enable no-color-literals

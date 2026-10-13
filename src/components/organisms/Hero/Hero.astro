@@ -1,0 +1,51 @@
+---
+import { getUiText } from '../../../i18n/ui';
+import type { ComponentProps } from 'astro/types';
+import Heading from '../../atoms/Heading/Heading.astro';
+import Description from '../../atoms/Description/Description.astro';
+import StoreBadge from '../../atoms/StoreBadge/StoreBadge.astro';
+import PhoneMockup from '../../molecules/PhoneMockup/PhoneMockup.astro';
+
+export interface Props {
+	heading: string;
+	description?: string;
+	phone: ComponentProps<typeof PhoneMockup>;
+	stores: ComponentProps<typeof StoreBadge>[];
+}
+
+const text = getUiText(Astro.currentLocale);
+const { heading, description, phone, stores } = Astro.props;
+---
+
+<section class="hero">
+	<div class="hero__inner global-inner">
+		<div class="hero__left">
+			<div class="hero__heading">
+				<Heading label={heading} tag="h1" size="medium" responsiveSize={{ xl: "normal" }} />
+			</div>
+		</div>
+		<div class="hero__center">
+			<div class="hero__media">
+				<PhoneMockup {...phone} fetchPriority="high" loading="eager" animationLoading="after-load" />
+			</div>
+		</div>
+		<div class="hero__right">
+			{description && (
+				<div class="hero__description">
+					<Description html={description} size="extra-small" responsiveSize={{ l: "normal", xl: "large" }} />
+				</div>
+			)}
+			<div class="hero__stores" aria-label={text.downloadApp}>
+				{stores.map((store) => (
+					<div class="hero__store-badge">
+						<StoreBadge {...store} />
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	@use './hero';
+</style>

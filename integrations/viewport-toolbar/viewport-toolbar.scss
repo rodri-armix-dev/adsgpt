@@ -1,0 +1,59 @@
+.viewport-toolbar
+{
+	display: flex;
+
+	&[hidden]
+	{
+		display: none;
+	}
+
+	&__button
+	{
+		// sass-lint:disable no-color-literals
+		background: transparent;
+		border: 0;
+		border-left: 1px solid #343841;
+		color: #fff;
+		cursor: pointer;
+		font-family: system-ui, sans-serif;
+		font-size: 12px;
+		min-width: 54px;
+		padding: 0 8px;
+		white-space: nowrap;
+
+		&:hover:enabled
+		{
+			background: #ffffff20;
+		}
+		// sass-lint:enable no-color-literals
+
+		&:focus-visible
+		{
+			outline-offset: -3px;
+		}
+
+		&:disabled
+		{
+			cursor: default;
+			opacity: .5;
+		}
+	}
+
+	&__status
+	{
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+}
+
+@include osm
+{
+	:host
+	{
+		display: none;
+	}
+}

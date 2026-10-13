@@ -1,0 +1,87 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+.pnpm-store/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env*
+!.env.example
+!.env.sample
+!.env.template
+
+# local credentials
+.npmrc
+.netrc
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+
+# local databases and backups
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+backups/
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# local editor and assistant configuration
+.vscode/
+.codex/
+.agents/
+.claude/
+.cursor/
+.gemini/
+.windsurf/
+.opencode/
+.aider*
+.cursorrules
+.cursorignore
+AGENTS.md
+CLAUDE.md
+SKILL.md
+GEMINI.md
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+
+# personal tooling, archived experiments and reports
+/scripts/
+/reports/
+/pending-deletion/
+/docs/performance.md
+/docs/publication-review.md
+/public/lotties/**/report.json
+/public/lotties/**/README.md
+
+# local browser audits and test artifacts
+.cache/
+.playwright/
+playwright-report/
+test-results/
+coverage/
+*.log
+*.report.html
+*.report.json
+*.har
+*.cpuprofile
+*.heapsnapshot

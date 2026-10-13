@@ -1,0 +1,42 @@
+---
+import { getUiText } from '../../../i18n/ui';
+import Description from '../../atoms/Description/Description.astro';
+
+export interface Brand {
+	src: string;
+	alt: string;
+	width: number;
+	height: number;
+	mobileWidth: number;
+	mobileHeight: number;
+}
+
+export interface Props {
+	description: string;
+	brands: Brand[];
+}
+
+const text = getUiText(Astro.currentLocale);
+const { description, brands } = Astro.props;
+---
+
+<section class="brands-marquee">
+	<div class="brands-marquee__inner global-inner">
+		<div class="brands-marquee__description">
+			<Description html={description} size="small" responsiveSize={{ l: "normal" }} />
+		</div>
+		<div class="brands-marquee__viewport" tabindex="0" aria-label={text.trustedBrands}>
+			<ul class="brands-marquee__track" aria-label={text.trustedBrands}>
+				{Array.from({ length: 4 }, (_, copy) => brands.map((brand) => (
+					<li class="brands-marquee__brand" aria-hidden={copy > 0 ? 'true' : undefined} style={`--brands-marquee-logo-width: ${brand.width}px; --brands-marquee-logo-height: ${brand.height}px; --brands-marquee-logo-mobile-width: ${brand.mobileWidth}px; --brands-marquee-logo-mobile-height: ${brand.mobileHeight}px;`}>
+						<img class="brands-marquee__image" src={brand.src} width={brand.width} height={brand.height} alt={copy === 0 ? brand.alt : ''} decoding="async" />
+					</li>
+				)))}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	@use './brands-marquee';
+</style>

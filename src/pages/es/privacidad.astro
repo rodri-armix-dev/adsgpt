@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalDocument from '../../components/organisms/LegalDocument/LegalDocument.astro';
+import { privacidadData as page } from '../../data/pages/privacidad';
+---
+
+<BaseLayout locale="es" title="Política de Privacidad | AdsGPT" description="Política de Privacidad de Wortise y AdsGPT." background="inner">
+	<LegalDocument {...page} />
+</BaseLayout>

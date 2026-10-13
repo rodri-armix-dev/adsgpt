@@ -1,0 +1,104 @@
+// sass-lint:disable no-color-literals
+.banner-cta
+{
+	padding-block: 48px 0;
+
+	&__banner
+	{
+		align-items: center;
+		background-color: #0f4be7;
+		background-image: linear-gradient(#0f4be757, #0f4be757), url('/banner-cta/banner-cta-bg.webp');
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: var(--radius-banner);
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+		padding: 48px 24px;
+		width: 100%;
+	}
+
+	&__content
+	{
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		margin-inline: auto;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	&__text
+	{
+		color: var(--color-text-inverse);
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		width: 100%;
+	}
+
+	&__heading
+	{
+		text-wrap: balance;
+	}
+
+	&__description
+	{
+		margin-inline: auto;
+		max-width: 580px;
+	}
+
+	&__stores
+	{
+		--store-badge-image-height: 60px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+
+@include m
+{
+	.banner-cta
+	{
+		&__stores
+		{
+			flex-direction: row;
+			gap: 20px;
+		}
+	}
+}
+
+@include l
+{
+	.banner-cta
+	{
+		padding-block-start: 54px;
+
+		&__banner
+		{
+			// Conserva el encuadre de Figma tras recortar la franja inferior del archivo.
+			background-position: left 28%;
+			background-size: 231.852% auto;
+			border-radius: var(--radius-banner-desktop);
+			min-height: 482px;
+			padding-block: 59px;
+		}
+
+		&__content,
+		&__text
+		{
+			gap: 28px;
+		}
+
+		&__stores
+		{
+			--store-badge-image-height: 50px;
+			flex-direction: row;
+			gap: 25px;
+		}
+	}
+}
+// sass-lint:enable no-color-literals

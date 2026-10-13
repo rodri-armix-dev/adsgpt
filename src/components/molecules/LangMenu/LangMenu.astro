@@ -1,0 +1,63 @@
+---
+import { getLanguageItems, getLocaleFromPath } from '../../../i18n/navigation';
+import { uiText, formatLabel } from '../../../i18n/ui';
+import Icon from '../../atoms/Icon/Icon.astro';
+
+export interface Props {
+	expanded?: boolean;
+	variant?: 'dropdown' | 'inline';
+}
+
+const { expanded = false, variant = 'dropdown' } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+const items = getLanguageItems(Astro.url.pathname, basePath).filter((item) => variant !== 'inline' || item.available);
+const currentCode = getLocaleFromPath(Astro.url.pathname, basePath);
+
+const text = uiText[currentCode];
+const normalizedCurrentCode = currentCode.toLowerCase();
+const currentItem = items.find(
+	(item) => item.code.toLowerCase() === normalizedCurrentCode,
+);
+const menuId = `lang-menu-options-${crypto.randomUUID()}`;
+---
+
+<nav class:list={['lang-menu', `lang-menu--${variant}`]} aria-label={text.selectLanguage} data-lang-menu={variant === 'dropdown' ? '' : undefined} data-navigation-disclosure={variant === 'dropdown' ? '' : undefined}>
+	{variant === 'dropdown' ? (
+		<button class="lang-menu__toggle" type="button" aria-expanded={expanded} aria-controls={menuId} data-open-label={formatLabel(text.openLanguage, currentItem?.label ?? currentCode)} data-close-label={formatLabel(text.closeLanguage, currentItem?.label ?? currentCode)} aria-label={formatLabel(expanded ? text.closeLanguage : text.openLanguage, currentItem?.label ?? currentCode)} >
+			<span class="lang-menu__code">{currentItem?.code.toUpperCase() ?? currentCode.toUpperCase()}</span>
+			<span class="lang-menu__indicator">
+				<Icon name="language-chevron" />
+			</span>
+		</button>
+	) : (
+		<p class="lang-menu__heading">{text.language}</p>
+	)}
+
+	<ul id={menuId} class="lang-menu__list" data-animation={variant === 'dropdown' ? 'menu-enter' : undefined} hidden={variant === 'dropdown' && !expanded}>
+		{items.map((item) => {
+			const isCurrent = item.code.toLowerCase() === normalizedCurrentCode;
+
+			return (
+				<li class:list={[ 'lang-menu__item', { 'lang-menu__item--current': isCurrent, 'lang-menu__item--disabled': !item.available, }, ]} >
+					{item.available ? (
+						<a class="lang-menu__link" href={item.href} hreflang={item.code.toLowerCase()} lang={item.code.toLowerCase()} aria-current={isCurrent ? 'page' : undefined} >
+							<span class="lang-menu__code">{item.code.toUpperCase()}</span>
+							<span class="lang-menu__label">{item.label}</span>
+						</a>
+					) : (
+						<span class="lang-menu__unavailable" aria-disabled="true" aria-label={formatLabel(text.unavailableLanguage, item.label)}>
+							<span class="lang-menu__code">{item.code.toUpperCase()}</span>
+							<span class="lang-menu__label">{item.label}</span>
+						</span>
+					)}
+				</li>
+			);
+		})}
+	</ul>
+</nav>
+
+<script src="./lang-menu.ts"></script>
+
+<style lang="scss">
+	@use './lang-menu';
+</style>

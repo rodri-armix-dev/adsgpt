@@ -1,0 +1,52 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Heading from '../../atoms/Heading/Heading.astro';
+import PricingItem from '../../molecules/PricingItem/PricingItem.astro';
+
+export interface Props {
+	heading: string;
+	items: ComponentProps<typeof PricingItem>[];
+	id?: string;
+	annualDiscount?: number;
+	billingLabels: {
+		legend: string;
+		monthly: string;
+		annual: string;
+		discountSuffix: string;
+	};
+}
+
+const { heading, items, id = 'pricing', annualDiscount = 20, billingLabels } = Astro.props;
+---
+
+<section class="pricing" id={id} aria-labelledby={`${id}-heading`} data-pricing data-annual-discount={annualDiscount}>
+	<div class="pricing__inner global-inner">
+		<div class="pricing__heading">
+			<Heading label={heading} tag="h2" size="medium" responsiveSize={{ l: "normal", xl: "extra-large" }} id={`${id}-heading`} />
+		</div>
+		<fieldset class="pricing__billing">
+			<legend class="pricing__billing-legend">{billingLabels.legend}</legend>
+			<label class="pricing__billing-option">
+				<input class="pricing__billing-input" type="radio" name={`${id}-billing`} value="monthly" data-billing-period checked />
+				<span class="pricing__billing-label">{billingLabels.monthly}</span>
+			</label>
+			<label class="pricing__billing-option">
+				<input class="pricing__billing-input" type="radio" name={`${id}-billing`} value="annual" data-billing-period />
+				<span class="pricing__billing-label">{billingLabels.annual} <span class="pricing__discount">{annualDiscount}{billingLabels.discountSuffix}</span></span>
+			</label>
+		</fieldset>
+		<div class="pricing__items">
+			{items.map((item) => (
+				<div class="pricing__item">
+					<PricingItem {...item} />
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<script src="./pricing.ts"></script>
+
+<style lang="scss">
+	@use './pricing';
+</style>

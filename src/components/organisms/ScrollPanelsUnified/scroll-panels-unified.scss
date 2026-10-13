@@ -1,0 +1,300 @@
+// sass-lint:disable no-color-literals
+@use 'sass:map';
+@use 'sass:math';
+
+$phone-viewport-height-limit: 0.8;
+
+.scroll-panels-unified
+{
+	--scroll-panels-dark-background: #0c0d0e;
+	--scroll-panels-unified-border-color: #d1d1d1;
+	// Reservar 112 px más el área segura para el header siempre visible.
+	--scroll-panels-mobile-top-space: calc(var(--spacing-48) + var(--spacing-64) + env(safe-area-inset-top, 0px));
+	// Reserva común: texto y beneficios; no se mide cada slide con JavaScript.
+	--scroll-panels-unified-text-height: 288px;
+	--scroll-panels-unified-phone-gap: var(--spacing-24);
+	--scroll-panels-unified-viewport-height: 100dvh;
+	--scroll-panels-unified-viewport-inset: 0px;
+	--scroll-panels-unified-phone-top: calc(var(--scroll-panels-mobile-top-space) + var(--scroll-panels-unified-text-height) + var(--scroll-panels-unified-phone-gap) + var(--scroll-panels-unified-viewport-inset));
+
+	background-color: var(--color-surface);
+	color: #21242a;
+	display: grid;
+	grid-template-areas: "scene";
+	overflow-anchor: none;
+
+	&[data-transitioning]
+	{
+		will-change: background-color;
+	}
+
+	&[data-input='touch']
+	{
+		transition: background-color var(--scroll-panels-unified-transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	&[data-pinning='sticky']
+	{
+		height: var(--scroll-panels-unified-track-height, var(--scroll-panels-unified-viewport-height));
+	}
+
+	@supports (-webkit-touch-callout: none)
+	{
+		--scroll-panels-unified-viewport-inset: 6px;
+	}
+
+	// La escena y el teléfono comparten el área, pero solo la escena pertenece al pin.
+	> :global(.pin-spacer)
+	{
+		grid-area: scene;
+	}
+
+	&__scene
+	{
+		background-color: inherit;
+		grid-area: scene;
+		height: var(--scroll-panels-unified-viewport-height);
+		isolation: isolate;
+		min-width: var(--layout-min-width);
+		overflow: clip;
+		position: relative;
+
+		[data-pinning='sticky'] &
+		{
+			align-self: start;
+			position: sticky;
+			top: var(--scroll-panels-unified-viewport-inset);
+		}
+
+		@supports (-webkit-touch-callout: none)
+		{
+			// Conservar la separación de las barras de Safari tanto en sticky como en fixed.
+			height: calc(var(--scroll-panels-unified-viewport-height) - 12px);
+			margin-block: 6px;
+
+			[data-pinning='sticky'] &
+			{
+				// El fondo lo pinta el organismo; Safari no debe extender el del sticky.
+				background-color: transparent;
+			}
+		}
+	}
+
+	&__step
+	{
+		height: 100%;
+		inset: 0;
+		position: absolute;
+		translate: 0 0%;
+
+		&[data-animating]
+		{
+			will-change: translate;
+		}
+
+		&:not([data-step='0'])
+		{
+			translate: 0 100%;
+		}
+	}
+
+	&__phone-layout
+	{
+		--layout-gutter: var(--spacing-24);
+
+		align-self: start;
+		grid-area: scene;
+		height: max(0px, calc(var(--scroll-panels-unified-viewport-height) - var(--scroll-panels-unified-phone-top) - var(--scroll-panels-unified-viewport-inset)));
+		justify-content: flex-start;
+		margin-top: var(--scroll-panels-unified-phone-top);
+		overflow: clip;
+		pointer-events: none;
+		position: sticky;
+		top: var(--scroll-panels-unified-phone-top);
+		z-index: 1;
+
+		[data-pinning='sticky'] &
+		{
+			transition: height 0.2s ease-out;
+		}
+	}
+
+	&__phone-cut
+	{
+		background-image: linear-gradient(to right, transparent, currentColor, transparent);
+		bottom: 0;
+		color: var(--scroll-panels-unified-border-color);
+		display: none;
+		height: 1px;
+		left: 0;
+		pointer-events: none;
+		position: absolute;
+		right: 0;
+		z-index: 2;
+
+		[data-input='touch'] &
+		{
+			transition: color var(--scroll-panels-unified-transition-duration) cubic-bezier(0.215, 0.61, 0.355, 1);
+		}
+
+		@supports (-webkit-touch-callout: none)
+		{
+			display: block;
+		}
+	}
+
+	&__phone
+	{
+		--phone-mockup-width: var(--layout-phone-width);
+
+		display: flex;
+		flex-shrink: 0;
+		justify-content: center;
+	}
+
+	&__animations
+	{
+		height: 100%;
+		position: relative;
+
+		&[data-transitioning]
+		{
+			clip-path: var(--phone-mockup-screen-clip);
+		}
+	}
+
+	&__animation
+	{
+		height: 100%;
+		inset: 0;
+		position: absolute;
+		translate: 0 100%;
+		visibility: hidden;
+
+		&[data-animating]
+		{
+			will-change: translate;
+		}
+
+		&[data-animation-step='0']
+		{
+			translate: 0 0%;
+			visibility: visible;
+		}
+	}
+}
+
+@include l
+{
+	.scroll-panels-unified
+	{
+		--scroll-panels-column-gap: 40px;
+		--scroll-panels-media-width: var(--layout-phone-width);
+		--scroll-panels-unified-phone-top: var(--scroll-panels-unified-viewport-inset);
+
+		&__phone-layout
+		{
+			--global-item-gap: var(--scroll-panels-column-gap);
+			--layout-gutter: var(--spacing-48);
+
+			align-items: end;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) var(--scroll-panels-media-width) minmax(0, 1fr);
+		}
+
+		&__phone
+		{
+			grid-column: 2;
+			margin-bottom: -118px;
+		}
+	}
+}
+
+@include xl
+{
+	.scroll-panels-unified
+	{
+		--scroll-panels-column-gap: var(--spacing-64);
+
+		&__phone-layout
+		{
+			--layout-content-max-width: 1280px;
+		}
+	}
+}
+
+@include xxl
+{
+	.scroll-panels-unified
+	{
+		&__phone-layout
+		{
+			--layout-content-max-width: 1584px;
+		}
+	}
+}
+
+@each $range, $phone-range in (ol: l, oxl: xl, oxxl: xxl)
+{
+	$center-min-height: math.div(map.get($phone-widths, $phone-range), $phone-aspect-ratio * $phone-viewport-height-limit);
+
+	@media #{media-query($range)} and (min-height: #{$center-min-height})
+	{
+		.scroll-panels-unified
+		{
+			&__phone-layout
+			{
+				align-items: center;
+			}
+
+			&__phone
+			{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+	.scroll-panels-unified
+	{
+		&[data-input='touch']
+		{
+			transition: none;
+		}
+
+		&__phone-cut
+		{
+			[data-input='touch'] &
+			{
+				transition: none;
+			}
+		}
+
+		&__phone-layout
+		{
+			[data-pinning='sticky'] &
+			{
+				transition: none;
+			}
+		}
+
+		&__step,
+		&__animation
+		{
+			visibility: visible;
+
+			&[data-step],
+			&[data-animation-step]
+			{
+				translate: none;
+			}
+
+			&[aria-hidden='true']
+			{
+				visibility: hidden;
+			}
+		}
+	}
+}
