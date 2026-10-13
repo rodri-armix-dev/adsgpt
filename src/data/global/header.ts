@@ -18,6 +18,11 @@ export const headerData = {
 					id: "pricing",
 					label: "Planes",
 					href: "/es/#pricing"
+				},
+				{
+					id: "documentation",
+					label: "Documentación",
+					href: "https://docs.adsgpt.dev/"
 				}
 			]
 		},
@@ -46,6 +51,11 @@ export const headerData = {
 					id: "pricing",
 					label: "Plans",
 					href: "/en/#pricing"
+				},
+				{
+					id: "documentation",
+					label: "Documentation",
+					href: "https://docs.adsgpt.dev/"
 				}
 			]
 		},
@@ -74,6 +84,11 @@ export const headerData = {
 					id: "pricing",
 					label: "Planos",
 					href: "/pt/#pricing"
+				},
+				{
+					id: "documentation",
+					label: "Documentação",
+					href: "https://docs.adsgpt.dev/"
 				}
 			]
 		},
