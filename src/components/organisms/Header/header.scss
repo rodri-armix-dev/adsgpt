@@ -197,8 +197,16 @@
 
 		&__bar
 		{
+			display: grid;
+			grid-template-columns: 1fr auto 1fr;
 			height: auto;
-			padding: 14px 14px 14px 27px;
+			padding: 14px;
+		}
+
+		&__logo
+		{
+			justify-self: start;
+			padding-inline-start: 13px;
 		}
 
 		&__main-menu,
@@ -211,6 +219,7 @@
 		&__right
 		{
 			gap: 16px;
+			justify-self: end;
 		}
 
 		&__menu-toggle,

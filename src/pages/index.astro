@@ -1,5 +1,21 @@
 ---
-import { defaultLocale } from '../i18n/config';
+import { localeCookieName } from '../i18n/config';
+import { getPreferredLocale } from '../i18n/preferred-locale';
 
-return Astro.redirect(`/${defaultLocale}/`);
+export const prerender = false;
+
+const locale = getPreferredLocale(
+	Astro.request.headers.get('Accept-Language'),
+	Astro.cookies.get(localeCookieName)?.value,
+);
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+return new Response(null, {
+	status: 302,
+	headers: {
+		Location: `${basePath}/${locale}/${Astro.url.search}`,
+		'Cache-Control': 'private, no-store',
+		Vary: 'Accept-Language, Cookie',
+	},
+});
 ---
