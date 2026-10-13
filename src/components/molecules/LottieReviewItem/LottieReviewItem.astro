@@ -44,7 +44,7 @@ const number = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 1 });
 		</label>
 		<div class="lottie-review-item__stage" tabindex="0" role="region" aria-label={`Vista a tamaño real de ${file.name}`}>
 			<div class="lottie-review-item__canvas" style={{ '--lottie-review-width': `${file.previewWidth}px`, '--lottie-aspect-ratio': `${file.compositionWidth} / ${file.compositionHeight}` }}>
-				<Lottie src={file.previewUrl} autoplay={false} loop={true} ariaLabel={file.name} />
+				<Lottie src={file.previewUrl} autoplay={false} loop={true} progressEvents={true} ariaLabel={file.name} />
 			</div>
 		</div>
 	</article>

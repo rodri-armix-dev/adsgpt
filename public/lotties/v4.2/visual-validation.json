@@ -1,0 +1,282 @@
+[
+  {
+    "name": "hero",
+    "frames": [
+      {
+        "progress": 0,
+        "changedChannels": 19013,
+        "maxDifference": 71,
+        "meanDifference": 0.011118812279009965,
+        "psnr": 55.20462020216247
+      },
+      {
+        "progress": 0.15,
+        "changedChannels": 19013,
+        "maxDifference": 71,
+        "meanDifference": 0.011118812279009965,
+        "psnr": 55.20462020216247
+      },
+      {
+        "progress": 0.5,
+        "changedChannels": 909904,
+        "maxDifference": 91,
+        "meanDifference": 0.2741510718016715,
+        "psnr": 44.758525486466766
+      },
+      {
+        "progress": 0.85,
+        "changedChannels": 352625,
+        "maxDifference": 84,
+        "meanDifference": 0.10900597175345549,
+        "psnr": 48.4101469047022
+      },
+      {
+        "progress": 1,
+        "changedChannels": 19013,
+        "maxDifference": 71,
+        "meanDifference": 0.011118812279009965,
+        "psnr": 55.20462020216247
+      }
+    ]
+  },
+  {
+    "name": "tu-marca-en-cada-formato",
+    "frames": [
+      {
+        "progress": 0,
+        "changedChannels": 1049701,
+        "maxDifference": 74,
+        "meanDifference": 0.6010569122126088,
+        "psnr": 41.35937775810811
+      },
+      {
+        "progress": 0.15,
+        "changedChannels": 863573,
+        "maxDifference": 89,
+        "meanDifference": 0.5768931430419665,
+        "psnr": 40.700016719215775
+      },
+      {
+        "progress": 0.5,
+        "changedChannels": 616216,
+        "maxDifference": 113,
+        "meanDifference": 0.49458867348588986,
+        "psnr": 39.87819574332393
+      },
+      {
+        "progress": 0.85,
+        "changedChannels": 997569,
+        "maxDifference": 76,
+        "meanDifference": 0.5428376677852349,
+        "psnr": 41.99630978531718
+      },
+      {
+        "progress": 1,
+        "changedChannels": 1052414,
+        "maxDifference": 76,
+        "meanDifference": 0.6021596874073475,
+        "psnr": 41.38665847640472
+      }
+    ]
+  },
+  {
+    "name": "lanza-y-optimiza",
+    "frames": [
+      {
+        "progress": 0,
+        "changedChannels": 8184,
+        "maxDifference": 65,
+        "meanDifference": 0.005316851951467336,
+        "psnr": 60.75997718565162
+      },
+      {
+        "progress": 0.15,
+        "changedChannels": 8014,
+        "maxDifference": 48,
+        "meanDifference": 0.004519305480843942,
+        "psnr": 63.93989372990986
+      },
+      {
+        "progress": 0.5,
+        "changedChannels": 8222,
+        "maxDifference": 70,
+        "meanDifference": 0.005335529854760624,
+        "psnr": 60.73851249288297
+      },
+      {
+        "progress": 0.85,
+        "changedChannels": 8039,
+        "maxDifference": 59,
+        "meanDifference": 0.0046922628653397885,
+        "psnr": 62.626102319074015
+      },
+      {
+        "progress": 1,
+        "changedChannels": 8173,
+        "maxDifference": 79,
+        "meanDifference": 0.0052559619867312175,
+        "psnr": 60.677458854644414
+      }
+    ]
+  },
+  {
+    "name": "conecta",
+    "frames": [
+      {
+        "progress": 0,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      },
+      {
+        "progress": 0.15,
+        "changedChannels": 4668,
+        "maxDifference": 27,
+        "meanDifference": 0.0009440215011918082,
+        "psnr": 71.32862287714244
+      },
+      {
+        "progress": 0.5,
+        "changedChannels": 1100,
+        "maxDifference": 28,
+        "meanDifference": 0.0004972834679184706,
+        "psnr": 71.39968498830639
+      },
+      {
+        "progress": 0.85,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      },
+      {
+        "progress": 1,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      }
+    ]
+  },
+  {
+    "name": "describe",
+    "frames": [
+      {
+        "progress": 0,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      },
+      {
+        "progress": 0.15,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      },
+      {
+        "progress": 0.5,
+        "changedChannels": 3798,
+        "maxDifference": 56,
+        "meanDifference": 0.003705475530376085,
+        "psnr": 60.26569220064124
+      },
+      {
+        "progress": 0.85,
+        "changedChannels": 54533,
+        "maxDifference": 58,
+        "meanDifference": 0.019020963918354228,
+        "psnr": 56.1417115108269
+      },
+      {
+        "progress": 1,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      }
+    ]
+  },
+  {
+    "name": "crea",
+    "frames": [
+      {
+        "progress": 0,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      },
+      {
+        "progress": 0.15,
+        "changedChannels": 1074304,
+        "maxDifference": 70,
+        "meanDifference": 0.2824769969463195,
+        "psnr": 45.705630067874885
+      },
+      {
+        "progress": 0.5,
+        "changedChannels": 143433,
+        "maxDifference": 29,
+        "meanDifference": 0.031045709779813566,
+        "psnr": 57.440971756769784
+      },
+      {
+        "progress": 0.85,
+        "changedChannels": 7387,
+        "maxDifference": 61,
+        "meanDifference": 0.007779351494696239,
+        "psnr": 55.88388524372917
+      },
+      {
+        "progress": 1,
+        "changedChannels": 0,
+        "maxDifference": 0,
+        "meanDifference": 0,
+        "psnr": null
+      }
+    ]
+  },
+  {
+    "name": "lanza",
+    "frames": [
+      {
+        "progress": 0,
+        "changedChannels": 581470,
+        "maxDifference": 63,
+        "meanDifference": 0.14873784554805528,
+        "psnr": 48.70656076655322
+      },
+      {
+        "progress": 0.15,
+        "changedChannels": 16487,
+        "maxDifference": 63,
+        "meanDifference": 0.007926510768241723,
+        "psnr": 57.46112070932003
+      },
+      {
+        "progress": 0.5,
+        "changedChannels": 493669,
+        "maxDifference": 63,
+        "meanDifference": 0.12349437982160077,
+        "psnr": 50.1121362282685
+      },
+      {
+        "progress": 0.85,
+        "changedChannels": 1121009,
+        "maxDifference": 90,
+        "meanDifference": 0.4122762475891996,
+        "psnr": 43.005636594173644
+      },
+      {
+        "progress": 1,
+        "changedChannels": 581470,
+        "maxDifference": 63,
+        "meanDifference": 0.14873784554805528,
+        "psnr": 48.70656076655322
+      }
+    ]
+  }
+]

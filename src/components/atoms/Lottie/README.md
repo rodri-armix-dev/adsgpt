@@ -15,6 +15,12 @@ El reproductor SVG se importa al solicitar la primera animación y se comparte
 entre instancias; conserva soporte para expresiones sin cargar los renderers
 canvas y HTML.
 
+La reproducción usa los fotogramas definidos por el archivo (`setSubframe(false)`),
+sin interpolar fotogramas adicionales para pantallas de 120/144 Hz. Se conservan
+los FPS del archivo y su duración. Las llamadas repetidas a `setProgress()` que
+apuntan al mismo fotograma pausado no vuelven a renderizarlo. Los cambios de bucle,
+reproducción y eventos de estado también evitan operaciones repetidas.
+
 Con `loading="manual"`, el consumidor solicita la preparación mediante
 `prepare()`. CardsSnap usa este modo: al aproximarse su escena, prepara la tarjeta
 actual y la vecina en la dirección del scroll. Cambiar la dirección prepara la
@@ -60,6 +66,11 @@ API pública:
 Eventos con propagación: `lottie:ready`, `lottie:progress`, `lottie:state` y
 `lottie:error`. Su `detail` contiene `{ ready, progress, playing, loop }`.
 El átomo destruye su instancia al quitarse del DOM.
+
+`lottie:progress` se activa únicamente con `progressEvents={true}`. Se emite una
+vez por fotograma distinto; el home no lo necesita. La galería de revisión lo
+activa para actualizar su control de progreso. `lottie:state` se emite solo si
+cambia alguno de los valores de su detalle.
 
 ## Accessibility
 

@@ -21,20 +21,29 @@ Formato: `v<entrega>.<revisión>`.
 | `v2.0` | `Nuevos-20261013T153253Z-1-001.zip`, recibido el 13/10/2026; cuatro JSON y diez alternativas dotLottie |
 | `v3.0` | `drive-download-20261013T155857Z-1-001.zip`, recibido el 13/10/2026; Hero, Dile tu objetivo desktop y Lanza y optimiza |
 | `v4.0` | Carpeta de Drive `1JbnYSfUQa6iDvcDWMDXsQAdZWU2RjbHe`, recibida el 13/10/2026; diez JSON originales |
+| `v4.1` | Optimización sin pérdida de `v4.0`: WebP, limpieza de metadatos y minificación; keyframes intactos |
+| `v4.2` | Imágenes ajustadas para Retina 2× + 5 % según uso real en S, XL y XXL; M y L excluidos del dimensionado |
+| `v4.3` | Imágenes externas con bytes idénticos; diez JSON y 175 imágenes únicas compartidas |
+| `v4.4` | JPG calidad 92 para fotos opacas y WebP con pérdida calidad 92 para fotos transparentes; revisión visual a cargo del usuario |
+| `v4.5` | Hero sin capa de marco integrada; el marco lo aporta PhoneMockup |
+| `v4.6` | Hero con cuatro JPG comprimidos suministrados por el usuario |
+| `v4.7` | Lanza y optimiza: indicador negro de presupuesto por delante del borde de la tarjeta |
+| `v4.8` | Reestructuración para reproducción: keyframes lineales, capas auxiliares, textos numéricos y atlas estáticos |
+| `v4.9` | Simplificación adicional de keyframes lineales (0,1 unidades), máscaras redundantes y grupos estáticos |
 
 La numeración de las revisiones históricas de `v1` registra las carpetas existentes al organizar este archivo; no reconstruye fechas de entrega desconocidas.
 
 ## Versiones activas
 
-- Hero: `v4.0/hero.json`.
-- Conecta tus redes: `v4.0/conecta-tus-redes.json`.
-- Dile tu objetivo desktop: `v4.0/dile-tu-objetivo.json`.
-- Dile tu objetivo móvil: `v4.0/dile-tu-objetivo-mobile.json`.
-- Tu marca, en cada formato: `v4.0/tu-marca-en-cada-formato.json`.
-- Lanza y optimiza: `v4.0/lanza-y-optimiza.json`.
-- Panel Conecta: `v4.0/conecta.json`.
-- Panel Describe: `v4.0/describe.json`.
-- Panel Crea: `v4.0/crea.json`.
-- Panel Lanza: `v4.0/lanza.json`.
+- Hero: `v4.9/hero.json`.
+- Conecta tus redes: `v4.9/conecta-tus-redes.json`.
+- Dile tu objetivo desktop: `v4.8/dile-tu-objetivo.json`.
+- Dile tu objetivo móvil: `v4.8/dile-tu-objetivo-mobile.json`.
+- Tu marca, en cada formato: `v4.9/tu-marca-en-cada-formato.json`.
+- Lanza y optimiza: `v4.9/lanza-y-optimiza.json`.
+- Panel Conecta: `v4.9/conecta.json`.
+- Panel Describe: `v4.9/describe.json`.
+- Panel Crea: `v4.9/crea.json`.
+- Panel Lanza: `v4.8/lanza.json`.
 
 `versions.json` registra la ruta anterior o el enlace de origen y el SHA-256 de cada archivo para comprobar su conservación. Las revisiones futuras deben añadir sus propios registros sin eliminar las entradas históricas.

@@ -1,0 +1,1522 @@
+{
+  "density": 2,
+  "safetyMargin": 1.05,
+  "excludedRanges": [
+    "m",
+    "l"
+  ],
+  "viewports": [
+    360,
+    575,
+    1380,
+    1979,
+    1980,
+    3960
+  ],
+  "layout": [
+    {
+      "viewport": 360,
+      "entries": [
+        {
+          "name": "hero",
+          "width": 242,
+          "height": 462.734375
+        },
+        {
+          "name": "conecta-tus-redes",
+          "width": 464,
+          "height": 218
+        },
+        {
+          "name": "dile-tu-objetivo-mobile",
+          "width": 326,
+          "height": 183.484375
+        },
+        {
+          "name": "tu-marca-en-cada-formato",
+          "width": 723,
+          "height": 268
+        },
+        {
+          "name": "lanza-y-optimiza",
+          "width": 280,
+          "height": 136.59375
+        },
+        {
+          "name": "conecta",
+          "width": 319.578125,
+          "height": 462.734375
+        },
+        {
+          "name": "describe",
+          "width": 242,
+          "height": 462.734375
+        },
+        {
+          "name": "crea",
+          "width": 242,
+          "height": 462.734375
+        },
+        {
+          "name": "lanza",
+          "width": 242,
+          "height": 462.734375
+        }
+      ]
+    },
+    {
+      "viewport": 575,
+      "entries": [
+        {
+          "name": "hero",
+          "width": 242,
+          "height": 462.734375
+        },
+        {
+          "name": "conecta-tus-redes",
+          "width": 464,
+          "height": 218
+        },
+        {
+          "name": "dile-tu-objetivo-mobile",
+          "width": 350,
+          "height": 197
+        },
+        {
+          "name": "tu-marca-en-cada-formato",
+          "width": 723,
+          "height": 268
+        },
+        {
+          "name": "lanza-y-optimiza",
+          "width": 495,
+          "height": 241.484375
+        },
+        {
+          "name": "conecta",
+          "width": 319.578125,
+          "height": 462.734375
+        },
+        {
+          "name": "describe",
+          "width": 242,
+          "height": 462.734375
+        },
+        {
+          "name": "crea",
+          "width": 242,
+          "height": 462.734375
+        },
+        {
+          "name": "lanza",
+          "width": 242,
+          "height": 462.734375
+        }
+      ]
+    },
+    {
+      "viewport": 1380,
+      "entries": [
+        {
+          "name": "hero",
+          "width": 410,
+          "height": 784
+        },
+        {
+          "name": "conecta-tus-redes",
+          "width": 463.5,
+          "height": 217.75
+        },
+        {
+          "name": "dile-tu-objetivo",
+          "width": 792.5,
+          "height": 227.140625
+        },
+        {
+          "name": "tu-marca-en-cada-formato",
+          "width": 723.265625,
+          "height": 268.09375
+        },
+        {
+          "name": "lanza-y-optimiza",
+          "width": 454.734375,
+          "height": 221.84375
+        },
+        {
+          "name": "conecta",
+          "width": 541.4375,
+          "height": 784
+        },
+        {
+          "name": "describe",
+          "width": 410,
+          "height": 784
+        },
+        {
+          "name": "crea",
+          "width": 410,
+          "height": 784
+        },
+        {
+          "name": "lanza",
+          "width": 410,
+          "height": 784
+        }
+      ]
+    },
+    {
+      "viewport": 1979,
+      "entries": [
+        {
+          "name": "hero",
+          "width": 410,
+          "height": 784
+        },
+        {
+          "name": "conecta-tus-redes",
+          "width": 486.09375,
+          "height": 228.375
+        },
+        {
+          "name": "dile-tu-objetivo",
+          "width": 829.90625,
+          "height": 237.859375
+        },
+        {
+          "name": "tu-marca-en-cada-formato",
+          "width": 757.296875,
+          "height": 280.703125
+        },
+        {
+          "name": "lanza-y-optimiza",
+          "width": 480.703125,
+          "height": 234.5
+        },
+        {
+          "name": "conecta",
+          "width": 541.4375,
+          "height": 784
+        },
+        {
+          "name": "describe",
+          "width": 410,
+          "height": 784
+        },
+        {
+          "name": "crea",
+          "width": 410,
+          "height": 784
+        },
+        {
+          "name": "lanza",
+          "width": 410,
+          "height": 784
+        }
+      ]
+    },
+    {
+      "viewport": 1980,
+      "entries": [
+        {
+          "name": "hero",
+          "width": 510,
+          "height": 975.203125
+        },
+        {
+          "name": "conecta-tus-redes",
+          "width": 576.484375,
+          "height": 270.84375
+        },
+        {
+          "name": "dile-tu-objetivo",
+          "width": 979.5,
+          "height": 280.734375
+        },
+        {
+          "name": "tu-marca-en-cada-formato",
+          "width": 893.46875,
+          "height": 331.1875
+        },
+        {
+          "name": "lanza-y-optimiza",
+          "width": 584.515625,
+          "height": 285.15625
+        },
+        {
+          "name": "conecta",
+          "width": 673.5,
+          "height": 975.203125
+        },
+        {
+          "name": "describe",
+          "width": 510,
+          "height": 975.203125
+        },
+        {
+          "name": "crea",
+          "width": 510,
+          "height": 975.203125
+        },
+        {
+          "name": "lanza",
+          "width": 510,
+          "height": 975.203125
+        }
+      ]
+    },
+    {
+      "viewport": 3960,
+      "entries": [
+        {
+          "name": "hero",
+          "width": 510,
+          "height": 975.203125
+        },
+        {
+          "name": "conecta-tus-redes",
+          "width": 576.484375,
+          "height": 270.84375
+        },
+        {
+          "name": "dile-tu-objetivo",
+          "width": 979.5,
+          "height": 280.734375
+        },
+        {
+          "name": "tu-marca-en-cada-formato",
+          "width": 893.46875,
+          "height": 331.1875
+        },
+        {
+          "name": "lanza-y-optimiza",
+          "width": 584.515625,
+          "height": 285.15625
+        },
+        {
+          "name": "conecta",
+          "width": 673.5,
+          "height": 975.203125
+        },
+        {
+          "name": "describe",
+          "width": 510,
+          "height": 975.203125
+        },
+        {
+          "name": "crea",
+          "width": 510,
+          "height": 975.203125
+        },
+        {
+          "name": "lanza",
+          "width": 510,
+          "height": 975.203125
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "name": "hero",
+      "maximum": {
+        "name": "hero",
+        "width": 510,
+        "height": 975.203125,
+        "viewport": 1980,
+        "scale": 0.4144509668508287
+      },
+      "framesMeasured": 852,
+      "positionsMeasured": 1704,
+      "assets": {
+        "asset_1": {
+          "width": 150.03125,
+          "height": 41.030645718232044,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_2": {
+          "width": 155.41911256906076,
+          "height": 47.247410220994475,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_3": {
+          "width": 239.55265883977899,
+          "height": 47.247410220994475,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_4": {
+          "width": 191.06189571823205,
+          "height": 47.247410220994475,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_5": {
+          "width": 199.76536602209944,
+          "height": 47.247410220994475,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_6": {
+          "width": 221.31681629834253,
+          "height": 47.247410220994475,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_7": {
+          "width": 155.8335635359116,
+          "height": 47.247410220994475,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_8": {
+          "width": 179.042817679558,
+          "height": 47.247410220994475,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_11": {
+          "width": 303.37810773480663,
+          "height": 410.30645718232046,
+          "widthFrame": 270.5,
+          "heightFrame": 270.5
+        },
+        "asset_13": {
+          "width": 303.37810773480663,
+          "height": 410.30645718232046,
+          "widthFrame": 270.5,
+          "heightFrame": 270.5
+        },
+        "asset_15": {
+          "width": 303.37810773480663,
+          "height": 410.30645718232046,
+          "widthFrame": 270.5,
+          "heightFrame": 270.5
+        },
+        "asset_17": {
+          "width": 303.37810773480663,
+          "height": 423.98333908839777,
+          "widthFrame": 270.5,
+          "heightFrame": 270.5
+        },
+        "asset_19": {
+          "width": 303.37810773480663,
+          "height": 410.30645718232046,
+          "widthFrame": 270.5,
+          "heightFrame": 270.5
+        },
+        "asset_32": {
+          "width": 490.2954937845304,
+          "height": 196.86420925414365,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_33": {
+          "width": 51.39191988950276,
+          "height": 53.049723756906076,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_34": {
+          "width": 6.6312154696132595,
+          "height": 5.802313535911602,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_35": {
+          "width": 12.84797997237569,
+          "height": 12.84797997237569,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_37": {
+          "width": 509.77468922651934,
+          "height": 979.7620856353591,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    },
+    {
+      "name": "conecta-tus-redes",
+      "maximum": {
+        "name": "conecta-tus-redes",
+        "width": 576.484375,
+        "height": 270.84375,
+        "viewport": 1980,
+        "scale": 0.4141341743119266
+      },
+      "framesMeasured": 2244,
+      "positionsMeasured": 4488,
+      "assets": {
+        "asset_1": {
+          "width": 67.08973623853211,
+          "height": 67.08973623853211,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_3": {
+          "width": 43.89822247706422,
+          "height": 30.231794724770644,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_5": {
+          "width": 44.726490825688074,
+          "height": 44.726490825688074,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_7": {
+          "width": 44.726490825688074,
+          "height": 44.726490825688074,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_9": {
+          "width": 52.180905963302756,
+          "height": 52.180905963302756,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_12": {
+          "width": 43.89822247706422,
+          "height": 43.89822247706422,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_15": {
+          "width": 64.19079701834863,
+          "height": 64.19079701834863,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_17": {
+          "width": 33.544868119266056,
+          "height": 33.544868119266056,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_19": {
+          "width": 43.89822247706422,
+          "height": 30.231794724770644,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_21": {
+          "width": 32.30246559633028,
+          "height": 33.544868119266056,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_23": {
+          "width": 55.90811353211009,
+          "height": 31.474197247706424,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_25": {
+          "width": 54.665711009174316,
+          "height": 54.665711009174316,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_30": {
+          "width": 64.19079701834863,
+          "height": 64.19079701834863,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_36": {
+          "width": 88.21057912844037,
+          "height": 223.63245412844037,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    },
+    {
+      "name": "dile-tu-objetivo-mobile",
+      "maximum": {
+        "name": "dile-tu-objetivo-mobile",
+        "width": 350,
+        "height": 197,
+        "viewport": 575,
+        "scale": 0.3333333333333333
+      },
+      "framesMeasured": 6000,
+      "positionsMeasured": 12000,
+      "assets": {
+        "asset_2": {
+          "width": 99.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_3": {
+          "width": 136.33333333333331,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_4": {
+          "width": 111.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_5": {
+          "width": 96.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_6": {
+          "width": 74,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_7": {
+          "width": 65.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_8": {
+          "width": 80,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_9": {
+          "width": 59.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_10": {
+          "width": 127.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_11": {
+          "width": 111.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_12": {
+          "width": 53.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_13": {
+          "width": 95.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_14": {
+          "width": 55,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_15": {
+          "width": 84.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_16": {
+          "width": 65.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_17": {
+          "width": 58.666666666666664,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_18": {
+          "width": 82,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_19": {
+          "width": 69.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_20": {
+          "width": 83.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_21": {
+          "width": 82.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_22": {
+          "width": 73.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_23": {
+          "width": 47.666666666666664,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_24": {
+          "width": 75,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_25": {
+          "width": 62.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_26": {
+          "width": 111.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_27": {
+          "width": 72.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_28": {
+          "width": 61.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_29": {
+          "width": 56.666666666666664,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_30": {
+          "width": 71.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_31": {
+          "width": 65,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_32": {
+          "width": 77,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_33": {
+          "width": 49.666666666666664,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_34": {
+          "width": 105,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_35": {
+          "width": 110,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_36": {
+          "width": 74.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_37": {
+          "width": 79.66666666666666,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_38": {
+          "width": 75.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_39": {
+          "width": 98,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_40": {
+          "width": 69.33333333333333,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_41": {
+          "width": 61,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_42": {
+          "width": 65,
+          "height": 24.666666666666664,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    },
+    {
+      "name": "tu-marca-en-cada-formato",
+      "maximum": {
+        "name": "tu-marca-en-cada-formato",
+        "width": 893.46875,
+        "height": 331.1875,
+        "viewport": 1980,
+        "scale": 0.4119247512437811
+      },
+      "framesMeasured": 1440,
+      "positionsMeasured": 2880,
+      "assets": {
+        "asset_1": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_2": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_3": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_4": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_5": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_6": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_7": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_8": {
+          "width": 304.824315920398,
+          "height": 392.9762126865672,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    },
+    {
+      "name": "lanza-y-optimiza",
+      "maximum": {
+        "name": "lanza-y-optimiza",
+        "width": 584.515625,
+        "height": 285.15625,
+        "viewport": 1980,
+        "scale": 0.43009992458521873
+      },
+      "framesMeasured": 1152,
+      "positionsMeasured": 2304,
+      "assets": {
+        "asset_2": {
+          "width": 74.83738687782805,
+          "height": 74.83738687782805,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    },
+    {
+      "name": "conecta",
+      "maximum": {
+        "name": "conecta",
+        "width": 673.5,
+        "height": 975.203125,
+        "viewport": 1980,
+        "scale": 0.4144509668508287
+      },
+      "framesMeasured": 876,
+      "positionsMeasured": 1752,
+      "assets": {
+        "asset_1": {
+          "width": 45.17515538674033,
+          "height": 45.17515538674033,
+          "widthFrame": 9.5,
+          "heightFrame": 9.5
+        },
+        "asset_2": {
+          "width": 68.38440953038673,
+          "height": 68.38440953038673,
+          "widthFrame": 9.5,
+          "heightFrame": 9.5
+        },
+        "asset_3": {
+          "width": 35.0836819862916,
+          "height": 35.0836819862916,
+          "widthFrame": 108,
+          "heightFrame": 108
+        },
+        "asset_4": {
+          "width": 68.75269937636176,
+          "height": 68.75269937636176,
+          "widthFrame": 108,
+          "heightFrame": 108
+        },
+        "asset_8": {
+          "width": 25.69595994475138,
+          "height": 25.69595994475138,
+          "widthFrame": 677.5,
+          "heightFrame": 677.5
+        },
+        "asset_9": {
+          "width": 25.69595994475138,
+          "height": 25.69595994475138,
+          "widthFrame": 672.5,
+          "heightFrame": 672.5
+        },
+        "asset_11": {
+          "width": 302.9636567679558,
+          "height": 58.02313535911602,
+          "widthFrame": 648.5,
+          "heightFrame": 648.5
+        },
+        "asset_13": {
+          "width": 292.1879316298342,
+          "height": 36.88613604972375,
+          "widthFrame": 643.5,
+          "heightFrame": 643.5
+        },
+        "asset_15": {
+          "width": 302.9636567679558,
+          "height": 79.57458563535911,
+          "widthFrame": 639.5,
+          "heightFrame": 639.5
+        },
+        "asset_17": {
+          "width": 46.418508287292816,
+          "height": 46.418508287292816,
+          "widthFrame": 619.5,
+          "heightFrame": 619.5
+        },
+        "asset_21": {
+          "width": 460.0405732044199,
+          "height": 941.218145718232,
+          "widthFrame": 90.5,
+          "heightFrame": 90.5
+        },
+        "asset_22": {
+          "width": 38.9583908839779,
+          "height": 38.9583908839779,
+          "widthFrame": 48.5,
+          "heightFrame": 48.5
+        },
+        "asset_25": {
+          "width": 38.9583908839779,
+          "height": 38.9583908839779,
+          "widthFrame": 43.5,
+          "heightFrame": 43.5
+        },
+        "asset_28": {
+          "width": 82.47574240331491,
+          "height": 19.06474447513812,
+          "widthFrame": 28.5,
+          "heightFrame": 28.5
+        },
+        "asset_29": {
+          "width": 32.74162638121547,
+          "height": 32.74162638121547,
+          "widthFrame": 33.5,
+          "heightFrame": 33.5
+        },
+        "asset_32": {
+          "width": 46.832959254143645,
+          "height": 46.832959254143645,
+          "widthFrame": 28.5,
+          "heightFrame": 28.5
+        },
+        "asset_35": {
+          "width": 65.06880179558011,
+          "height": 19.06474447513812,
+          "widthFrame": 24.5,
+          "heightFrame": 24.5
+        },
+        "asset_36": {
+          "width": 49.31966505524862,
+          "height": 49.31966505524862,
+          "widthFrame": 24.5,
+          "heightFrame": 24.5
+        },
+        "asset_39": {
+          "width": 33.57052831491713,
+          "height": 33.57052831491713,
+          "widthFrame": 19.5,
+          "heightFrame": 19.5
+        },
+        "asset_42": {
+          "width": 36.47168508287292,
+          "height": 36.47168508287292,
+          "widthFrame": 14.5,
+          "heightFrame": 14.5
+        },
+        "asset_45": {
+          "width": 46.2304810213275,
+          "height": 46.2304810213275,
+          "widthFrame": 518,
+          "heightFrame": 518
+        }
+      }
+    },
+    {
+      "name": "describe",
+      "maximum": {
+        "name": "describe",
+        "width": 510,
+        "height": 975.203125,
+        "viewport": 1980,
+        "scale": 0.4144509668508287
+      },
+      "framesMeasured": 591,
+      "positionsMeasured": 1182,
+      "assets": {
+        "asset_1": {
+          "width": 457.9683183701657,
+          "height": 96.15262430939227,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_2": {
+          "width": 460.0405732044199,
+          "height": 162.05032803867402,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_4": {
+          "width": 83.27665469438887,
+          "height": 19.472661049635207,
+          "widthFrame": 423.5,
+          "heightFrame": 423.5
+        },
+        "asset_5": {
+          "width": 89.49133041785072,
+          "height": 89.49257901652577,
+          "widthFrame": 400.5,
+          "heightFrame": 402
+        },
+        "asset_6": {
+          "width": 49.30324693621543,
+          "height": 38.13221618384946,
+          "widthFrame": 282.5,
+          "heightFrame": 364.5
+        },
+        "asset_7": {
+          "width": 49.30324693621543,
+          "height": 38.13221618384946,
+          "widthFrame": 276.5,
+          "heightFrame": 364.5
+        },
+        "asset_8": {
+          "width": 49.30324693621543,
+          "height": 38.13221618384946,
+          "widthFrame": 270.5,
+          "heightFrame": 364.5
+        },
+        "asset_15": {
+          "width": 77.4765308997671,
+          "height": 19.480588702618746,
+          "widthFrame": 184,
+          "heightFrame": 364.5
+        },
+        "asset_16": {
+          "width": 124.43709365791482,
+          "height": 118.11852555248619,
+          "widthFrame": 162.5,
+          "heightFrame": 162.5
+        },
+        "asset_20": {
+          "width": 381.29488950276243,
+          "height": 43.10290055248619,
+          "widthFrame": 105.5,
+          "heightFrame": 105.5
+        },
+        "asset_23": {
+          "width": 404.089692679558,
+          "height": 47.247410220994475,
+          "widthFrame": 12.5,
+          "heightFrame": 12.5
+        }
+      }
+    },
+    {
+      "name": "crea",
+      "maximum": {
+        "name": "crea",
+        "width": 510,
+        "height": 975.203125,
+        "viewport": 1980,
+        "scale": 0.4144509668508287
+      },
+      "framesMeasured": 1075,
+      "positionsMeasured": 2150,
+      "assets": {
+        "asset_2": {
+          "width": 424.3977900552486,
+          "height": 278.92550069060775,
+          "widthFrame": 832.5,
+          "heightFrame": 832.5
+        },
+        "asset_3": {
+          "width": 424.3977900552486,
+          "height": 159.56362223756906,
+          "widthFrame": 822.5,
+          "heightFrame": 822.5
+        },
+        "asset_4": {
+          "width": 228.77693370165744,
+          "height": 140.49887776243094,
+          "widthFrame": 815.5,
+          "heightFrame": 815.5
+        },
+        "asset_5": {
+          "width": 228.77693370165744,
+          "height": 140.49887776243094,
+          "widthFrame": 808.5,
+          "heightFrame": 808.5
+        },
+        "asset_9": {
+          "width": 187.74628798342542,
+          "height": 125.16419198895028,
+          "widthFrame": 798.5,
+          "heightFrame": 798.5
+        },
+        "asset_12": {
+          "width": 405.33240408734395,
+          "height": 810.6648081746879,
+          "widthFrame": 565.5,
+          "heightFrame": 565.5
+        },
+        "asset_15": {
+          "width": 280.9977555248619,
+          "height": 246.18387430939225,
+          "widthFrame": 73,
+          "heightFrame": 73
+        },
+        "asset_16": {
+          "width": 280.9977555248619,
+          "height": 246.18387430939225,
+          "widthFrame": 61,
+          "heightFrame": 61
+        },
+        "asset_17": {
+          "width": 280.9977555248619,
+          "height": 246.18387430939225,
+          "widthFrame": 37.5,
+          "heightFrame": 37.5
+        },
+        "asset_18": {
+          "width": 280.9977555248619,
+          "height": 246.18387430939225,
+          "widthFrame": 26,
+          "heightFrame": 26
+        },
+        "asset_19": {
+          "width": 256.13069751381215,
+          "height": 467.5006906077348,
+          "widthFrame": 14.5,
+          "heightFrame": 14.5
+        },
+        "asset_20": {
+          "width": 480.3486705801105,
+          "height": 680.1140366022099,
+          "widthFrame": 0.5,
+          "heightFrame": 0.5
+        },
+        "asset_21": {
+          "width": 457.9683183701657,
+          "height": 96.15262430939227,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    },
+    {
+      "name": "lanza",
+      "maximum": {
+        "name": "lanza",
+        "width": 510,
+        "height": 975.203125,
+        "viewport": 1980,
+        "scale": 0.4144509668508287
+      },
+      "framesMeasured": 546,
+      "positionsMeasured": 1092,
+      "assets": {
+        "asset_1": {
+          "width": 51.39191988950276,
+          "height": 53.049723756906076,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_2": {
+          "width": 610.4862741712707,
+          "height": 1085.4470821823204,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_4": {
+          "width": 570.6989813535912,
+          "height": 690.0608598066298,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_6": {
+          "width": 406.576398480663,
+          "height": 722.3880352209944,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_8": {
+          "width": 498.58451312154693,
+          "height": 665.19380179558,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_10": {
+          "width": 548.3186291436464,
+          "height": 665.19380179558,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_12": {
+          "width": 642.8134495856353,
+          "height": 665.19380179558,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_14": {
+          "width": 493.611101519337,
+          "height": 665.19380179558,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    },
+    {
+      "name": "dile-tu-objetivo",
+      "maximum": {
+        "name": "dile-tu-objetivo",
+        "width": 979.5,
+        "height": 280.734375,
+        "viewport": 1980,
+        "scale": 0.41223843612334804
+      },
+      "framesMeasured": 6000,
+      "positionsMeasured": 12000,
+      "assets": {
+        "asset_2": {
+          "width": 173.1401431718062,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_3": {
+          "width": 236.62486233480178,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_4": {
+          "width": 193.7520649779736,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_5": {
+          "width": 166.95656662995594,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_6": {
+          "width": 128.20615363436124,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_7": {
+          "width": 112.95333149779736,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_8": {
+          "width": 138.51211453744494,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_9": {
+          "width": 103.05960903083701,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_10": {
+          "width": 222.1965170704846,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_11": {
+          "width": 194.16430341409693,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_12": {
+          "width": 92.34140969162996,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_13": {
+          "width": 165.7198513215859,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_14": {
+          "width": 95.2270787444934,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_15": {
+          "width": 145.9324063876652,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_16": {
+          "width": 113.77780837004406,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_17": {
+          "width": 101.41065528634361,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_18": {
+          "width": 142.22226046255508,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_19": {
+          "width": 120.78586178414098,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_20": {
+          "width": 144.69569107929516,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_21": {
+          "width": 142.63449889867843,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_22": {
+          "width": 127.7939151982379,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_23": {
+          "width": 82.44768722466961,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_24": {
+          "width": 129.85510737885463,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_25": {
+          "width": 107.59423182819384,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_26": {
+          "width": 192.92758810572687,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_27": {
+          "width": 126.1449614537445,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_28": {
+          "width": 106.35751651982379,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_29": {
+          "width": 98.11274779735683,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_30": {
+          "width": 124.08376927312776,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_31": {
+          "width": 112.54109306167402,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_32": {
+          "width": 133.56525330396477,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_33": {
+          "width": 192.92758810572687,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_34": {
+          "width": 126.55719988986785,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_35": {
+          "width": 85.74559471365639,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_36": {
+          "width": 182.20938876651982,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_37": {
+          "width": 190.86639592511014,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_38": {
+          "width": 129.03063050660793,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_39": {
+          "width": 138.51211453744494,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_40": {
+          "width": 130.26734581497797,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_41": {
+          "width": 170.25447411894274,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_42": {
+          "width": 120.37362334801763,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        },
+        "asset_43": {
+          "width": 105.5330396475771,
+          "height": 42.46055892070485,
+          "widthFrame": 0,
+          "heightFrame": 0
+        }
+      }
+    }
+  ]
+}
