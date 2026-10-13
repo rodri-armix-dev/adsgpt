@@ -1,0 +1,153 @@
+// sass-lint:disable no-color-literals
+.lottie-review-item
+{
+	display: block;
+	min-width: 0;
+
+	&[hidden]
+	{
+		display: none;
+	}
+
+	&__card
+	{
+		background: #fff;
+		border: 1px solid #d7e7ff;
+		border-radius: var(--radius-md);
+		overflow: hidden;
+		padding: var(--spacing-24);
+	}
+
+	&__header
+	{
+		align-items: start;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-16);
+		justify-content: space-between;
+	}
+
+	&__eyebrow
+	{
+		color: #0055cc;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	&__title
+	{
+		font-size: 24px;
+		line-height: 1.2;
+		margin-block: var(--spacing-8);
+		overflow-wrap: anywhere;
+	}
+
+	&__date
+	{
+		color: #4d5159;
+		font-size: 14px;
+	}
+
+	&__number
+	{
+		background: #edf4ff;
+		border-radius: var(--radius-md);
+		color: #0055cc;
+		font-size: 28px;
+		font-weight: 700;
+		padding: var(--spacing-8) var(--spacing-16);
+	}
+
+	&__details
+	{
+		display: grid;
+		font-size: 14px;
+		gap: var(--spacing-8);
+		margin-block: var(--spacing-24);
+		overflow-wrap: anywhere;
+
+		dt
+		{
+			color: #4d5159;
+		}
+
+		dd
+		{
+			margin: 0;
+		}
+
+		a
+		{
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+	}
+
+	&__controls
+	{
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-8);
+	}
+
+	&__state
+	{
+		color: #4d5159;
+		font-size: 14px;
+		padding-inline: var(--spacing-8);
+	}
+
+	&__source
+	{
+		color: #0055cc;
+		padding: var(--spacing-8);
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	&__progress
+	{
+		align-items: center;
+		display: flex;
+		font-size: 14px;
+		gap: var(--spacing-16);
+		margin-block: var(--spacing-16);
+
+		input
+		{
+			accent-color: #0055cc;
+			appearance: auto;
+			flex: 1;
+			min-width: 0;
+		}
+	}
+
+	&__stage
+	{
+		background: #f2f5f9;
+		border-radius: var(--radius-md);
+		overflow-x: auto;
+		padding: var(--spacing-24);
+	}
+
+	&__canvas
+	{
+		--lottie-composition-clip: none;
+		--lottie-overflow: visible;
+
+		margin-inline: auto;
+		width: var(--lottie-review-width);
+	}
+}
+
+@include l
+{
+	.lottie-review-item
+	{
+		&__details
+		{
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+}

@@ -1,0 +1,57 @@
+---
+import Button from '../../atoms/Button/Button.astro';
+import Lottie from '../../atoms/Lottie/Lottie.astro';
+import type { LottieReviewFile } from '../../../data/lottie-review';
+
+export interface Props {
+	file: LottieReviewFile;
+}
+
+const { file } = Astro.props;
+const displayDate = new Intl.DateTimeFormat('es-AR', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Mendoza' }).format(new Date(file.modifiedTime));
+const number = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 1 });
+---
+
+<lottie-review-item class="lottie-review-item" data-location={file.usage} data-folder={file.folder} data-format={file.format} data-date={file.modifiedTime} data-review-number={file.reviewNumber} data-search={`#${file.reviewNumber} ${file.name} ${file.driveRelativePath}`}>
+	<article class="lottie-review-item__card" aria-labelledby={`review-${file.fileId}`}>
+		<header class="lottie-review-item__header">
+			<div>
+				<p class="lottie-review-item__eyebrow">{file.version} · {file.format === 'json' ? 'JSON' : 'dotLottie'}</p>
+				<h2 class="lottie-review-item__title" id={`review-${file.fileId}`}>{file.name}</h2>
+				<p class="lottie-review-item__date">Modificado: <time datetime={file.modifiedTime}>{displayDate}</time> · Mendoza</p>
+			</div>
+			<p class="lottie-review-item__number">#{file.reviewNumber}</p>
+		</header>
+		<dl class="lottie-review-item__details">
+			<div><dt>Ubicación en el diseño</dt><dd>{file.usage}</dd></div>
+			<div><dt>En Drive</dt><dd>{file.driveRelativePath}</dd></div>
+			<div><dt>Ruta local</dt><dd><a href={file.publicUrl} target="_blank" rel="noopener noreferrer">public/lotties-drive/{file.relativePath}</a></dd></div>
+			<div><dt>Composición original</dt><dd>{file.compositionWidth} × {file.compositionHeight} px · {file.frameRate} fps · {number.format(file.durationSeconds)} s · {number.format(file.size / 1024 / 1024)} MB</dd></div>
+			<div><dt>Tamaño de prueba</dt><dd>{number.format(file.previewWidth)} × {number.format(file.previewHeight)} px · {file.usage}</dd></div>
+			{file.format === 'dotlottie' && (
+				<div><dt>Copia de reproducción</dt><dd>{file.previewVersion} · SVG a partir del dotLottie original, sin reducir imágenes</dd></div>
+			)}
+		</dl>
+		<div class="lottie-review-item__controls">
+			<div data-action="play"><Button label="Play" ariaLabel={`Reproducir ${file.name}`} /></div>
+			<div data-action="pause"><Button label="Pause" variant="secondary" ariaLabel={`Pausar ${file.name}`} /></div>
+			<div data-action="restart"><Button label="Volver al inicio" variant="secondary" /></div>
+			<span class="lottie-review-item__state" data-state role="status">Pausado</span>
+			<a class="lottie-review-item__source" href={file.sourceUrl} target="_blank" rel="noopener noreferrer">Ver en Drive ↗</a>
+		</div>
+		<label class="lottie-review-item__progress">
+			Fotograma <input type="range" min="0" max="1000" step="1" value="0" data-progress aria-label={`Recorrer ${file.name}`} />
+		</label>
+		<div class="lottie-review-item__stage" tabindex="0" role="region" aria-label={`Vista a tamaño real de ${file.name}`}>
+			<div class="lottie-review-item__canvas" style={{ '--lottie-review-width': `${file.previewWidth}px`, '--lottie-aspect-ratio': `${file.compositionWidth} / ${file.compositionHeight}` }}>
+				<Lottie src={file.previewUrl} autoplay={false} loop={true} ariaLabel={file.name} />
+			</div>
+		</div>
+	</article>
+</lottie-review-item>
+
+<script src="./lottie-review-item.ts"></script>
+
+<style lang="scss">
+	@use './lottie-review-item';
+</style>
