@@ -3,10 +3,15 @@
 Versión activa en la home. Conserva la API `items` y utiliza los mismos
 componentes visuales compartidos.
 
-Toda la lógica vive en `scroll-panels-unified.ts`. El markup y el ciclo de vida
+La lógica de movimiento vive en `scroll-panels-unified.ts`; la carga se coordina
+en `scroll-panels-loader.ts`. El markup y el ciclo de vida
 parten de Native: una escena y un teléfono hermano. En los rangos S y M la escena
-usa sticky nativo; desde L conserva el pin de ScrollTrigger. Un observador carga
-el controlador a 800 px del viewport.
+usa sticky nativo; desde L conserva el pin de ScrollTrigger. El loader carga
+el controlador después de dos frames de renderizado o antes del primer clic en
+Planes, lo que ocurra primero. Ambos caminos comparten una única promesa y esperan
+las fuentes antes de medir el pin. Si el clic se adelanta, se pausa la navegación
+al ancla hasta terminar la inicialización; los siguientes clics usan la navegación
+nativa. El refresh inicial es síncrono para no interrumpir ese scroll después.
 
 ## Controladores
 

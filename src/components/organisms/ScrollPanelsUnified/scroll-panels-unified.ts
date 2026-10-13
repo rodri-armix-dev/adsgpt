@@ -400,13 +400,9 @@ class ScrollPanelsUnified extends HTMLElement {
 		if (scene.parentElement?.classList.contains('pin-spacer')) scene.parentElement.style.backgroundColor = 'inherit';
 		if (touch) updateNative(trigger);
 		else updateDesktop(trigger);
-		const refreshIfConnected = () => {
-			if (this.isConnected && !context.isReverted) ScrollTrigger.refresh(true);
-		};
-		const refreshFrame = requestAnimationFrame(refreshIfConnected);
-		void document.fonts.ready.then(refreshIfConnected);
+		// El loader espera las fuentes; terminar la medición antes de permitir el scroll al ancla.
+		ScrollTrigger.refresh();
 		return () => {
-			cancelAnimationFrame(refreshFrame);
 			abort.abort();
 			cancelTransition();
 			delete this.dataset.pinning;

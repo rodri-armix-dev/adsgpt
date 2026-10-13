@@ -45,15 +45,7 @@ const { items: steps } = Astro.props;
 	)}
 </scroll-panels-unified>
 
-<script>
-	// Reservar el layout desde el principio; cargar el controlador cerca de la sección.
-	const observer = new IntersectionObserver((entries) => {
-		if (!entries.some(entry => entry.isIntersecting)) return;
-		observer.disconnect();
-		void import('./scroll-panels-unified.ts');
-	}, { rootMargin: '800px 0px' });
-	for (const section of document.querySelectorAll('scroll-panels-unified')) observer.observe(section);
-</script>
+<script src="./scroll-panels-loader.ts"></script>
 
 <style lang="scss">
 	@use './scroll-panels-unified' as scrollPanels;

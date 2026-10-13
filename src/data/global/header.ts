@@ -24,7 +24,8 @@ export const headerData = {
 		login: {
 			label: "Ingresar",
 			variant: "secondary",
-			href: "#"
+			href: "https://dashboard.adsgpt.dev/auth",
+			target: "_blank"
 		},
 		download: {
 			label: "Descargar"
@@ -51,7 +52,8 @@ export const headerData = {
 		login: {
 			label: "Log in",
 			variant: "secondary",
-			href: "#"
+			href: "https://dashboard.adsgpt.dev/auth",
+			target: "_blank"
 		},
 		download: {
 			label: "Download"
@@ -78,7 +80,8 @@ export const headerData = {
 		login: {
 			label: "Entrar",
 			variant: "secondary",
-			href: "#"
+			href: "https://dashboard.adsgpt.dev/auth",
+			target: "_blank"
 		},
 		download: {
 			label: "Baixar"
