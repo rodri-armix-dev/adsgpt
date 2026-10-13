@@ -13,7 +13,7 @@ export interface AboutData {
 const spanishAbout = {
 	meta: {
 		title: 'Sobre nosotros | AdsGPT',
-		description: 'Conocé la historia de AdsGPT: desarrolladores, diseñadores y entusiastas que hacen la publicidad más simple e inclusiva.',
+		description: 'Conoce la historia de AdsGPT: desarrolladores, diseñadores y entusiastas que hacen la publicidad más simple e inclusiva.',
 	},
 	content: {
 		pill: { label: 'Nuestra historia', variant: 'light' },

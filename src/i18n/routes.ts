@@ -5,8 +5,6 @@ export const pageSlugs = {
 	about: { es: 'sobre-nosotros', en: 'about-us', pt: 'sobre-nos' },
 	privacy: { es: 'privacidad', en: 'privacy', pt: 'privacidade' },
 	terms: { es: 'terminos', en: 'terms', pt: 'termos' },
-	ui: { es: 'ui', en: 'ui', pt: 'ui' },
-	lotties: { es: 'lotties', en: 'lotties', pt: 'lotties' },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type Page = keyof typeof pageSlugs;

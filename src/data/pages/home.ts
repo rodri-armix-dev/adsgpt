@@ -22,7 +22,7 @@ export const homeData = {
 	es: {
 		meta: {
 			title: "AdsGPT | Publicidad con inteligencia artificial",
-			description: "Creá, lanzá y optimizá campañas publicitarias con IA en Google, Instagram y más. Con AdsGPT, vos elegís cuánto invertir."
+			description: "Crea, lanza y optimiza campañas publicitarias con IA en Google, Instagram y más. Con AdsGPT, tú eliges cuánto invertir."
 		},
 		hero: {
 			stores: storesData.es,
@@ -360,7 +360,7 @@ export const homeData = {
 		bannerCTA: {
 			stores: storesData.es,
 			pill: {
-				label: "Descargá la app",
+				label: "Descarga la app",
 				icon: "star-filled"
 			},
 			heading: "Lleva el futuro de la publicidad contigo",

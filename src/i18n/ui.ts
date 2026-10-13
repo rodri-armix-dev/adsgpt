@@ -8,7 +8,7 @@ export const uiText = {
 		unavailableLanguage: '{label}, no disponible',
 		downloadApp: 'Descargar AdsGPT',
 		trustedBrands: 'Marcas que confían en nosotros',
-		features: 'Qué podés hacer con AdsGPT',
+		features: 'Qué puedes hacer con AdsGPT',
 		howItWorks: 'Cómo funciona AdsGPT',
 		planFeatures: 'Capacidades del plan {label}',
 		planBenefits: 'Beneficios del plan {label}',
