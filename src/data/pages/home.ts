@@ -26,8 +26,8 @@ export const homeData = {
 		},
 		hero: {
 			stores: storesData.es,
-			heading: "Decí qué querés vender. Nosotros te traemos clientes.",
-			description: "<p>Escribís \"quiero vender más empanadas\" y AdsGPT arma tus anuncios en Google, Instagram y más. Vos solo elegís cuánto gastar.</p>",
+			heading: "Di qué quieres vender. Nosotros te traemos clientes.",
+			description: "<p>Escribe \"quiero vender más empanadas\" y AdsGPT arma tus anuncios, creativos y videos en Google, Instagram y más. Tu eliges cuánto gastar.</p>",
 			phone: {
 				src: "/lotties/launch-external/lanza.json",
 				ariaLabel: "AdsGPT en un teléfono: ejemplos de anuncios creados para tu marca."
@@ -150,14 +150,14 @@ export const homeData = {
 					lottieSrc: "/lotties/conecta-progressive/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecta",
-					descriptionLeft: "<p>Conecta tus redes de publicidad y gestiónalas de un solo lugar.</p>",
+					descriptionLeft: "<p>Enlaza tus redes de publicidad y gestiónalas de un solo lugar.</p>",
 					image: {
 						src: "/cards-snap/cards-snap-01.png",
 						alt: "Pantalla de integraciones publicitarias de AdsGPT en un teléfono.",
 						width: 450,
 						height: 690
 					},
-					descriptionRight: "<ul><li>Conectá tus plataformas</li><li>Gestioná todo en un lugar</li><li>Centralizá datos y campañas</li></ul>",
+					descriptionRight: "<ul><li>Conecta tus plataformas</li><li>Gestiona todo en un lugar</li><li>Centraliza datos y campañas</li></ul>",
 					context: "light"
 				},
 				{
@@ -375,7 +375,7 @@ export const homeData = {
 		hero: {
 			stores: storesData.en,
 			heading: "Tell us what you want to sell. We bring you customers.",
-			description: "<p>Type \"I want to sell more empanadas\" and AdsGPT creates your ads for Google, Instagram and more. You just choose how much to spend.</p>",
+			description: "<p>Type \"I want to sell more empanadas\" and AdsGPT creates your ads, ad creatives and videos for Google, Instagram and more. You choose how much to spend.</p>",
 			phone: {
 				src: "/lotties/launch-external/lanza.json",
 				ariaLabel: "AdsGPT on a phone: examples of ads created for your brand."
@@ -498,7 +498,7 @@ export const homeData = {
 					lottieSrc: "/lotties/conecta-progressive/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Connect",
-					descriptionLeft: "<p>Connect your advertising networks and manage them all in one place.</p>",
+					descriptionLeft: "<p>Link your advertising networks and manage them all in one place.</p>",
 					image: {
 						src: "/cards-snap/cards-snap-01.png",
 						alt: "AdsGPT advertising integrations on a phone screen.",
@@ -723,7 +723,7 @@ export const homeData = {
 		hero: {
 			stores: storesData.pt,
 			heading: "Diga o que você quer vender. Nós trazemos os clientes.",
-			description: "<p>Escreva \"quero vender mais empanadas\" e o AdsGPT cria seus anúncios no Google, Instagram e muito mais. Você só escolhe quanto gastar.</p>",
+			description: "<p>Escreva \"quero vender mais empanadas\" e o AdsGPT cria seus anúncios, peças publicitárias e vídeos no Google, Instagram e muito mais. Você escolhe quanto gastar.</p>",
 			phone: {
 				src: "/lotties/launch-external/lanza.json",
 				ariaLabel: "AdsGPT em um celular: exemplos de anúncios criados para sua marca."
@@ -846,7 +846,7 @@ export const homeData = {
 					lottieSrc: "/lotties/conecta-progressive/conecta.json",
 					lottieProgressiveLoad: true,
 					heading: "Conecte",
-					descriptionLeft: "<p>Conecte suas redes de publicidade e gerencie todas em um só lugar.</p>",
+					descriptionLeft: "<p>Vincule suas redes de publicidade e gerencie todas em um só lugar.</p>",
 					image: {
 						src: "/cards-snap/cards-snap-01.png",
 						alt: "Integrações publicitárias do AdsGPT na tela de um celular.",
