@@ -31,20 +31,19 @@ Formato: `v<entrega>.<revisión>`.
 | `v4.8` | Reestructuración para reproducción: keyframes lineales, capas auxiliares, textos numéricos y atlas estáticos |
 | `v4.9` | Simplificación adicional de keyframes lineales (0,1 unidades), máscaras redundantes y grupos estáticos |
 | `v4.10` | Panel Conecta: oscurecimiento ajustado al borde inferior del marco |
+| `v5.0` | `drive-download-20261014T135913Z-1-001.zip`, recibido el 14/10/2026; veinte JSON originales en inglés y portugués |
+| `v5.1` | Describe portugués: emoji recuperado de la imagen inglesa en lugar del cuadrado negro |
+| `v6.0` | Base activa consolidada por petición del usuario: global, es, pt, en e images; recursos sin recomprimir |
+| `v5.4` | Corrección de textos animados, documentos por estado, selectores, cajas, flechas e imágenes con texto EN/PT |
+| `v5.3` | Crea inglés y portugués: ancho de texto localizado para evitar saltos de línea en el botón |
+| `v5.2` | Inglés y portugués sobre las bases españolas optimizadas; textos, glifos, imágenes y atlas localizados, con recursos comunes reutilizados |
 
 La numeración de las revisiones históricas de `v1` registra las carpetas existentes al organizar este archivo; no reconstruye fechas de entrega desconocidas.
 
 ## Versiones activas
 
-- Hero: `v4.9/hero.json`.
-- Conecta tus redes: `v4.9/conecta-tus-redes.json`.
-- Dile tu objetivo desktop: `v4.8/dile-tu-objetivo.json`.
-- Dile tu objetivo móvil: `v4.8/dile-tu-objetivo-mobile.json`.
-- Tu marca, en cada formato: `v4.9/tu-marca-en-cada-formato.json`.
-- Lanza y optimiza: `v4.9/lanza-y-optimiza.json`.
-- Panel Conecta: `v4.10/conecta.json`.
-- Panel Describe: `v4.9/describe.json`.
-- Panel Crea: `v4.9/crea.json`.
-- Panel Lanza: `v4.8/lanza.json`.
+Todos los Lotties activos están reunidos en `v6.0/`. Conecta tus redes, Tu marca en cada formato y Lanza se comparten desde `global/`. Cada idioma tiene sus siete variantes en `es/`, `pt/` o `en/`, y todos los recursos viven en `images/`.
+
+La lista completa de archivos, asignaciones y procedencia está en [v6.0/README.md](v6.0/README.md) y [v6.0/manifest.json](v6.0/manifest.json). Esta consolidación es una nueva base ordenada solicitada por el usuario, sin una nueva entrega externa ni cambios de contenido.
 
 `versions.json` registra la ruta anterior o el enlace de origen y el SHA-256 de cada archivo para comprobar su conservación. Las revisiones futuras deben añadir sus propios registros sin eliminar las entradas históricas.
