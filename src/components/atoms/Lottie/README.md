@@ -1,7 +1,7 @@
 # Lottie
 
 ```astro
-<Lottie src="/lotties/v1.0/conecta.json" autoplay={false} loop={false} />
+<Lottie src="/lotties/v6.0/es/conecta.json" autoplay={false} loop={false} />
 ```
 
 El átomo renderiza la animación. El componente consumidor controla el scroll,

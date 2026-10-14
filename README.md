@@ -17,7 +17,7 @@ pnpm preview
 pnpm astro -- --help
 ```
 
-La página raíz redirige al idioma predeterminado en `/es/`. El catálogo básico de componentes está disponible en `/es/ui/` durante el desarrollo.
+La página raíz redirige a español, inglés o portugués según la preferencia guardada y el idioma del navegador. Las páginas de prueba de Lotties se retiraron de las rutas públicas.
 
 ## Idiomas
 
@@ -67,3 +67,9 @@ src/styles/
 ```
 
 Los colores, radios y familias separan primitivas de aliases semánticos. `colors.scss` reúne la paleta y sus roles; los valores de AdsGPT se conservan. `fonts.scss` registra Host Grotesk como única familia, con fuentes variables locales WOFF2 para pesos 300–800, normal y cursiva, y subconjuntos latin y latin-ext. La licencia OFL se incluye junto a los archivos en `src/assets/fonts/host-grotesk/`.
+
+## Recursos de producción
+
+`public/lotties/v6.0/` contiene únicamente los JSON activos en `global`, `es`, `pt` y `en`, junto con sus imágenes compartidas. La documentación y los manifiestos viven en [docs/lotties/](docs/lotties/README.md), fuera de los archivos públicos. Los iconos inline y su licencia están en `src/assets/icons/`.
+
+Las versiones históricas y los recursos retirados pueden recuperarse desde Git; el commit `5af79ae` conserva el estado anterior a la limpieza. El resumen de la limpieza está en [docs/production-cleanup.md](docs/production-cleanup.md).

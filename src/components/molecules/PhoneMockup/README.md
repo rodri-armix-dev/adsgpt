@@ -10,7 +10,7 @@ import PhoneMockup from './PhoneMockup.astro';
 ---
 
 <div class="demo__phone">
-	<PhoneMockup src="/lotties/v1.0/describe.json" autoplay={true} loop={true} ariaLabel="Demo de creación de anuncios" />
+	<PhoneMockup src="/lotties/v6.0/es/describe.json" autoplay={true} loop={true} ariaLabel="Demo de creación de anuncios" />
 </div>
 
 <style lang="scss">

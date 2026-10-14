@@ -1,6 +1,6 @@
 # Icon
 
-SVG inline de `public/icons`, sin JavaScript en el cliente. `name` selecciona
+SVG inline de `src/assets/icons`, sin JavaScript en el cliente. `name` selecciona
 un nombre del registro tipado en `Icon.astro`. Los consumidores infieren el tipo
 con `ComponentProps<typeof Icon>['name']`.
 
@@ -31,9 +31,9 @@ Sin `label`, el icono es decorativo (`aria-hidden="true"`). Para un icono con
 significado independiente, usar `label` con una descripción localizada. En
 botones y enlaces, el nombre accesible pertenece al control.
 
-Para agregar un icono, preparar su SVG en `public/icons` e incorporarlo al
+Para agregar un icono, preparar su SVG en `src/assets/icons` e incorporarlo al
 registro del átomo. Mantener `viewBox`, geometría y transparencias, usar
 `currentColor` para colores visibles y preservar blancos/negros técnicos de
 máscaras. Los identificadores de definiciones se vuelven únicos por instancia.
 Los tres SVG derivados de Lucide conservan su licencia en
-`public/icons/LICENSE-lucide.txt`.
+`src/assets/icons/LICENSE-lucide.txt`.

@@ -68,6 +68,7 @@ GEMINI.md
 /scripts/
 /reports/
 /pending-deletion/
+/extracted-assets/
 /docs/performance.md
 /docs/publication-review.md
 /public/lotties/**/report.json
